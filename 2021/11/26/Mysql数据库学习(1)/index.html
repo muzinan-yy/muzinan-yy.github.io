@@ -20,28 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到muzinan的博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="一、sql、DB、DBMS分别是什么，他们之间的关系？DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在） DBMS: DataBase Management System（数据库管理系统，常见的有：MySQL Oracle DB2 Sybase           SqlServer...） SQL: 结构化查询语言，是一门标准通用的语言。标准的sql适合于所有的数据库产品。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql数据库学习">
+<meta property="og:url" content="http://example.com/2021/11/26/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0(1)/index.html">
 <meta property="og:site_name" content="欢迎来到muzinan的博客">
+<meta property="og:description" content="一、sql、DB、DBMS分别是什么，他们之间的关系？DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在） DBMS: DataBase Management System（数据库管理系统，常见的有：MySQL Oracle DB2 Sybase           SqlServer...） SQL: 结构化查询语言，是一门标准通用的语言。标准的sql适合于所有的数据库产品。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-26T10:50:36.000Z">
+<meta property="article:modified_time" content="2021-11-26T11:47:15.565Z">
 <meta property="article:author" content="muzinan">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/26/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0(1)/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>欢迎来到muzinan的博客</title>
+  <title>Mysql数据库学习 | 欢迎来到muzinan的博客</title>
   
 
 
@@ -139,9 +144,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -157,10 +163,9 @@
       <meta itemprop="name" content="欢迎来到muzinan的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/26/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0(1)/" class="post-title-link" itemprop="url">Mysql数据库学习</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Mysql数据库学习
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +189,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一、sql、DB、DBMS分别是什么，他们之间的关系？"><a href="#一、sql、DB、DBMS分别是什么，他们之间的关系？" class="headerlink" title="一、sql、DB、DBMS分别是什么，他们之间的关系？"></a>一、sql、DB、DBMS分别是什么，他们之间的关系？</h1><pre><code>DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在）
+        <h1 id="一、sql、DB、DBMS分别是什么，他们之间的关系？"><a href="#一、sql、DB、DBMS分别是什么，他们之间的关系？" class="headerlink" title="一、sql、DB、DBMS分别是什么，他们之间的关系？"></a>一、sql、DB、DBMS分别是什么，他们之间的关系？</h1><pre><code>DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在）
 DBMS: DataBase Management System（数据库管理系统，常见的有：MySQL Oracle DB2 Sybase           SqlServer...）
 SQL: 结构化查询语言，是一门标准通用的语言。标准的sql适合于所有的数据库产品。
      SQL属于高级语言。只要能看懂英语单词的，写出来的sql语句，可以读懂什么意思。
@@ -263,319 +268,34 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 <p>order by        6</p>
 <p>..</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="muzinan">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到muzinan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/22/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM/" class="post-title-link" itemprop="url">深入了解JVM</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-22 21:31:09" itemprop="dateCreated datePublished" datetime="2021-11-22T21:31:09+08:00">2021-11-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/22/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM/" rel="prev" title="深入了解JVM">
+      <i class="fa fa-chevron-left"></i> 深入了解JVM
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="muzinan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到muzinan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">计算机组成原理之指令系统</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-16 21:44:11 / 修改时间：21:45:06" itemprop="dateCreated datePublished" datetime="2021-11-16T21:44:11+08:00">2021-11-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="muzinan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到muzinan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/" class="post-title-link" itemprop="url">计算机组成原理之存储器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-16 13:29:10 / 修改时间：21:37:58" itemprop="dateCreated datePublished" datetime="2021-11-16T13:29:10+08:00">2021-11-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一、存储器："><a href="#一、存储器：" class="headerlink" title="一、存储器："></a>一、存储器：</h1><h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><h3 id="根据存储介质分类："><a href="#根据存储介质分类：" class="headerlink" title="根据存储介质分类："></a>根据存储介质分类：</h3><pre><code>    1.半导体存储器
-    2.磁表面存储器
-    3.磁芯存储器
-    4.光盘存储器
-</code></pre>
-<h3 id="根据存取的方式进行分类："><a href="#根据存取的方式进行分类：" class="headerlink" title="根据存取的方式进行分类："></a>根据存取的方式进行分类：</h3><pre><code>    1.随机存储器 RAM
-    2.只读存储器 ROM
-    3.串行访问存储器
-</code></pre>
-<h3 id="根据在计算机中的作用分类："><a href="#根据在计算机中的作用分类：" class="headerlink" title="根据在计算机中的作用分类："></a>根据在计算机中的作用分类：</h3><pre><code>    1.主存储器：
-    2.辅助存储器 
-    3.缓冲存储器
-</code></pre>
-<h2 id="存储器的基本结构结构："><a href="#存储器的基本结构结构：" class="headerlink" title="存储器的基本结构结构："></a>存储器的基本结构结构：</h2><pre><code>存储器包括存储的部分以及选址的部分，同时可以控制对于存储器的读或者写
-不同的操作。
-地址线：用来选址的信号传输线。
-片选线（用于容量的扩容）、读写控制线（WE）、数据线。
-</code></pre>
-<p><strong><em>存储器的总容量=存储单元*存储字长</em></strong></p>
-<h2 id="主存储器（主要由RAM和ROM构成）："><a href="#主存储器（主要由RAM和ROM构成）：" class="headerlink" title="主存储器（主要由RAM和ROM构成）："></a>主存储器（主要由RAM和ROM构成）：</h2><pre><code>1.地址寄存器
-2.数据寄存器
-3.存储体：存储元组成存储单元，多个存储单元构成存储体
-    译码器：有2**n个存储单元
-</code></pre>
-<h3 id="RAM："><a href="#RAM：" class="headerlink" title="RAM："></a>RAM：</h3><pre><code>1.SRAM（静态）：触发器（常用作cache）
-2.DRAM（动态随机存储器）：电容（常用作主存）
-    刷新：1）分散刷新 2）集中刷新 3）异步刷新 。（死区的概念）
-</code></pre>
-<h1 id="存储器的性能指标："><a href="#存储器的性能指标：" class="headerlink" title="存储器的性能指标："></a>存储器的性能指标：</h1><pre><code>1.存储容量： 存储字数*存储字长
-2.单位成本： 每位价格=总成本/总容量
-3.存储速度：数据传输率=数据的宽度/存储周期
-</code></pre>
-<h1 id="主存与CPU的连接："><a href="#主存与CPU的连接：" class="headerlink" title="主存与CPU的连接："></a>主存与CPU的连接：</h1><pre><code>    1.容量拓展：*_使能信号_*(低电平有效)
-    字拓展：1）译码片选法 2)线选法 n条线对应n个选片信号
-    位拓展：
-    字和位同时拓展（选择芯片）
-</code></pre>
-<h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><pre><code>系统程序区用ROM
-用户程序区用RAM
-执行区都用RAM
-</code></pre>
-<h1 id="高速缓冲存储器："><a href="#高速缓冲存储器：" class="headerlink" title="高速缓冲存储器："></a>高速缓冲存储器：</h1><pre><code>1.命中率：是指cpu要访问的信息已在cache中的比率
-h=Nc/(Nc+Nm)
-2.访问效率：
-e=tc/ta*100% ta是指平均访问时间
-</code></pre>
-<h2 id="1-cache地址映射："><a href="#1-cache地址映射：" class="headerlink" title="1.cache地址映射："></a>1.cache地址映射：</h2><pre><code>1.全相连映射
-2.组相联映射（其余两者的折中）
-3.直接映射
-</code></pre>
-<h2 id="2-替换算法："><a href="#2-替换算法：" class="headerlink" title="2.替换算法："></a>2.替换算法：</h2><pre><code>1.RAND（随机）
-2.FIFO（先进先出）
-3.LRU （最近最少使用）
-4.LFU  （不经常使用）
-</code></pre>
-<h2 id="3-写策略："><a href="#3-写策略：" class="headerlink" title="3.写策略："></a>3.写策略：</h2><pre><code>1.命中时：（1）.全写法 （2）.写回法
-2.不命中： （1）.写分配法 （2）.非写分配法
-</code></pre>
-<h2 id="虚拟存储器："><a href="#虚拟存储器：" class="headerlink" title="虚拟存储器："></a>虚拟存储器：</h2><pre><code>辅存的地址（磁盘）：
-    磁盘号+盘面号+磁道号+扇区号
-1.虚拟存储器是一个逻辑模型；
-功能：用户给出一个地址，叫做虚地址或者逻辑地址，虚拟存储器要给出该地址对应      的数据
-实现：由辅助硬件将虚地址映射到主存当中的某个单元，主存单元地址称为实地址或       物理地址
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/OCEANBASE%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="muzinan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到muzinan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/16/OCEANBASE%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">OCEANBASE数据库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-16 09:59:18" itemprop="dateCreated datePublished" datetime="2021-11-16T09:59:18+08:00">2021-11-16</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -627,6 +347,7 @@ e=tc/ta*100% ta是指平均访问时间
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81sql%E3%80%81DB%E3%80%81DBMS%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E4%BB%96%E4%BB%AC%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">一、sql、DB、DBMS分别是什么，他们之间的关系？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%A1%A8%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什么是表？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E4%B8%80%E4%B8%AA%E5%AD%97%E6%AE%B5%E5%BA%94%E8%AF%A5%E5%8C%85%E6%8B%AC%E5%93%AA%E4%BA%9B%E5%B1%9E%E6%80%A7%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">每一个字段应该包括哪些属性？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E9%80%9A%E7%94%A8%E7%9A%84SQL%E8%AF%AD%E5%8F%A5%EF%BC%8CSQL%E8%AF%AD%E5%8F%A5%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">学习通用的SQL语句，SQL语句的分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">登录数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8sql%E5%91%BD%E4%BB%A4"><span class="nav-number">5.</span> <span class="nav-text">常用sql命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%9Adrop-database-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D"><span class="nav-number">5.1.</span> <span class="nav-text">删除数据库：drop database 数据库名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84%EF%BC%9Adesc-%E8%A1%A8%E5%90%8D"><span class="nav-number">6.</span> <span class="nav-text">查看表的结构：desc 表名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E8%AF%AD%E5%8F%A5%EF%BC%9A%EF%BC%88sql%E8%AF%AD%E5%8F%A5%E4%B8%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99%E3%80%82%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">sql语句：（sql语句不区分大小写。）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-number">7.1.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E5%87%BD%E6%95%B0"><span class="nav-number">7.2.</span> <span class="nav-text">分组函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%95%E8%A1%8C%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="nav-number">8.</span> <span class="nav-text">单行处理函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#groupby-%E5%92%8C-having%EF%BC%9A"><span class="nav-number">9.</span> <span class="nav-text">groupby 和 having：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="nav-number">9.1.</span> <span class="nav-text">执行顺序</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
