@@ -145,6 +145,334 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/06/php%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/06/php%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">php学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-06 16:00:46" itemprop="dateCreated datePublished" datetime="2021-12-06T16:00:46+08:00">2021-12-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-13 16:07:33" itemprop="dateModified" datetime="2021-12-13T16:07:33+08:00">2021-12-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="php"><a href="#php" class="headerlink" title="php"></a>php</h1><p>echo ‘<hr>‘;</p>
+<p>变量：</p>
+<p>$a;</p>
+<p>常量：</p>
+<p>var_dump（）判断括号中的表达式是否为1</p>
+<p>比较运算符:&gt;= &lt;= == !=</p>
+<p>逻辑运算符：针对不同的结果进行匹配，</p>
+<p>&amp;&amp; 逻辑与    $a=’week’, $b=’good’ ;  $a==’week’ &amp;&amp; $b==’good’</p>
+<p>||逻辑或</p>
+<p>！逻辑非</p>
+<p>连接运算符：</p>
+<p>​    将多个字符串拼接的字符：（.）(.=将左边的内容与右边的内容连接起来，然后赋值给左边的变量)</p>
+<p>错误抑制符：</p>
+<blockquote>
+<p><em>在php中，有些错误可以提前预知</em>，</p>
+<p>在可能出现错误的表达式之前使用@符号即可</p>
+<p>@（$a/$b）</p>
+</blockquote>
+<p>三目运算：</p>
+<p>自操作运算符：</p>
+<blockquote>
+<p>++</p>
+<p>–</p>
+<p>前置和后置</p>
+<p>后置先赋值后操作</p>
+<p>前置先操作后赋值</p>
+</blockquote>
+<p>非：~补码</p>
+<p>&amp;：与操作</p>
+<p>|:或</p>
+<p>异或：^</p>
+<p>左移：&gt;&gt;</p>
+<p>右移：&lt;&lt;</p>
+<p>while循环：</p>
+<p>do{}while()</p>
+<p> $a++;</p>
+<p>如果是基于固定已知条件，而且有规律的话。使用for循环</p>
+<p>while循环</p>
+<p>php是可以嵌入到html中的脚本语言。</p>
+<p>php函数：</p>
+<p>function f_name($a,$b,$c~~~){</p>
+<p>​    fun_body；</p>
+<p>}</p>
+<p>取消引用:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">strlen()获取字符串的长度</span><br><span class="line"></span><br><span class="line"><span class="variable">$string</span>[index] 访问字符串的某个位置的字符</span><br><span class="line"></span><br><span class="line"><span class="variable">$string</span> substr( [<span class="keyword">string</span> <span class="variable">$string</span>,<span class="keyword">int</span> <span class="variable">$start</span>[,<span class="keyword">int</span> <span class="variable">$length</span>]] )访问字符串中的多个字符</span><br><span class="line"></span><br><span class="line"><span class="keyword">string</span> strstr( <span class="keyword">string</span> <span class="variable">$haystack</span>,<span class="keyword">mixed</span> <span class="variable">$needle</span>[,<span class="keyword">bool</span> <span class="variable">$before_needle</span>=<span class="literal">false</span>])判断一个字符是否是另一个字符串的子串</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> strpos(<span class="keyword">string</span> <span class="variable">$haystack</span>,<span class="keyword">mixed</span> <span class="variable">$needle</span>[,<span class="keyword">int</span> <span class="variable">$offset</span>=<span class="number">0</span>]) 查找字符串首次出现的位置</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>（（<span class="variable">$pos</span>=strpos(<span class="variable">$mystr</span>,<span class="string">&quot;1&quot;</span>,<span class="variable">$pos</span>)) !==<span class="literal">false</span> ）&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;The lette&quot;</span>;</span><br><span class="line"></span><br><span class="line">&amp;pos++;</span><br><span class="line"><span class="comment">//获取到字符串在源字符串中的所有位置的索引</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> strtpos() strpos的姐妹函数，作用与strpos基本相同，唯一的差别在于strrpos找的是最后一次匹配的位置。</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> substr_count(<span class="keyword">string</span> <span class="variable">$haystack</span>, <span class="keyword">string</span> <span class="variable">$needle</span>[,<span class="keyword">int</span> <span class="variable">$offset</span>=<span class="number">0</span>[,<span class="keyword">int</span> <span class="variable">$length</span>]]) 函数统计字符串出现的次数</span><br><span class="line"></span><br><span class="line"><span class="keyword">string</span> strpbak(<span class="keyword">string</span> <span class="variable">$haystack</span>,<span class="keyword">string</span> <span class="variable">$char_list</span>) 判断字符串中是否包含一个字符集中的任意一个字符时。</span><br><span class="line"></span><br><span class="line"><span class="keyword">mixed</span> str_replace(<span class="keyword">mixed</span> <span class="variable">$search</span>,<span class="keyword">mixed</span> <span class="variable">$replace</span>,<span class="keyword">mixed</span> <span class="variable">$subject</span>[,<span class="keyword">int</span> <span class="variable">$count</span>])</span><br><span class="line"><span class="keyword">mixed</span> substr_replace(<span class="keyword">mixed</span> <span class="variable">$search</span>,<span class="keyword">mixed</span> <span class="variable">$replacement</span>,<span class="keyword">mixed</span> <span class="variable">$start</span>[,<span class="keyword">mixed</span> <span class="variable">$length</span>])</span><br><span class="line"><span class="keyword">string</span> strtr(<span class="keyword">string</span> <span class="variable">$str</span>,<span class="keyword">string</span> <span class="variable">$from</span>,<span class="keyword">string</span> <span class="variable">$to</span>)</span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>数据精度：</p>
+<p>%.2f 表示小数的位数为两位</p>
+<p>printf函数的作用：</p>
+<p>1）类型说明</p>
+<p>2）符号说明</p>
+<p>3）宽度说明</p>
+<p>4）说明数值精度</p>
+<p>5）交换转换符的顺序</p>
+<p>6）存储格式化效果 sprintf（）函数可以将结果字符串作为函数值返回</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除字符串中的空白符</span></span><br><span class="line">trim() 删除字符串首尾的空白符</span><br><span class="line">ltrim() 只删除字符串首部的空白符</span><br><span class="line">rtrim() 只删除字符串尾部的空白符</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="数组的创建"><a href="#数组的创建" class="headerlink" title="数组的创建"></a>数组的创建</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#### </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span> <span class="keyword">array</span>([<span class="keyword">mixed</span> $])</span><br><span class="line"></span><br><span class="line"><span class="variable">$mybook</span>=<span class="keyword">array</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#在创建好的数组之后添加数据</span></span><br><span class="line"><span class="variable">$mybook</span>[]=<span class="keyword">new</span> ele;</span><br><span class="line"><span class="comment">#利用array()构造函数首先初始化数组</span></span><br><span class="line"><span class="comment">#通过print_r函数输出数组的元素</span></span><br><span class="line">print_r(输出所有的数组元素)</span><br><span class="line"><span class="comment">#切割数组：</span></span><br><span class="line">  <span class="keyword">array</span> array_slice(<span class="keyword">array</span> <span class="variable">$array</span>,<span class="keyword">int</span> <span class="variable">$offset</span>[,<span class="keyword">int</span> <span class="variable">$length</span>=<span class="literal">null</span>[,<span class="keyword">bool</span> <span class="variable">$preserve_keys</span>=<span class="literal">false</span>]])</span><br><span class="line"><span class="comment">#统计数组中的个数：</span></span><br><span class="line">    <span class="keyword">int</span> count(<span class="variable">$array</span>)</span><br><span class="line"><span class="comment">#访问数组中的元素：</span></span><br><span class="line">    <span class="number">1</span>.通过数组指针访问数组中的元素：</span><br><span class="line">    <span class="number">2</span>.通过each()函数逐个访问数组的元素</span><br><span class="line">    <span class="number">3</span>.用<span class="keyword">foreach</span>遍历数组：</span><br><span class="line">    <span class="keyword">for</span> (<span class="variable">$array</span> <span class="keyword">as</span> <span class="variable">$value</span>)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$value</span>.<span class="string">&quot;&lt;br/&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="number">4</span>.用<span class="keyword">foreach</span>遍历数组的键和值：</span><br><span class="line">    <span class="number">5</span>.用<span class="keyword">foreach</span>遍历修改数组元素的值：</span><br><span class="line">        <span class="keyword">for</span>(<span class="variable">$array</span> <span class="keyword">as</span> &amp;<span class="variable">$val</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="variable">$val</span>==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">                <span class="variable">$val</span>=<span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">unset</span>(<span class="variable">$val</span>);</span><br><span class="line">            <span class="keyword">echo</span><span class="string">&quot;&lt;br/&gt;&quot;</span>;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的操作"><a href="#数组的操作" class="headerlink" title="数组的操作"></a>数组的操作</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sort（）和rsort（） 用于索引数组的排序</span><br><span class="line">asort（）和arsort（） 用于关联数组的排序</span><br><span class="line">ksort（）和krsort（）根据关联数组的键而非值对数组进行排序</span><br><span class="line">array_multisort():可以同时会多个数组或者多维数组进行排序</span><br></pre></td></tr></table></figure>
+
+<h3 id="add和delete数组元素"><a href="#add和delete数组元素" class="headerlink" title="add和delete数组元素"></a>add和delete数组元素</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">array_unshift();将一个或多个新元素添加到数组的开始位置</span><br><span class="line">array_shift();删除数组的最后一个元素</span><br><span class="line">array_push();在数组的末尾添加一个或多个新的元素<span class="keyword">int</span> array_push(<span class="keyword">array</span> <span class="variable">$array</span>,<span class="keyword">mixed</span> <span class="variable">$value1</span>[,<span class="keyword">mixed</span> $...])</span><br><span class="line">array_pop();删除数组的最后一个元素</span><br><span class="line">array_splice();删除数组中从某个位置开始的元素，或把新元素插入到数组得某个位置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span> array_merge(<span class="keyword">array</span> <span class="variable">$array1</span>[,<span class="keyword">array</span> $...])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组和字符串之间的转换"><a href="#数组和字符串之间的转换" class="headerlink" title="数组和字符串之间的转换"></a>数组和字符串之间的转换</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span> explode(<span class="keyword">string</span> separator,<span class="keyword">string</span> <span class="keyword">string</span>[,<span class="keyword">int</span> limit])</span><br><span class="line"><span class="keyword">string</span> implode(<span class="keyword">string</span> glue,<span class="keyword">array</span> pieces)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组转换为变量列表"><a href="#数组转换为变量列表" class="headerlink" title="数组转换为变量列表"></a>数组转换为变量列表</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span> <span class="keyword">list</span>(<span class="keyword">mixed</span> <span class="variable">$var1</span>[,<span class="keyword">mixed</span> <span class="variable">$var2</span>...])</span><br></pre></td></tr></table></figure>
+
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">行定位符：</span><br><span class="line">	^tm tm$ tm</span><br><span class="line">单词定界符：</span><br><span class="line">	\btm\b \Btm\B</span><br><span class="line">字符类：</span><br><span class="line">	[]</span><br><span class="line">	正则表达式是区分大小写的</span><br><span class="line">	选择字符（|）</span><br><span class="line">	连字符（-）</span><br><span class="line">	排除字符（^）</span><br><span class="line">	限定字符（？*+&#123;n,m&#125;）</span><br><span class="line">	点字符（.）</span><br><span class="line">	转义字符（\）</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>\反斜杠</th>
+<th align="left">转义，指定预定义的字符集，定义断言，显示不可打印的字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>（）圆括号</td>
+<td align="left">改变限定符的作用范围，进行分组</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>反向引用：</p>
+<p>php中的模式匹配函数：</p>
+<p>int preg_match(string $pattern,string $subject[,array &amp;$matces[,int $flag=0[,int $offset=0]]])</p>
+<p>用preg_match_all( )函数实现多次匹配：</p>
+<p>int preg_match_all(string $pattern,string $subject[,array &amp;$matches[,int $flag=PREG_PATTERN_ORDER[,int $offset=0]]])</p>
+<p>matches数组用来表示匹配的结果。</p>
+<h1 id="PHP和Web页面的交互"><a href="#PHP和Web页面的交互" class="headerlink" title="PHP和Web页面的交互"></a>PHP和Web页面的交互</h1><h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>功能：让浏览者和网站有一个互动的平台。用来将数据发送到服务器。</p>
+<h2 id="获取表单数据"><a href="#获取表单数据" class="headerlink" title="获取表单数据"></a>获取表单数据</h2><h3 id="post"><a href="#post" class="headerlink" title="post"></a>post</h3><p>ｐｏｓｔ方式的提交不依赖于ｕｒｌ，表单中的参数值不会显示再地址栏中，安全性高，能够提交大容量数据</p>
+<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>ｇｅｔ方式是表单数据默认的提交方式，即ｆｏｒｍ元素的ｍｅｔｈｏｄ属性的默认值．</p>
+<h3 id="php参数传递的常用方法"><a href="#php参数传递的常用方法" class="headerlink" title="php参数传递的常用方法"></a>php参数传递的常用方法</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_POST</span>[<span class="string">&quot;name&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="variable">$_POST</span>[<span class="string">&quot;name&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>需要区分大小写</p>
+<h3 id="在网页中嵌入php脚本"><a href="#在网页中嵌入php脚本" class="headerlink" title="在网页中嵌入php脚本"></a>在网页中嵌入php脚本</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在html标签中添加php脚本：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对value进行赋值：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"></span><br><span class="line"><span class="variable">$user_name</span>=<span class="string">&quot;landy&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;user-name&quot;</span> value=<span class="string">&quot;&lt;?php echo <span class="subst">$user_name</span>;?&gt;&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在php中获取表单数据"><a href="#在php中获取表单数据" class="headerlink" title="在php中获取表单数据"></a>在php中获取表单数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form name=&quot;from1&quot; method=&quot;post&quot; action=&quot;index.php&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">        &lt;table width=&quot;405&quot; border=&quot;0&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; bordercolor=&quot;#FFFFFF&quot; bgcolor=&quot;#999999&quot;&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;用户名：&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&quot;user_name&quot; type=&quot;text&quot; id=&quot;user&quot;size=&quot;20&quot; </span><br><span class="line">                    maxlength=&quot;100&quot;/&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;密码&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;&lt;input name=&quot;password&quot; type=&quot;password&quot; id=&quot;user&quot;size=&quot;20&quot; </span><br><span class="line">                maxlength=&quot;100&quot;/&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;确认密码&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;&lt;input name=&quot;cfm_password&quot; type=&quot;password&quot; id=&quot;user&quot;size=&quot;20&quot; </span><br><span class="line">                maxlength=&quot;100&quot;/&gt;&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/tr&gt;               </span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;性别&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&quot;sex&quot; type=&quot;radio&quot; value=&quot;男&quot; checked&gt;男&lt;/input&gt;</span><br><span class="line">                    &lt;input name=&quot;sex&quot; type=&quot;radio&quot; value=&quot;女&quot;&gt;女&lt;/input&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#a61b29&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;爱好&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&quot;fond[]&quot; type=&quot;checkbox&quot; id=&quot;fond[]&quot; value=&quot;music&quot;&gt;music&lt;/input&gt;</span><br><span class="line">                    &lt;input name=&quot;fond[]&quot; type=&quot;checkbox&quot; id=&quot;fond[]&quot; value=&quot;ball&quot;&gt;ball&lt;/input&gt;</span><br><span class="line">                &lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                    &lt;td colspan=&quot;2&quot; height=&quot;25&quot; align=&quot;center&quot;&gt;</span><br><span class="line">                        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot;/&gt;</span><br><span class="line">                        &lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;reset&quot;/&gt;</span><br><span class="line">                    &lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#a61b29&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;学历&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;select name=&quot;select&quot; size=&quot;1&quot;&gt;</span><br><span class="line">                        &lt;option value=&quot;专科&quot;&gt;专科&lt;/option&gt;</span><br><span class="line">                        &lt;option value=&quot;本科&quot;&gt;本科&lt;/option&gt;</span><br><span class="line">                        &lt;option value=&quot;硕士&quot;&gt;硕士&lt;/option&gt;</span><br><span class="line">                        &lt;option value=&quot;博士&quot;&gt;博士&lt;/option&gt;</span><br><span class="line">                        &lt;/select&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#a61b29&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;上传头像&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&#x27;img&#x27; type=&#x27;file&#x27; id=&quot;img&quot; size=&quot;20&quot; maxlength=&quot;100&quot;/&gt;</span><br><span class="line">                &lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">// 获取基本元素的值</span><br><span class="line">echo &quot;请确认表单的信息：&lt;br&gt;&quot;;</span><br><span class="line">echo &quot;&quot;.trim($_POST[&#x27;user_name&#x27;]).&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo &quot;&quot;.trim($_POST[&#x27;password&#x27;]).&quot;&lt;br&gt;&quot;; </span><br><span class="line">echo &quot;&quot;.trim($_POST[&#x27;cfm_password&#x27;]).&quot;&lt;br&gt;&quot;;</span><br><span class="line">// 获取单选按钮的值</span><br><span class="line">echo &quot;性别&quot;.trim($_POST[&#x27;sex&#x27;]).&quot;&lt;br&gt;&quot;; </span><br><span class="line">// 获取复选框的值</span><br><span class="line">if($_POST[&#x27;fond&#x27;]!=null)&#123;</span><br><span class="line">    echo &quot;宁的爱好是：&quot;;</span><br><span class="line">    for($i=0;$i&lt;count($_POST[&#x27;fond&#x27;]);$i++)&#123;</span><br><span class="line">        echo $_POST[&#x27;fond&#x27;][$i].&quot;&amp;nbsp;&amp;nbsp;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 获取菜单列表框的值</span><br><span class="line">if($_POST[&#x27;select&#x27;]!=&#x27;&#x27;)&#123;</span><br><span class="line">    echo &quot;你的学历&quot;.$_POST[&#x27;select&#x27;];</span><br><span class="line">&#125;</span><br><span class="line">// 获取文件域的值</span><br><span class="line">echo &quot;上传文件的信息&quot;;</span><br><span class="line">echo &#x27;文件名&#x27;.$_FILES[&#x27;img&#x27;][&#x27;name&#x27;].&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;文件类型&#x27;.$_FILES[&#x27;img&#x27;][&#x27;type&#x27;].&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;文件大小&#x27;.($_FILES[&#x27;img&#x27;][&#x27;size&#x27;]/1024).&#x27;KB&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;临时文件名&#x27;.$_FILES[&#x27;img&#x27;][&#x27;tmp_name&#x27;].&#x27;&lt;br&gt;&#x27;;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对URL传递的参数进行编码和解码"><a href="#对URL传递的参数进行编码和解码" class="headerlink" title="对URL传递的参数进行编码和解码"></a>对URL传递的参数进行编码和解码</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> urlencode(<span class="keyword">string</span> str)</span><br><span class="line"><span class="keyword">string</span> urldecode(<span class="keyword">string</span> str)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<h2 id="web服务器端的其他数据采集方法"><a href="#web服务器端的其他数据采集方法" class="headerlink" title="web服务器端的其他数据采集方法"></a>web服务器端的其他数据采集方法</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_REQUEST</span>[<span class="string">&#x27;NAME&#x27;</span>]</span><br><span class="line">    <span class="comment">//是post和get,cookie的综合</span></span><br><span class="line"><span class="comment">//预定义变量</span></span><br><span class="line">    <span class="variable">$_SERVE</span>是一个包含诸如头信息,路径以及脚本位置等信息的数组</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<h1 id="日期和时间的操作"><a href="#日期和时间的操作" class="headerlink" title="日期和时间的操作"></a>日期和时间的操作</h1><h3 id="获取当前日期和时间"><a href="#获取当前日期和时间" class="headerlink" title="获取当前日期和时间"></a>获取当前日期和时间</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示的是unix时间戳</span></span><br><span class="line"><span class="keyword">echo</span> time();</span><br><span class="line"><span class="comment">//设置默认时区为北京时间</span></span><br><span class="line">date_default_timezone_set(<span class="string">&#x27;PRC&#x27;</span>)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="创建时间戳"><a href="#创建时间戳" class="headerlink" title="创建时间戳"></a>创建时间戳</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据日期和时间生成时间戳</span></span><br><span class="line"><span class="keyword">echo</span> mktime(<span class="number">18</span>,<span class="number">30</span>,<span class="number">00</span>,<span class="number">12</span>,<span class="number">12</span>,<span class="number">2021</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="comment">//从GMT日期和时间值生成时间戳</span></span><br><span class="line"><span class="keyword">echo</span> gmmktime(<span class="number">18</span>,<span class="number">30</span>,<span class="number">00</span>,<span class="number">12</span>,<span class="number">12</span>,<span class="number">2021</span>);</span><br><span class="line"><span class="comment">//从日期和时间字符串生成时间戳</span></span><br><span class="line"><span class="keyword">echo</span> strtotime(<span class="keyword">string</span> <span class="variable">$time</span>[,<span class="keyword">int</span> <span class="variable">$now</span>=time()])</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换时间戳"><a href="#转换时间戳" class="headerlink" title="转换时间戳"></a>转换时间戳</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转换时间戳</span></span><br><span class="line"><span class="keyword">array</span> getdate([<span class="keyword">int</span> <span class="variable">$timestamp</span>=time()])</span><br><span class="line"><span class="comment">//接受一个时间戳作为参数,返回一个关联数组</span></span><br><span class="line"><span class="comment">//如果只想从时间戳中读取时间或日期,可以使用idate()函数</span></span><br><span class="line"><span class="keyword">int</span> idate(<span class="keyword">string</span> <span class="variable">$format</span>[,<span class="keyword">int</span> <span class="variable">$timestamp</span>])</span><br><span class="line"><span class="comment">//需要两个参数,一个格式串和一个可选的时间戳$timestamp</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="格式化日期字符串"><a href="#格式化日期字符串" class="headerlink" title="格式化日期字符串"></a>格式化日期字符串</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> date(<span class="keyword">string</span> <span class="variable">$format</span>[,<span class="keyword">int</span> <span class="variable">$timestamp</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="检查日期值"><a href="#检查日期值" class="headerlink" title="检查日期值"></a>检查日期值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> checkdate(<span class="keyword">int</span> <span class="variable">$month</span>,<span class="keyword">int</span> <span class="variable">$day</span>,<span class="keyword">int</span> <span class="variable">$year</span>)</span><br><span class="line"><span class="comment">//该函数需要接收1~12月,1~31日和年是哪个参数,如果这个日期是有效的话,返回true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="毫秒的使用"><a href="#毫秒的使用" class="headerlink" title="毫秒的使用"></a>毫秒的使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mixed microtime([bool $get_as_float])</span><br><span class="line">//这个函数回合time()一样,返回当前时间的时间戳.但是还会返回一个毫秒值.这样会使时间更加精确</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">????</span><br></pre></td></tr></table></figure>
+
+<h1 id="http的使用"><a href="#http的使用" class="headerlink" title="http的使用"></a>http的使用</h1><h2 id="http请求"><a href="#http请求" class="headerlink" title="http请求"></a>http请求</h2><p>请求行:GET/about/index.php HTTP/1.1</p>
+<p>http头列表:</p>
+<p>空行:</p>
+<p>可选消息体:其中可能包括通过post方法传递的数据</p>
+<h2 id="http响应"><a href="#http响应" class="headerlink" title="http响应"></a>http响应</h2><p>状态行:(200 ok  )</p>
+<p>http头列表:(各个响应头)</p>
+<p>空行</p>
+<p>一个可选的消息头:</p>
+<h1 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h1><p>cookie是一种在客户端浏览器中存储数据并以此跟踪和识别用户的机制</p>
+<p>cookie的功能:</p>
+<p>1.记录访客的某些信息.</p>
+<p>2.在页面之间传递变量</p>
+<p>3.将查看的网页存储在cookie临时文件中.提高浏览的速度</p>
+<h2 id="创建cookie"><a href="#创建cookie" class="headerlink" title="创建cookie"></a>创建cookie</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> setcookie(<span class="keyword">string</span> name[,<span class="keyword">string</span> value[,<span class="keyword">int</span> expire[,<span class="keyword">string</span> path[,<span class="keyword">string</span> domain[,<span class="keyword">int</span> secure]]]]])</span><br><span class="line">    name:cookie的名称,可以通过<span class="variable">$_COOKIE</span>[<span class="string">&#x27;cookie_name&#x27;</span>]调用变量名为cookie_name的cookie</span><br><span class="line">    value:cookie变量的值,该值保存在客户端,不能用来保存敏感的数据<span class="variable">$_COOKIE</span>[<span class="string">&#x27;values&#x27;</span>]获取名为values的值</span><br><span class="line">    expire:cookie的时效,用time()或者mktime()获取</span><br><span class="line">    path:cookie在服务器端的有效路径</span><br><span class="line">    domain:cookie的有效域名</span><br><span class="line">    secure:指明cookie是否仅通过安全的https,值为<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="读取cookie"><a href="#读取cookie" class="headerlink" title="读取cookie"></a>读取cookie</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在php中可以直接通过超级全局数组$_COOKIE[]来读取浏览器端的cookie的值</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">isset</span>(<span class="variable">$_COOKIE</span>[<span class="string">&#x27;visit_time&#x27;</span>]))&#123;</span><br><span class="line">setcookie(<span class="string">&#x27;visit_time&#x27;</span>,date(<span class="string">&#x27;y-m-d H:i:s&#x27;</span>));</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;欢迎首次访问网络&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    setcookie(<span class="string">&#x27;visit_time&#x27;</span>,date(<span class="string">&#x27;y-m-d H:i:s&#x27;</span>),time()+<span class="number">60</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;上次访问时间为:&quot;</span>.<span class="variable">$_COOKIE</span>[<span class="string">&#x27;visit_time&#x27;</span>];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;您上次访问网站的时间为:&#x27;</span>.date(<span class="string">&quot;y-m-d H:i:s&quot;</span>);</span><br><span class="line">    <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setcookie(<span class="string">&quot;visit_time&quot;</span>,<span class="string">&quot;&quot;</span>,time()-<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="cookie的生命周期"><a href="#cookie的生命周期" class="headerlink" title="cookie的生命周期"></a>cookie的生命周期</h2><blockquote>
+<p>如果不为cookie设置时间,则他的生命周期就是浏览器会话时间范围</p>
+<p>只要关闭浏览器,cookie就会消失</p>
+<p><strong>cookie</strong>不是一成不变的,每个cookie文件的大小有限,每个域名最多支持20个cookie</p>
+</blockquote>
+<h1 id="session"><a href="#session" class="headerlink" title="session"></a>session</h1><h2 id="创建session"><a href="#创建session" class="headerlink" title="创建session"></a>创建session</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//session是指有始有终的一系列的动作和消息</span></span><br><span class="line"><span class="comment">// 1.启动session</span></span><br><span class="line"><span class="comment">//bool session_start(void)</span></span><br><span class="line"><span class="comment">//session_register()函数用来创建session</span></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<img src="/2021/12/06/php%E5%AD%A6%E4%B9%A0/blog\source\_posts\image-20211213160703940.png" alt="image-20211213160703940" style="zoom:80%;">
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" class="post-title-link" itemprop="url">计算机组成原理之流水线技术</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-30 17:24:14" itemprop="dateCreated datePublished" datetime="2021-11-30T17:24:14+08:00">2021-11-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-07 10:22:31" itemprop="dateModified" datetime="2021-12-07T10:22:31+08:00">2021-12-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="流水线的相关："><a href="#流水线的相关：" class="headerlink" title="流水线的相关："></a>流水线的相关：</h1><p>​    1）结构相关：硬件方面（当硬件资源满足不了指令重叠执行时的要求时产生的）</p>
+<p>​    2）数据相关：如果一条指令需要的某个数据正在被之前的指令操作着，那这条指令就无法执行，就导致了数据相关.（指令在流水线中重叠执行时，当后继指令需要用到前面指令的执行结果时发生的）</p>
+<p>​    3）控制相关：如果现在要执行哪条指令，是由之前指令的运行结果决定，而现在那条之前指令的结果还没产生，就导致了控制相关.（当流水线遇到分支指令和其他改变PC值得指令时引起的）</p>
+<h2 id="结构相关"><a href="#结构相关" class="headerlink" title="结构相关"></a>结构相关</h2><p>由访存引起的结构相关：取数和取指都需要访存。</p>
+<p>·1：引起流水线停顿（stall），产生空泡（bubble）</p>
+<p>·2：</p>
+<p>解决访存冲突的方法：设置两个独立的存储器分别存放操作数和指令。</p>
+<h2 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h2><p>1）RAW（Read After Write）后面指令用到前面所写的数据。</p>
+<p>2)WAW（Write After Write）–两条指令写同一个单元，在简单流水线中没有此类相关，因为不会乱序执行</p>
+<p>3)WAR(Write After Read)    后面指令覆盖前面指令所读的单元，在简单流水线中没有此类相关</p>
+<p>•在动态流水线中会有WAR和WAW相关</p>
+<h2 id="解决数据相关的方法："><a href="#解决数据相关的方法：" class="headerlink" title="解决数据相关的方法："></a>解决数据相关的方法：</h2><h3 id="forwarding技术：（旁路技术，相关专用通路技术）"><a href="#forwarding技术：（旁路技术，相关专用通路技术）" class="headerlink" title="forwarding技术：（旁路技术，相关专用通路技术）"></a>forwarding技术：（旁路技术，相关专用通路技术）</h3><p>数据在EX阶段就被计算出，所以可将它送到下一条指令ALU的输入，而不需要添加气泡（bubble）。</p>
+<h1 id="控制相关"><a href="#控制相关" class="headerlink" title="控制相关"></a>控制相关</h1><p>主要是由转移指令引起的;</p>
+<p>解决方法：尽早判断转移是否发生，尽早生成转移目标地址，预取转移成功或不成功两个控制流方向上的目标指令，加快和提前形成条件码，提高转移方向的猜准率。</p>
+<h1 id="流水线的性能"><a href="#流水线的性能" class="headerlink" title="流水线的性能"></a>流水线的性能</h1><p>1）吞吐量：</p>
+<p>T=1/▲t</p>
+<p>2）加速比：（speedup Ratio）</p>
+<p>Sp=m·n÷（m+n-1）</p>
+<p>3）效率：</p>
+<p>E=Sp÷m</p>
+<h1 id="流水线中的多发技术"><a href="#流水线中的多发技术" class="headerlink" title="流水线中的多发技术"></a>流水线中的多发技术</h1><p>·超标量技术</p>
+<p>·超流水线技术</p>
+<p>·超长指令字技术</p>
+<h1 id="动态流水线技术"><a href="#动态流水线技术" class="headerlink" title="动态流水线技术"></a>动态流水线技术</h1><h2 id="指令集并行技术"><a href="#指令集并行技术" class="headerlink" title="指令集并行技术"></a>指令集并行技术</h2><h2 id="动态调度技术"><a href="#动态调度技术" class="headerlink" title="动态调度技术"></a>动态调度技术</h2><h2 id="记分板"><a href="#记分板" class="headerlink" title="记分板"></a>记分板</h2><p>Qj：</p>
+<p>Qk:当前把源寄存器当作当作目标寄存器的功能部件号</p>
+<p>Fi:目标寄存器号</p>
+<p>Fj:源寄存器号</p>
+<p>Fk:源寄存器号</p>
+<p>Rj:指示Fi和Fj是否可用</p>
+<p>Rk:</p>
+<h2 id="循环展开技术"><a href="#循环展开技术" class="headerlink" title="循环展开技术"></a>循环展开技术</h2><h2 id="名字依赖性与寄存器重命名"><a href="#名字依赖性与寄存器重命名" class="headerlink" title="名字依赖性与寄存器重命名"></a>名字依赖性与寄存器重命名</h2><h2 id="Tomasulo算法"><a href="#Tomasulo算法" class="headerlink" title="Tomasulo算法"></a>Tomasulo算法</h2><h1 id="中断系统"><a href="#中断系统" class="headerlink" title="中断系统"></a>中断系统</h1><h2 id="中断请求标记和中断请求判优逻辑"><a href="#中断请求标记和中断请求判优逻辑" class="headerlink" title="中断请求标记和中断请求判优逻辑"></a>中断请求标记和中断请求判优逻辑</h2><p>由于漏电阻的存在，DRAM存储单元经过一段时间会泄放掉其充积的电荷，导致信息丢失或者错误，为了保证存储信息的正确性。需要每隔一段时间为DRAM的所有单元电路进行充电，此过程为刷新。</p>
+<p>寻址方式主要包括：</p>
+<p>指令寻址</p>
+<p>数据寻址</p>
+<p>主状态周期，节拍电位，节拍脉冲</p>
+<p>cpu中断保护时的两个关键的硬件技术：程序断点和程序状态字</p>
+<p>解释：是指将一种语言编写的程序的一条语句翻译成另一种语言的一条或者多条语句，然后执行。解释完一条语句之后，再解释下一条。</p>
+<p>翻译：是指将一种语言编写的程序的所有语句翻译成另一种语言，然后再执行</p>
+<p>计算机的属性</p>
+<p>如何实现计算机体系结构表现出来的属性</p>
+<p>二进制；</p>
+<p>运算器：</p>
+<p>五个部件：cdd</p>
+<p>指令和数据都在存储器中：并可以按照地址访问</p>
+<p>控制器：</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/26/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0(1)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -176,7 +504,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-28 14:15:51" itemprop="dateModified" datetime="2021-11-28T14:15:51+08:00">2021-11-28</time>
+                <time title="修改时间：2021-12-11 16:43:57" itemprop="dateModified" datetime="2021-12-11T16:43:57+08:00">2021-12-11</time>
               </span>
 
           
@@ -190,7 +518,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="sql、DB、DBMS分别是什么，他们之间的关系？"><a href="#sql、DB、DBMS分别是什么，他们之间的关系？" class="headerlink" title="sql、DB、DBMS分别是什么，他们之间的关系？"></a>sql、DB、DBMS分别是什么，他们之间的关系？</h1><pre><code>DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在）
+          <h1 id="sql、DB、DBMS"><a href="#sql、DB、DBMS" class="headerlink" title="sql、DB、DBMS"></a>sql、DB、DBMS</h1><pre><code>DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在）
 DBMS: DataBase Management System（数据库管理系统，常见的有：MySQL Oracle DB2 Sybase           SqlServer...）
 SQL: 结构化查询语言，是一门标准通用的语言。标准的sql适合于所有的数据库产品。
      SQL属于高级语言。只要能看懂英语单词的，写出来的sql语句，可以读懂什么意思。
@@ -198,40 +526,38 @@ SQL: 结构化查询语言，是一门标准通用的语言。标准的sql适合
      DBMS负责执行sql语句，通过执行sql语句来操作DB当中的数据。
 DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 </code></pre>
-<h1 id="什么是表？"><a href="#什么是表？" class="headerlink" title="什么是表？"></a>什么是表？</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">表：<span class="keyword">table</span>是数据库的基本组成单元，所有的数据都以表格的形式组织，目的是可读性强。</span><br><span class="line">一个表包括行和列：</span><br><span class="line">	行：被称为数据<span class="operator">/</span>记录(data)</span><br><span class="line">	列：被称为字段(<span class="keyword">column</span>)</span><br><span class="line">学号(<span class="type">int</span>)	姓名(<span class="type">varchar</span>)	年龄(<span class="type">int</span>)</span><br><span class="line"><span class="comment">------------------------------------</span></span><br><span class="line"><span class="number">110</span>			张三				<span class="number">20</span></span><br><span class="line"><span class="number">120</span>			李四				<span class="number">21</span></span><br></pre></td></tr></table></figure>
-<h2 id="每一个字段应该包括哪些属性？"><a href="#每一个字段应该包括哪些属性？" class="headerlink" title="每一个字段应该包括哪些属性？"></a>每一个字段应该包括哪些属性？</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名、数据类型、相关的约束。</span><br></pre></td></tr></table></figure>
-<h1 id="学习通用的SQL语句，SQL语句的分类"><a href="#学习通用的SQL语句，SQL语句的分类" class="headerlink" title="学习通用的SQL语句，SQL语句的分类"></a>学习通用的SQL语句，SQL语句的分类</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DQL（数据查询语言）: 查询语句，凡是<span class="keyword">select</span>语句都是DQL。</span><br><span class="line">DML（数据操作语言）：<span class="keyword">insert</span> <span class="keyword">delete</span> update，对表当中的数据进行增删改。</span><br><span class="line">DDL（数据定义语言）：<span class="keyword">create</span> <span class="keyword">drop</span> <span class="keyword">alter</span>，对表结构的增删改。</span><br><span class="line">TCL（事务控制语言）：<span class="keyword">commit</span>提交事务，<span class="keyword">rollback</span>回滚事务。(TCL中的T是       	Transaction)</span><br><span class="line">DCL（数据控制语言）: <span class="keyword">grant</span>授权、<span class="keyword">revoke</span>撤销权限等。</span><br></pre></td></tr></table></figure>
+<h1 id="表的概念"><a href="#表的概念" class="headerlink" title="表的概念"></a>表的概念</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">表：<span class="keyword">table</span>是数据库的基本组成单元，所有的数据都以表格的形式组织，目的是可读性强。</span><br><span class="line">一个表包括行和列：</span><br><span class="line">	行：被称为数据<span class="operator">/</span>记录(data)</span><br><span class="line">	列：被称为字段(<span class="keyword">column</span>)</span><br><span class="line">学号(<span class="type">int</span>)	姓名(<span class="type">varchar</span>)	年龄(<span class="type">int</span>)</span><br><span class="line"><span class="comment">------------------------------------</span></span><br><span class="line"><span class="number">110</span>			张三				<span class="number">20</span></span><br><span class="line"><span class="number">120</span>			李四				<span class="number">21</span></span><br></pre></td></tr></table></figure>
+<h1 id="字段的属性"><a href="#字段的属性" class="headerlink" title="字段的属性"></a>字段的属性</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名、数据类型、相关的约束。</span><br></pre></td></tr></table></figure>
+<h1 id="SQL语句的分类"><a href="#SQL语句的分类" class="headerlink" title="SQL语句的分类"></a>SQL语句的分类</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DQL（数据查询语言）: 查询语句，凡是<span class="keyword">select</span>语句都是DQL。</span><br><span class="line">DML（数据操作语言）：<span class="keyword">insert</span> <span class="keyword">delete</span> update，对表当中的数据进行增删改。</span><br><span class="line">DDL（数据定义语言）：<span class="keyword">create</span> <span class="keyword">drop</span> <span class="keyword">alter</span>，对表结构的增删改。</span><br><span class="line">TCL（事务控制语言）：<span class="keyword">commit</span>提交事务，<span class="keyword">rollback</span>回滚事务。(TCL中的T是       	Transaction)</span><br><span class="line">DCL（数据控制语言）: <span class="keyword">grant</span>授权、<span class="keyword">revoke</span>撤销权限等。</span><br></pre></td></tr></table></figure>
 <h1 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命令行窗口输入：<span class="operator">-</span>uroot <span class="operator">-</span>p你的密码</span><br><span class="line">初始化数据：source 文件路径</span><br><span class="line">(以<span class="keyword">sql</span>结尾的文件称为<span class="keyword">sql</span>脚本，其中包含着许多的<span class="keyword">sql</span>语句)</span><br><span class="line"><span class="keyword">sql</span>脚本中的数据量太大的时候，无法打开，请使用source命令完成初始化。</span><br></pre></td></tr></table></figure>
 
-<h1 id="常用sql命令"><a href="#常用sql命令" class="headerlink" title="常用sql命令"></a>常用sql命令</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">		<span class="number">1</span>) mysql<span class="operator">&gt;</span> <span class="keyword">select</span> database(); 查看当前使用的是哪个数据库</span><br><span class="line"></span><br><span class="line">​		<span class="number">2</span>) mysql<span class="operator">&gt;</span> <span class="keyword">select</span> version(); 查看mysql的版本号。</span><br><span class="line"></span><br><span class="line">​		<span class="number">3</span>) \c  命令，结束一条语句。</span><br><span class="line"></span><br><span class="line">​		<span class="number">4</span>) exit 命令，退出mysql。</span><br><span class="line">		</span><br><span class="line">		<span class="number">5</span>)showtables;(显示当前数据库中的所有的表)</span><br><span class="line">		</span><br><span class="line">		<span class="number">6</span>)<span class="keyword">create</span> database 数据库名</span><br><span class="line">		</span><br><span class="line">		<span class="number">7</span>)<span class="keyword">show</span> databases 显示当前有的所有数据库</span><br><span class="line">		</span><br><span class="line">		<span class="number">8</span>)use 数据库名 选择要使用的数据库名</span><br><span class="line">		</span><br><span class="line">		<span class="number">9</span>)<span class="keyword">drop</span> database sqlname;删库</span><br><span class="line">		</span><br><span class="line">		<span class="number">10</span>)<span class="keyword">show</span> <span class="keyword">create</span> database sqlname 查看数据库的定义</span><br><span class="line">		</span><br><span class="line">		<span class="number">11</span>)<span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tablename 查看数据表的定义</span><br><span class="line">		</span><br><span class="line">		<span class="number">12</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 旧表名 rename 新表名</span><br><span class="line">		</span><br><span class="line">		<span class="number">13</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 数据类型...;(添加新的字段)</span><br><span class="line">		</span><br><span class="line">		<span class="number">14</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 原字段名 新字段名 数据类型...；(修改字段)</span><br><span class="line">		</span><br><span class="line">		<span class="number">15</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名（删除字段）</span><br><span class="line">		</span><br><span class="line">		<span class="number">16</span>)在创建完表之后添加主键约束：<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 主键名 <span class="keyword">primary</span> key 表名（主键字段）</span><br><span class="line">		<span class="number">17</span>)在创建完表之后进行外键约束：<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 外键名 <span class="keyword">foreign</span> key（外键字段）<span class="keyword">references</span> 关联表名（关联字段）</span><br><span class="line">		</span><br></pre></td></tr></table></figure>
+<h1 id="常用sql命令"><a href="#常用sql命令" class="headerlink" title="常用sql命令"></a>常用sql命令</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>) mysql<span class="operator">&gt;</span> <span class="keyword">select</span> database(); 查看当前使用的是哪个数据库</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>) mysql<span class="operator">&gt;</span> <span class="keyword">select</span> version(); 查看mysql的版本号。</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>) \c  命令，结束一条语句。</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>) exit 命令，退出mysql。</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>)<span class="keyword">show</span> tables;(显示当前数据库中的所有的表)</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>)<span class="keyword">create</span> &#123;database<span class="operator">|</span>schema&#125; [if <span class="keyword">not</span> <span class="keyword">exists</span>] 数据库名<span class="operator">/</span><span class="operator">/</span>创建数据库</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>)<span class="keyword">show</span> databases [<span class="keyword">like</span> wild]显示当前有的所有数据库</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>)use db_name 选择要使用的数据库名(该语句可以用来从一个数据库转移到另一个数据库，用<span class="keyword">create</span>语句创建的数据库不会自动成为当前数据库，需要用use语句指定当前的数据库)</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>)<span class="keyword">drop</span> database [if <span class="keyword">exists</span> ]sqlname;删库</span><br><span class="line"></span><br><span class="line"><span class="number">10</span>)<span class="keyword">show</span> <span class="keyword">create</span> database sqlname 查看数据库的定义</span><br><span class="line"></span><br><span class="line"><span class="number">11</span>)对于数据库的修改：<span class="keyword">alter</span> database db_name <span class="keyword">default</span> <span class="type">character</span> <span class="keyword">set</span> charset_name</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<h1 id="mysql数据表操作"><a href="#mysql数据表操作" class="headerlink" title="mysql数据表操作"></a>mysql数据表操作</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>)<span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tablename 查看数据表的定义</span><br><span class="line">	</span><br><span class="line"><span class="number">2</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 旧表名 rename 新表名</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 数据类型...;(添加新的字段)</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 原字段名 新字段名 数据类型...；(修改字段)</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名（删除字段）</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>)在创建完表之后添加主键约束：<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 主键名 <span class="keyword">primary</span> key 表名（主键字段）</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>)在创建完表之后进行外键约束：<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 外键名 <span class="keyword">foreign</span> key（外键字段）<span class="keyword">references</span> 关联表名（关联字段）</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>)<span class="keyword">desc</span> table_name 查看表的结构</span><br><span class="line"></span><br><span class="line"><span class="number">10</span>)<span class="keyword">create</span> [temporary] <span class="keyword">table</span> [if <span class="keyword">not</span> <span class="keyword">exists</span>]tab_name </span><br><span class="line">	[([column_definition],<span class="operator">~</span><span class="operator">~</span><span class="operator">~</span><span class="operator">|</span>[index_definition])]</span><br><span class="line">	[table_option][select_statement];</span><br><span class="line">	创建数据表：temporary创建临时表，此表只能对创建它的用户可见，当断开与数据库的连接时，会自动删除临时表</span><br><span class="line">			  index<span class="operator">-</span>definition:表索引项定义</span><br><span class="line">			  table_option:用于描述表的选项</span><br><span class="line">			  select_statement:可以在语句的末尾添加一个<span class="keyword">select</span>语句，在一个表的基础上创建一个表</span><br><span class="line">			  </span><br><span class="line"><span class="number">11</span>)删除数据表：<span class="keyword">drop</span> [temporary] <span class="keyword">table</span> [id <span class="keyword">exists</span>]tbl_name<span class="operator">~</span><span class="operator">~</span><span class="operator">~</span>可以一次删除多个表</span><br><span class="line"></span><br><span class="line"><span class="number">12</span>)复制数据表：<span class="keyword">create</span> <span class="keyword">table</span> new_tbl_name <span class="keyword">like</span> old_tbl_name</span><br></pre></td></tr></table></figure>
+
+
+<p>​        </p>
+<h1 id="mysql表记录操作"><a href="#mysql表记录操作" class="headerlink" title="mysql表记录操作"></a>mysql表记录操作</h1><blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> 插入新的记录：<span class="keyword">insert</span>  [][][low_priority<span class="operator">|</span>delayed<span class="operator">|</span>high_priority] [ignore] [<span class="keyword">into</span>] tbl_name</span><br><span class="line">               [(col_name,<span class="operator">~</span><span class="operator">~</span><span class="operator">~</span>)] <span class="keyword">values</span>(&#123;expr<span class="operator">|</span><span class="keyword">default</span>&#125;,……) <span class="operator">|</span> <span class="keyword">set</span> col_name<span class="operator">=</span>(expr<span class="operator">|</span><span class="keyword">default</span>)</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span> 更新表记录：update [low_priprity] [ignore]  tbl_name <span class="keyword">set</span>  clo_name1<span class="operator">=</span>expr1</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span> 删除表记录：<span class="keyword">delete</span> [low_priority] [quick] [ignore] <span class="keyword">from</span> tbl<span class="operator">-</span>name</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="删除数据库：drop-database-数据库名"><a href="#删除数据库：drop-database-数据库名" class="headerlink" title="删除数据库：drop database 数据库名"></a>删除数据库：drop database 数据库名</h2><h1 id="查看表的结构：desc-表名"><a href="#查看表的结构：desc-表名" class="headerlink" title="查看表的结构：desc 表名"></a>查看表的结构：desc 表名</h1><h1 id="sql语句：（sql语句不区分大小写。）"><a href="#sql语句：（sql语句不区分大小写。）" class="headerlink" title="sql语句：（sql语句不区分大小写。）"></a>sql语句：（sql语句不区分大小写。）</h1><h2 id="查询语句："><a href="#查询语句：" class="headerlink" title="查询语句："></a>查询语句：</h2><p>​     select * from 表名（能够显示表中所有数据的信息，但一般不常用）</p>
-<p>​     select 字段名1,字段名2,字段名3,…. from 表名;（字段可以参与数学运算）</p>
-<p>​     给查询结果的列重命名：select ename,sal * 12 as yearsal from emp;</p>
-<p>​                                               select ename,sal * 12 （as可以省略） ‘年薪’ from emp;</p>
-<p>​     <em>条件查询：（3）select  字段,字段… （1） from  表名  （2）where  条件;</em></p>
-<p>​                           <em>· select ename from emp where sal = 5000;</em></p>
-<p>​                           <em>·select ename,sal from emp where sal between 1100 and 3000;</em> </p>
-<p>​                            <em>// between…and…是闭区间 [1100 ~ 3000]</em></p>
-<p>​    在数据库当中NULL不是一个值，代表什么也没有，为空。</p>
-<p>​    空不是一个值，不能用等号衡量。必须使用 is null或者is not null</p>
-<p>​                            ·select ename,sal,comm from emp where comm is null;</p>
-<p>​                            ·select ename,job from emp where sal in(800, 5000); </p>
-<p>​                            // in后面的值不是区间，是具体的值。</p>
+</blockquote>
+<h1 id="mysql常量"><a href="#mysql常量" class="headerlink" title="mysql常量"></a>mysql常量</h1><p>1.字符串常量：用单引号进行字符</p>
+<h1 id="sql语句"><a href="#sql语句" class="headerlink" title="sql语句"></a>sql语句</h1><h2 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名（能够显示表中所有数据的信息，但一般不常用）</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> 字段名<span class="number">1</span>,字段名<span class="number">2</span>,字段名<span class="number">3</span>,.... <span class="keyword">from</span> 表名;（字段可以参与数学运算）</span><br><span class="line"></span><br><span class="line">给查询结果的列重命名：<span class="keyword">select</span> ename,sal <span class="operator">*</span> <span class="number">12</span> <span class="keyword">as</span> yearsal <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ename,sal <span class="operator">*</span> <span class="number">12</span> （<span class="keyword">as</span>可以省略） <span class="string">&#x27;年薪&#x27;</span> <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>条件查询：（<span class="number">3</span>）<span class="keyword">select</span>  字段,字段... （<span class="number">1</span>） <span class="keyword">from</span>  表名  （<span class="number">2</span>）<span class="keyword">where</span>  条件;<span class="operator">*</span></span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>· <span class="keyword">select</span> ename <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="operator">=</span> <span class="number">5000</span>;<span class="operator">*</span></span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>·<span class="keyword">select</span> ename,sal <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="keyword">between</span> <span class="number">1100</span> <span class="keyword">and</span> <span class="number">3000</span>;<span class="operator">*</span> </span><br><span class="line"></span><br><span class="line"><span class="operator">*</span><span class="operator">/</span><span class="operator">/</span> between...and...是闭区间 [<span class="number">1100</span> <span class="operator">~</span> <span class="number">3000</span>]<span class="operator">*</span></span><br><span class="line"></span><br><span class="line">在数据库当中<span class="keyword">NULL</span>不是一个值，代表什么也没有，为空。</span><br><span class="line"></span><br><span class="line">空不是一个值，不能用等号衡量。必须使用 <span class="keyword">is</span> <span class="keyword">null</span>或者<span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line">·<span class="keyword">select</span> ename,sal,comm <span class="keyword">from</span> emp <span class="keyword">where</span> comm <span class="keyword">is</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ename,job <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="keyword">in</span>(<span class="number">800</span>, <span class="number">5000</span>); </span><br><span class="line"></span><br><span class="line"><span class="operator">/</span> <span class="keyword">in</span>后面的值不是区间，是具体的值。</span><br></pre></td></tr></table></figure>
+
 <p>​    模糊查询like：</p>
 <p>​                找出名字当中含有O的？（在模糊查询当中，必须掌握两个特殊的符号，一个是%，一个是_)</p>
 <pre><code>           %代表任意多个字符，_代表任意1个字符。
 </code></pre>
-<p>​                    ·select ename from emp where ename like ‘%O%’;</p>
-<p>​    新建一张表：Create table name&lt;Id int ,Name varchar&lt;255&gt;&gt;;</p>
-<p>​                         (插入信息)Insert nametable&lt;id,name&gt; values&lt;1,’john’&gt;</p>
-<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>​        select 字段名 from 表名 （4）order by 字段;(默认是升序)</p>
-<p>​        select 字段名 from 表名 order by 字段 asc;</p>
-<p>​        select 字段名 from 表名 order by 字段 desc;（降序）</p>
-<p>​        select ename,sal from emp order by sal desc , ename asc;</p>
-<p>注意：越靠前的字段越能起到主导作用。只有当前面的字段无法完成排序的时候，才会启用后面的字段。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ename <span class="keyword">from</span> emp <span class="keyword">where</span> ename <span class="keyword">like</span> <span class="string">&#x27;%O%&#x27;</span>;</span><br><span class="line"></span><br><span class="line">新建一张表：<span class="keyword">Create</span> <span class="keyword">table</span> name<span class="operator">&lt;</span>Id <span class="type">int</span> ,Name <span class="type">varchar</span><span class="operator">&lt;</span><span class="number">255</span><span class="operator">&gt;&gt;</span>;</span><br><span class="line"></span><br><span class="line">(插入信息)<span class="keyword">Insert</span> nametable<span class="operator">&lt;</span>id,name<span class="operator">&gt;</span> <span class="keyword">values</span><span class="operator">&lt;</span><span class="number">1</span>,<span class="string">&#x27;john&#x27;</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">		<span class="keyword">select</span> 字段名 <span class="keyword">from</span> 表名 （<span class="number">4</span>）<span class="keyword">order</span> <span class="keyword">by</span> 字段;(默认是升序)</span><br><span class="line"></span><br><span class="line">​		<span class="keyword">select</span> 字段名 <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line">​		<span class="keyword">select</span> 字段名 <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">desc</span>;（降序）</span><br><span class="line"></span><br><span class="line">​		<span class="keyword">select</span> ename,sal <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span> , ename <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line">注意：越靠前的字段越能起到主导作用。只有当前面的字段无法完成排序的时候，才会启用后面的字段。</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="分组函数"><a href="#分组函数" class="headerlink" title="分组函数"></a>分组函数</h2><p>对某一组数据进行操作（在where操作之后）：（又名多行处理函数）自动忽略null</p>
 <p>count 计数  count（*）计数总记录的条数  count（comm）：表示统计comm字段中不为bull的数据总量</p>
 <p>sum 求和</p>
@@ -242,19 +568,9 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 <h2 id="groupby和having"><a href="#groupby和having" class="headerlink" title="groupby和having"></a>groupby和having</h2><p>groupby：按照某个字段或者某些字段进行分组</p>
 <p>having：having是对分组之后的数据进行再次过滤</p>
 <p>规则：当一条语句中有group by的话，select后面只能跟分组函数和参与分组的字段。</p>
-<h2 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h2><p>select               5</p>
-<p>..</p>
-<p>from            1    </p>
-<p>..</p>
-<p>where            2</p>
-<p>..</p>
-<p>group by        3</p>
-<p>..</p>
-<p>having               4</p>
-<p>..</p>
-<p>order by        6</p>
-<p>…</p>
-<h2 id="查询结果集的去重："><a href="#查询结果集的去重：" class="headerlink" title="查询结果集的去重："></a>查询结果集的去重：</h2><p>distinct 关键字去除重复记录（只能出现在所有字段的最前面）</p>
+<h2 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>               <span class="number">5</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span>            <span class="number">1</span>    </span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span>            <span class="number">2</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>        <span class="number">3</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">having</span>               <span class="number">4</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span>        <span class="number">6</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">limit &#123;[<span class="keyword">offset</span>,]row_count <span class="operator">|</span> row_count <span class="keyword">OFFSET</span> <span class="keyword">offset</span>&#125;    <span class="number">7</span></span><br><span class="line"></span><br><span class="line">## 查询</span><br></pre></td></tr></table></figure>
+
+<h2 id="结果集的去重："><a href="#结果集的去重：" class="headerlink" title="结果集的去重："></a>结果集的去重：</h2><p>distinct 关键字去除重复记录（只能出现在所有字段的最前面）</p>
 <h2 id="连接查询："><a href="#连接查询：" class="headerlink" title="连接查询："></a>连接查询：</h2><p>内连接：</p>
 <p>​    1）等值连接</p>
 <p>​    2）非等值连接</p>
@@ -265,8 +581,8 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 <p>全连接(很少用)</p>
 <p><strong>笛卡尔积现象：当两张表进行连接查询的时候，没有任何条件进行限制，最终的查询结果条数是两张表记录条数的乘积。</strong></p>
 <p>内连接:</p>
-<p>select 字段名 from emp e (inner) join  dept d on e.deptno=d.deptno(连接条件);</p>
-<p>select   e.ename,e.sal,s.grade  from emp e inner join salgrade s on  e.sal between s.losal and s.hisal;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段名 <span class="keyword">from</span> emp e (<span class="keyword">inner</span>) <span class="keyword">join</span>  dept d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno(连接条件);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span>   e.ename,e.sal,s.grade  <span class="keyword">from</span> emp e <span class="keyword">inner</span> <span class="keyword">join</span> salgrade s <span class="keyword">on</span>  e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal;</span><br></pre></td></tr></table></figure>
+
 <p><strong>自连接</strong>：最大的特点是：一张表看做两张表。自己连接自己。</p>
 <p><strong>外连接</strong>：</p>
 <p>内连接：</p>
@@ -287,15 +603,21 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 
 <h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line"></span><br><span class="line">..(select).</span><br><span class="line"></span><br><span class="line">from      select  t.*,s.grade from (select deptno,avg(sal) as avgsal from emp group by 			  deptno) t join  salgrade s on  t.avgsal between s.losal and s.hisal;</span><br><span class="line">..(select).</span><br><span class="line"></span><br><span class="line">where    	select * from emp where sal &gt; (select avg(sal) from emp);</span><br><span class="line"></span><br><span class="line">..(select).</span><br><span class="line"></span><br><span class="line"> //语句中嵌入select子句</span><br></pre></td></tr></table></figure>
 
-<h2 id="union-（可以将查询结果集相加）"><a href="#union-（可以将查询结果集相加）" class="headerlink" title="union （可以将查询结果集相加）"></a>union （可以将查询结果集相加）</h2><p>将两张表整合在一起：</p>
+<h2 id="union"><a href="#union" class="headerlink" title="union"></a>union</h2><blockquote>
+<p>（可以将查询结果集相加）</p>
+</blockquote>
+<p>将两张表整合在一起：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ename <span class="keyword">from</span> emp <span class="keyword">where</span> 条件一</span><br><span class="line"><span class="keyword">union</span> </span><br><span class="line"><span class="keyword">select</span> dname <span class="keyword">from</span> dept <span class="keyword">where</span> 条件二</span><br></pre></td></tr></table></figure>
 
 <p><em>//拼接的数据必须两两相对应。不能一张表是一个数据，另一张表是两个数据，这样无法拼接！</em></p>
-<h2 id="limit-取出结果集中的部分数据"><a href="#limit-取出结果集中的部分数据" class="headerlink" title="limit(取出结果集中的部分数据)"></a>limit(取出结果集中的部分数据)</h2><p>limit startindex length</p>
+<h2 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h2><blockquote>
+<p>(取出结果集中的部分数据)</p>
+</blockquote>
+<p>limit startindex length</p>
 <p>startindex表示起始位置，从0开始，0表示第一条数据</p>
 <p>length表示取几个</p>
 <p>limit执行的顺序是最后一个</p>
-<h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">建表语句的语法格式：</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line"></span><br><span class="line">字段名<span class="number">1</span> 数据类型,</span><br><span class="line"></span><br><span class="line">字段名<span class="number">2</span> 数据类型,</span><br><span class="line"></span><br><span class="line">字段名<span class="number">3</span> 数据类型,</span><br><span class="line"></span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h1 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">建表语句的语法格式： </span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line"></span><br><span class="line">字段名<span class="number">1</span> 数据类型,</span><br><span class="line"></span><br><span class="line">字段名<span class="number">2</span> 数据类型,</span><br><span class="line"></span><br><span class="line">字段名<span class="number">3</span> 数据类型,</span><br><span class="line"></span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p>关于MySQL当中字段的数据类型：</p>
 <p>int        整数型(java中的int)</p>
@@ -308,17 +630,62 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 <p>CLOB        字符大对象（存储较大文本，比如，可以存储4G的字符串。） Character Large OBject（对应java中的Object）</p>
 <p>……</p>
 <p><em>数据是定长的话，使用char，不定长的话，使用varchar</em></p>
-<h2 id="insert语句插入数据"><a href="#insert语句插入数据" class="headerlink" title="insert语句插入数据"></a>insert语句插入数据</h2><p>语法格式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(字段名1,字段名2,字段名3,....) values(值1,值2,值3,....)</span><br><span class="line"></span><br><span class="line">要求：字段的数量和值的数量相同，并且数据类型要对应相同。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="查看表的结构"><a href="#查看表的结构" class="headerlink" title="查看表的结构"></a>查看表的结构</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">desc</span> t_student;</span><br><span class="line"><span class="operator">+</span><span class="comment">-------+--------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> Field <span class="operator">|</span> Type         <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+--------------+------+-----+---------+-------+</span></span><br><span class="line"><span class="operator">|</span> <span class="keyword">no</span>    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)      <span class="operator">|</span> YES  <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> sname <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">255</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> age   <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)      <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> email <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">255</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-------+--------------+------+-----+---------+-------+</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="表的复制"><a href="#表的复制" class="headerlink" title="表的复制"></a>表的复制</h2><p>语法：</p>
-<p>create table 表名 as select语句;</p>
+
+
+<h2 id="insert语句插入数据"><a href="#insert语句插入数据" class="headerlink" title="insert语句插入数据"></a>insert语句插入数据</h2><p>语法格式：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>)<span class="keyword">insert</span> <span class="keyword">into</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,字段名<span class="number">3</span>,....) <span class="keyword">values</span>(值<span class="number">1</span>,值<span class="number">2</span>,值<span class="number">3</span>,....)</span><br><span class="line"></span><br><span class="line">要求：字段的数量和值的数量相同，并且数据类型要对应相同。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>)<span class="keyword">insert</span> <span class="keyword">into</span> tab_name</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> 字段名<span class="number">1</span><span class="operator">=</span>&quot;value&quot;,字段名<span class="number">2</span><span class="operator">=</span>&quot;value&quot;；</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>）对于图片的储存：</span><br><span class="line"></span><br><span class="line">使用路径：LOAD_FILE(<span class="string">&#x27;D:\images\picture.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="表的复制"><a href="#表的复制" class="headerlink" title="表的复制"></a>表的复制</h2><p>复制数据表：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crate [temporary] <span class="keyword">table</span> [if <span class="keyword">not</span> <span class="keyword">exists</span>] tab_name</span><br></pre></td></tr></table></figure>
+
+<p>语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名 <span class="keyword">as</span> <span class="keyword">select</span>语句;</span><br></pre></td></tr></table></figure>
+
 <p>将查询结果当做表创建出来。</p>
-<h2 id="将查询结果插入到一张表中"><a href="#将查询结果插入到一张表中" class="headerlink" title="将查询结果插入到一张表中"></a>将查询结果插入到一张表中</h2><p>insert into 表名 select * from 表名</p>
-<h2 id="修改数据：update"><a href="#修改数据：update" class="headerlink" title="修改数据：update"></a>修改数据：update</h2><p>update 表名 set 字段名1=值1,字段名2=值2… where 条件;</p>
+<h2 id="将查询结果插入到一张表中"><a href="#将查询结果插入到一张表中" class="headerlink" title="将查询结果插入到一张表中"></a>将查询结果插入到一张表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="修改数据：update"><a href="#修改数据：update" class="headerlink" title="修改数据：update"></a>修改数据：update</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">update 表名 <span class="keyword">set</span> 字段名<span class="number">1</span><span class="operator">=</span>值<span class="number">1</span>,字段名<span class="number">2</span><span class="operator">=</span>值<span class="number">2.</span>.. <span class="keyword">where</span> 条件;</span><br><span class="line"></span><br><span class="line">更新多个表的数据：</span><br><span class="line">update[low_priority][ignore] table_references <span class="keyword">set</span> col_name<span class="operator">=</span>expr1[,col_name2<span class="operator">=</span>expr2[,...]]</span><br><span class="line">[<span class="keyword">where</span> where_definition]</span><br></pre></td></tr></table></figure>
+
 <p><em>没有条件时更新表中的所有数据</em></p>
-<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><p>delete from 表名 where 条件;</p>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> [low_priority][quick(快速删除)][ignore] <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;[<span class="keyword">order</span> by....][limit row_count]</span><br></pre></td></tr></table></figure>
+
 <p>没有条件全部删除</p>
+<h1 id="mysql函数"><a href="#mysql函数" class="headerlink" title="mysql函数"></a>mysql函数</h1><h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2><blockquote>
+<p>abs（）绝对值函数</p>
+<p>round（）取整函数</p>
+<p>sqrt（）求平方根函数</p>
+<p>rand（）随机数函数</p>
+<p>floor（）取最大整数函数</p>
+<p>PI() 返回圆周率的值</p>
+<p>truncate（x，d）四舍五入函数 返回被舍去至小数点后d位的数字x</p>
+<p>greatset（x1，x2，x3）返回参数中的最大值 </p>
+<p>least（）返回参数中最小值函数</p>
+<p>bin（x）返回参数x的二进制值</p>
+<p>otc（x）返回参数x的八进制值</p>
+<p>hex（x）返回参数x的十六进制值</p>
+</blockquote>
+<h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><blockquote>
+<p>sum（）求和函数</p>
+<p>avg（）平均值函数</p>
+<p>count（）数量函数</p>
+<p>max（）用来计算表中满足条件的数的最大值</p>
+<p>min（）用来计算表中满足条件的数的最小值</p>
+</blockquote>
+<h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><blockquote>
+<p>char_length() </p>
+<p>concat(str1,str2…)返回的是连接参数产生的字符串，如有一个值为null，则结果为null</p>
+<p>repeat（str，count）返回一个由重复的字符串str组成的字符串</p>
+<p>find_in_set(str,strlist)返回str在strlist中的位置值</p>
+<p>locate(substr.str) 返回str中子字符串第一次出现的位置</p>
+<p>instr（str，substr）返回字符串str中子字符串substr的第一个出现位置</p>
+<p>left（str，len）返回字符串str最左侧len个字符</p>
+<p>right（str，len）返回字符串str最右侧的len个字符</p>
+<p>中间截取函数：</p>
+</blockquote>
 <h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><p>什么是约束：</p>
 <p>​    在创建表的时候，可以给表的字段添加相应的约束，添加约束的目的是为了保证表中数据的合法性、有效性、完整性。</p>
 <p>常见的约束：</p>
@@ -327,14 +694,10 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 <p>主键约束(primary key)：约束的字段既不能为NULL，也不能重复（简称PK）</p>
 <p>外键约束(foreign key)：…（简称FK）</p>
 <p>检查约束(check)：注意Oracle数据库有check约束，但是mysql没有，目前mysql不支持该约束。</p>
-<h2 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h2><p>create table t_user(</p>
-<p>id int,</p>
-<p>username varchar(255) not null（<strong>在创建表时添加约束</strong>）,</p>
-<p>password varchar(255)</p>
-<p>);</p>
-<p>insert into t_user(id,password) values(1,’123’); //编译错误，约束username字段不能为空！</p>
-<p>ERROR 1364 (HY000): Field ‘username’ doesn’t have a default value</p>
-<p> insert into t_user(id,username,password) values(1,’lisi’,’123’);</p>
+<h2 id="非空约束"><a href="#非空约束" class="headerlink" title="非空约束"></a>非空约束</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_user(</span><br><span class="line"></span><br><span class="line">id <span class="type">int</span>,</span><br><span class="line"></span><br><span class="line">username <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="keyword">null</span>（<span class="operator">*</span><span class="operator">*</span>在创建表时添加约束<span class="operator">*</span><span class="operator">*</span>）,</span><br><span class="line"></span><br><span class="line">password <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t_user(id,password) <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;123&#x27;</span>); <span class="operator">/</span><span class="operator">/</span>编译错误，约束username字段不能为空！</span><br><span class="line"></span><br><span class="line">ERROR <span class="number">1364</span> (HY000): Field <span class="string">&#x27;username&#x27;</span> doesn<span class="string">&#x27;t have a default value</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> insert into t_user(id,username,password) values(1,&#x27;</span>lisi<span class="string">&#x27;,&#x27;</span><span class="number">123</span><span class="string">&#x27;);</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="唯一性约束"><a href="#唯一性约束" class="headerlink" title="唯一性约束"></a>唯一性约束</h2><p> <em>唯一性约束修饰的字段具有唯一性</em>，<em>不能重复。但可以为null。</em></p>
 <p> drop table if exists t_user;</p>
 <p>create table t_user(</p>
@@ -616,198 +979,6 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="muzinan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到muzinan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/" class="post-title-link" itemprop="url">计算机组成原理之存储器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-16 13:29:10" itemprop="dateCreated datePublished" datetime="2021-11-16T13:29:10+08:00">2021-11-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-27 15:04:03" itemprop="dateModified" datetime="2021-11-27T15:04:03+08:00">2021-11-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一、存储器："><a href="#一、存储器：" class="headerlink" title="一、存储器："></a>一、存储器：</h1><h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><h3 id="根据存储介质分类："><a href="#根据存储介质分类：" class="headerlink" title="根据存储介质分类："></a>根据存储介质分类：</h3><pre><code>    1.半导体存储器
-    2.磁表面存储器
-    3.磁芯存储器
-    4.光盘存储器
-</code></pre>
-<h3 id="根据存取的方式进行分类："><a href="#根据存取的方式进行分类：" class="headerlink" title="根据存取的方式进行分类："></a>根据存取的方式进行分类：</h3><pre><code>    1.随机存储器 RAM
-    2.只读存储器 ROM
-    3.串行访问存储器
-</code></pre>
-<h3 id="根据在计算机中的作用分类："><a href="#根据在计算机中的作用分类：" class="headerlink" title="根据在计算机中的作用分类："></a>根据在计算机中的作用分类：</h3><pre><code>    1.主存储器：
-    2.辅助存储器 
-    3.缓冲存储器
-</code></pre>
-<h2 id="存储器的基本结构结构："><a href="#存储器的基本结构结构：" class="headerlink" title="存储器的基本结构结构："></a>存储器的基本结构结构：</h2><pre><code>存储器包括存储的部分以及选址的部分，同时可以控制对于存储器的读或者写
-不同的操作。
-地址线：用来选址的信号传输线。
-片选线（用于容量的扩容）、读写控制线（WE）、数据线。
-</code></pre>
-<p><strong><em>存储器的总容量=存储单元*存储字长</em></strong></p>
-<h2 id="主存储器（主要由RAM和ROM构成）："><a href="#主存储器（主要由RAM和ROM构成）：" class="headerlink" title="主存储器（主要由RAM和ROM构成）："></a>主存储器（主要由RAM和ROM构成）：</h2><pre><code>1.地址寄存器
-2.数据寄存器
-3.存储体：存储元组成存储单元，多个存储单元构成存储体
-    译码器：有2**n个存储单元
-</code></pre>
-<h3 id="RAM："><a href="#RAM：" class="headerlink" title="RAM："></a>RAM：</h3><pre><code>1.SRAM（静态）：触发器（常用作cache）
-2.DRAM（动态随机存储器）：电容（常用作主存）
-    刷新：1）分散刷新 2）集中刷新 3）异步刷新 。（死区的概念）
-</code></pre>
-<h1 id="存储器的性能指标："><a href="#存储器的性能指标：" class="headerlink" title="存储器的性能指标："></a>存储器的性能指标：</h1><pre><code>1.存储容量： 存储字数*存储字长
-2.单位成本： 每位价格=总成本/总容量
-3.存储速度：数据传输率=数据的宽度/存储周期
-</code></pre>
-<h1 id="主存与CPU的连接："><a href="#主存与CPU的连接：" class="headerlink" title="主存与CPU的连接："></a>主存与CPU的连接：</h1><pre><code>    1.容量拓展：*_使能信号_*(低电平有效)
-    字拓展：1）译码片选法 2)线选法 n条线对应n个选片信号
-    位拓展：
-    字和位同时拓展（选择芯片）
-</code></pre>
-<h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><pre><code>系统程序区用ROM
-用户程序区用RAM
-执行区都用RAM
-</code></pre>
-<h1 id="高速缓冲存储器："><a href="#高速缓冲存储器：" class="headerlink" title="高速缓冲存储器："></a>高速缓冲存储器：</h1><pre><code>1.命中率：是指cpu要访问的信息已在cache中的比率
-h=Nc/(Nc+Nm)
-2.访问效率：
-e=tc/ta*100% ta是指平均访问时间
-</code></pre>
-<h2 id="1-cache地址映射："><a href="#1-cache地址映射：" class="headerlink" title="1.cache地址映射："></a>1.cache地址映射：</h2><pre><code>1.全相连映射
-2.组相联映射（其余两者的折中）
-3.直接映射
-</code></pre>
-<h2 id="2-替换算法："><a href="#2-替换算法：" class="headerlink" title="2.替换算法："></a>2.替换算法：</h2><pre><code>1.RAND（随机）
-2.FIFO（先进先出）
-3.LRU （最近最少使用）
-4.LFU  （不经常使用）
-</code></pre>
-<h2 id="3-写策略："><a href="#3-写策略：" class="headerlink" title="3.写策略："></a>3.写策略：</h2><pre><code>1.命中时：（1）.全写法 （2）.写回法
-2.不命中： （1）.写分配法 （2）.非写分配法
-</code></pre>
-<h2 id="虚拟存储器："><a href="#虚拟存储器：" class="headerlink" title="虚拟存储器："></a>虚拟存储器：</h2><pre><code>辅存的地址（磁盘）：
-    磁盘号+盘面号+磁道号+扇区号
-1.虚拟存储器是一个逻辑模型；
-功能：用户给出一个地址，叫做虚地址或者逻辑地址，虚拟存储器要给出该地址对应      的数据
-实现：由辅助硬件将虚地址映射到主存当中的某个单元，主存单元地址称为实地址或       物理地址
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/OCEANBASE%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="muzinan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="欢迎来到muzinan的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/16/OCEANBASE%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">OCEANBASE数据库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-16 09:59:18" itemprop="dateCreated datePublished" datetime="2021-11-16T09:59:18+08:00">2021-11-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-27 15:05:27" itemprop="dateModified" datetime="2021-11-27T15:05:27+08:00">2021-11-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -877,12 +1048,12 @@ e=tc/ta*100% ta是指平均访问时间
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>

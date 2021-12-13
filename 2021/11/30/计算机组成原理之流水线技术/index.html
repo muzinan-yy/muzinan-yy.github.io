@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="流水线的相关：​    1）结构相关：硬件方面（当硬件资源满足不了指令重叠执行时的要求时产生的） ​    2）数据相关：如果一条指令需要的某个数据正在被之前的指令操作着，那这条指令就无法执行，就导致了数据相关.（指令在流水线中重叠执行时，当后继指令需要用到前面指令的执行结果时发生的） ​    3）控制相关：如果现在要执行哪条指令，是由之前指令的运行结果决定，而现在那条之前指令的结果还没产生，就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理之流水线技术">
+<meta property="og:url" content="http://example.com/2021/11/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="欢迎来到muzinan的博客">
+<meta property="og:description" content="流水线的相关：​    1）结构相关：硬件方面（当硬件资源满足不了指令重叠执行时的要求时产生的） ​    2）数据相关：如果一条指令需要的某个数据正在被之前的指令操作着，那这条指令就无法执行，就导致了数据相关.（指令在流水线中重叠执行时，当后继指令需要用到前面指令的执行结果时发生的） ​    3）控制相关：如果现在要执行哪条指令，是由之前指令的运行结果决定，而现在那条之前指令的结果还没产生，就">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-30T09:24:14.000Z">
+<meta property="article:modified_time" content="2021-12-07T02:22:31.079Z">
+<meta property="article:author" content="muzinan">
+<meta property="article:tag" content="计组">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/11/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机组成原理之流水线技术 | 欢迎来到muzinan的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">欢迎来到muzinan的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机组成原理之流水线技术
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-30 17:24:14" itemprop="dateCreated datePublished" datetime="2021-11-30T17:24:14+08:00">2021-11-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-07 10:22:31" itemprop="dateModified" datetime="2021-12-07T10:22:31+08:00">2021-12-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="流水线的相关："><a href="#流水线的相关：" class="headerlink" title="流水线的相关："></a>流水线的相关：</h1><p>​    1）结构相关：硬件方面（当硬件资源满足不了指令重叠执行时的要求时产生的）</p>
+<p>​    2）数据相关：如果一条指令需要的某个数据正在被之前的指令操作着，那这条指令就无法执行，就导致了数据相关.（指令在流水线中重叠执行时，当后继指令需要用到前面指令的执行结果时发生的）</p>
+<p>​    3）控制相关：如果现在要执行哪条指令，是由之前指令的运行结果决定，而现在那条之前指令的结果还没产生，就导致了控制相关.（当流水线遇到分支指令和其他改变PC值得指令时引起的）</p>
+<h2 id="结构相关"><a href="#结构相关" class="headerlink" title="结构相关"></a>结构相关</h2><p>由访存引起的结构相关：取数和取指都需要访存。</p>
+<p>·1：引起流水线停顿（stall），产生空泡（bubble）</p>
+<p>·2：</p>
+<p>解决访存冲突的方法：设置两个独立的存储器分别存放操作数和指令。</p>
+<h2 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h2><p>1）RAW（Read After Write）后面指令用到前面所写的数据。</p>
+<p>2)WAW（Write After Write）–两条指令写同一个单元，在简单流水线中没有此类相关，因为不会乱序执行</p>
+<p>3)WAR(Write After Read)    后面指令覆盖前面指令所读的单元，在简单流水线中没有此类相关</p>
+<p>•在动态流水线中会有WAR和WAW相关</p>
+<h2 id="解决数据相关的方法："><a href="#解决数据相关的方法：" class="headerlink" title="解决数据相关的方法："></a>解决数据相关的方法：</h2><h3 id="forwarding技术：（旁路技术，相关专用通路技术）"><a href="#forwarding技术：（旁路技术，相关专用通路技术）" class="headerlink" title="forwarding技术：（旁路技术，相关专用通路技术）"></a>forwarding技术：（旁路技术，相关专用通路技术）</h3><p>数据在EX阶段就被计算出，所以可将它送到下一条指令ALU的输入，而不需要添加气泡（bubble）。</p>
+<h1 id="控制相关"><a href="#控制相关" class="headerlink" title="控制相关"></a>控制相关</h1><p>主要是由转移指令引起的;</p>
+<p>解决方法：尽早判断转移是否发生，尽早生成转移目标地址，预取转移成功或不成功两个控制流方向上的目标指令，加快和提前形成条件码，提高转移方向的猜准率。</p>
+<h1 id="流水线的性能"><a href="#流水线的性能" class="headerlink" title="流水线的性能"></a>流水线的性能</h1><p>1）吞吐量：</p>
+<p>T=1/▲t</p>
+<p>2）加速比：（speedup Ratio）</p>
+<p>Sp=m·n÷（m+n-1）</p>
+<p>3）效率：</p>
+<p>E=Sp÷m</p>
+<h1 id="流水线中的多发技术"><a href="#流水线中的多发技术" class="headerlink" title="流水线中的多发技术"></a>流水线中的多发技术</h1><p>·超标量技术</p>
+<p>·超流水线技术</p>
+<p>·超长指令字技术</p>
+<h1 id="动态流水线技术"><a href="#动态流水线技术" class="headerlink" title="动态流水线技术"></a>动态流水线技术</h1><h2 id="指令集并行技术"><a href="#指令集并行技术" class="headerlink" title="指令集并行技术"></a>指令集并行技术</h2><h2 id="动态调度技术"><a href="#动态调度技术" class="headerlink" title="动态调度技术"></a>动态调度技术</h2><h2 id="记分板"><a href="#记分板" class="headerlink" title="记分板"></a>记分板</h2><p>Qj：</p>
+<p>Qk:当前把源寄存器当作当作目标寄存器的功能部件号</p>
+<p>Fi:目标寄存器号</p>
+<p>Fj:源寄存器号</p>
+<p>Fk:源寄存器号</p>
+<p>Rj:指示Fi和Fj是否可用</p>
+<p>Rk:</p>
+<h2 id="循环展开技术"><a href="#循环展开技术" class="headerlink" title="循环展开技术"></a>循环展开技术</h2><h2 id="名字依赖性与寄存器重命名"><a href="#名字依赖性与寄存器重命名" class="headerlink" title="名字依赖性与寄存器重命名"></a>名字依赖性与寄存器重命名</h2><h2 id="Tomasulo算法"><a href="#Tomasulo算法" class="headerlink" title="Tomasulo算法"></a>Tomasulo算法</h2><h1 id="中断系统"><a href="#中断系统" class="headerlink" title="中断系统"></a>中断系统</h1><h2 id="中断请求标记和中断请求判优逻辑"><a href="#中断请求标记和中断请求判优逻辑" class="headerlink" title="中断请求标记和中断请求判优逻辑"></a>中断请求标记和中断请求判优逻辑</h2><p>由于漏电阻的存在，DRAM存储单元经过一段时间会泄放掉其充积的电荷，导致信息丢失或者错误，为了保证存储信息的正确性。需要每隔一段时间为DRAM的所有单元电路进行充电，此过程为刷新。</p>
+<p>寻址方式主要包括：</p>
+<p>指令寻址</p>
+<p>数据寻址</p>
+<p>主状态周期，节拍电位，节拍脉冲</p>
+<p>cpu中断保护时的两个关键的硬件技术：程序断点和程序状态字</p>
+<p>解释：是指将一种语言编写的程序的一条语句翻译成另一种语言的一条或者多条语句，然后执行。解释完一条语句之后，再解释下一条。</p>
+<p>翻译：是指将一种语言编写的程序的所有语句翻译成另一种语言，然后再执行</p>
+<p>计算机的属性</p>
+<p>如何实现计算机体系结构表现出来的属性</p>
+<p>二进制；</p>
+<p>运算器：</p>
+<p>五个部件：cdd</p>
+<p>指令和数据都在存储器中：并可以按照地址访问</p>
+<p>控制器：</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%BB%84/" rel="tag"># 计组</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/26/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0(1)/" rel="prev" title="Mysql数据库学习">
+      <i class="fa fa-chevron-left"></i> Mysql数据库学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/12/06/php%E5%AD%A6%E4%B9%A0/" rel="next" title="php学习">
+      php学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E7%9B%B8%E5%85%B3%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">流水线的相关：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">结构相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3"><span class="nav-number">1.2.</span> <span class="nav-text">数据相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">解决数据相关的方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forwarding%E6%8A%80%E6%9C%AF%EF%BC%9A%EF%BC%88%E6%97%81%E8%B7%AF%E6%8A%80%E6%9C%AF%EF%BC%8C%E7%9B%B8%E5%85%B3%E4%B8%93%E7%94%A8%E9%80%9A%E8%B7%AF%E6%8A%80%E6%9C%AF%EF%BC%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">forwarding技术：（旁路技术，相关专用通路技术）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">控制相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E6%80%A7%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">流水线的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E4%B8%AD%E7%9A%84%E5%A4%9A%E5%8F%91%E6%8A%80%E6%9C%AF"><span class="nav-number">4.</span> <span class="nav-text">流水线中的多发技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF"><span class="nav-number">5.</span> <span class="nav-text">动态流水线技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B9%B6%E8%A1%8C%E6%8A%80%E6%9C%AF"><span class="nav-number">5.1.</span> <span class="nav-text">指令集并行技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%B0%83%E5%BA%A6%E6%8A%80%E6%9C%AF"><span class="nav-number">5.2.</span> <span class="nav-text">动态调度技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%88%86%E6%9D%BF"><span class="nav-number">5.3.</span> <span class="nav-text">记分板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%B1%95%E5%BC%80%E6%8A%80%E6%9C%AF"><span class="nav-number">5.4.</span> <span class="nav-text">循环展开技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8D%E5%AD%97%E4%BE%9D%E8%B5%96%E6%80%A7%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-number">5.5.</span> <span class="nav-text">名字依赖性与寄存器重命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomasulo%E7%AE%97%E6%B3%95"><span class="nav-number">5.6.</span> <span class="nav-text">Tomasulo算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F"><span class="nav-number">6.</span> <span class="nav-text">中断系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E8%AF%B7%E6%B1%82%E6%A0%87%E8%AE%B0%E5%92%8C%E4%B8%AD%E6%96%AD%E8%AF%B7%E6%B1%82%E5%88%A4%E4%BC%98%E9%80%BB%E8%BE%91"><span class="nav-number">6.1.</span> <span class="nav-text">中断请求标记和中断请求判优逻辑</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">muzinan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">muzinan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

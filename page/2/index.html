@@ -145,6 +145,134 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/" class="post-title-link" itemprop="url">计算机组成原理之存储器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-16 13:29:10" itemprop="dateCreated datePublished" datetime="2021-11-16T13:29:10+08:00">2021-11-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-27 15:04:03" itemprop="dateModified" datetime="2021-11-27T15:04:03+08:00">2021-11-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一、存储器："><a href="#一、存储器：" class="headerlink" title="一、存储器："></a>一、存储器：</h1><h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><h3 id="根据存储介质分类："><a href="#根据存储介质分类：" class="headerlink" title="根据存储介质分类："></a>根据存储介质分类：</h3><pre><code>    1.半导体存储器
+    2.磁表面存储器
+    3.磁芯存储器
+    4.光盘存储器
+</code></pre>
+<h3 id="根据存取的方式进行分类："><a href="#根据存取的方式进行分类：" class="headerlink" title="根据存取的方式进行分类："></a>根据存取的方式进行分类：</h3><pre><code>    1.随机存储器 RAM
+    2.只读存储器 ROM
+    3.串行访问存储器
+</code></pre>
+<h3 id="根据在计算机中的作用分类："><a href="#根据在计算机中的作用分类：" class="headerlink" title="根据在计算机中的作用分类："></a>根据在计算机中的作用分类：</h3><pre><code>    1.主存储器：
+    2.辅助存储器 
+    3.缓冲存储器
+</code></pre>
+<h2 id="存储器的基本结构结构："><a href="#存储器的基本结构结构：" class="headerlink" title="存储器的基本结构结构："></a>存储器的基本结构结构：</h2><pre><code>存储器包括存储的部分以及选址的部分，同时可以控制对于存储器的读或者写
+不同的操作。
+地址线：用来选址的信号传输线。
+片选线（用于容量的扩容）、读写控制线（WE）、数据线。
+</code></pre>
+<p><strong><em>存储器的总容量=存储单元*存储字长</em></strong></p>
+<h2 id="主存储器（主要由RAM和ROM构成）："><a href="#主存储器（主要由RAM和ROM构成）：" class="headerlink" title="主存储器（主要由RAM和ROM构成）："></a>主存储器（主要由RAM和ROM构成）：</h2><pre><code>1.地址寄存器
+2.数据寄存器
+3.存储体：存储元组成存储单元，多个存储单元构成存储体
+    译码器：有2**n个存储单元
+</code></pre>
+<h3 id="RAM："><a href="#RAM：" class="headerlink" title="RAM："></a>RAM：</h3><pre><code>1.SRAM（静态）：触发器（常用作cache）
+2.DRAM（动态随机存储器）：电容（常用作主存）
+    刷新：1）分散刷新 2）集中刷新 3）异步刷新 。（死区的概念）
+</code></pre>
+<h1 id="存储器的性能指标："><a href="#存储器的性能指标：" class="headerlink" title="存储器的性能指标："></a>存储器的性能指标：</h1><pre><code>1.存储容量： 存储字数*存储字长
+2.单位成本： 每位价格=总成本/总容量
+3.存储速度：数据传输率=数据的宽度/存储周期
+</code></pre>
+<h1 id="主存与CPU的连接："><a href="#主存与CPU的连接：" class="headerlink" title="主存与CPU的连接："></a>主存与CPU的连接：</h1><pre><code>    1.容量拓展：*_使能信号_*(低电平有效)
+    字拓展：1）译码片选法 2)线选法 n条线对应n个选片信号
+    位拓展：
+    字和位同时拓展（选择芯片）
+</code></pre>
+<h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><pre><code>系统程序区用ROM
+用户程序区用RAM
+执行区都用RAM
+</code></pre>
+<h1 id="高速缓冲存储器："><a href="#高速缓冲存储器：" class="headerlink" title="高速缓冲存储器："></a>高速缓冲存储器：</h1><pre><code>1.命中率：是指cpu要访问的信息已在cache中的比率
+h=Nc/(Nc+Nm)
+2.访问效率：
+e=tc/ta*100% ta是指平均访问时间
+</code></pre>
+<h2 id="1-cache地址映射："><a href="#1-cache地址映射：" class="headerlink" title="1.cache地址映射："></a>1.cache地址映射：</h2><pre><code>1.全相连映射
+2.组相联映射（其余两者的折中）
+3.直接映射
+</code></pre>
+<h2 id="2-替换算法："><a href="#2-替换算法：" class="headerlink" title="2.替换算法："></a>2.替换算法：</h2><pre><code>1.RAND（随机）
+2.FIFO（先进先出）
+3.LRU （最近最少使用）
+4.LFU  （不经常使用）
+</code></pre>
+<h2 id="3-写策略："><a href="#3-写策略：" class="headerlink" title="3.写策略："></a>3.写策略：</h2><pre><code>1.命中时：（1）.全写法 （2）.写回法
+2.不命中： （1）.写分配法 （2）.非写分配法
+</code></pre>
+<h2 id="虚拟存储器："><a href="#虚拟存储器：" class="headerlink" title="虚拟存储器："></a>虚拟存储器：</h2><pre><code>辅存的地址（磁盘）：
+    磁盘号+盘面号+磁道号+扇区号
+1.虚拟存储器是一个逻辑模型；
+功能：用户给出一个地址，叫做虚地址或者逻辑地址，虚拟存储器要给出该地址对应      的数据
+实现：由辅助硬件将虚地址映射到主存当中的某个单元，主存单元地址称为实地址或       物理地址
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/15/muzinanStart/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -242,7 +370,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-27 15:23:40" itemprop="dateModified" datetime="2021-11-27T15:23:40+08:00">2021-11-27</time>
+                <time title="修改时间：2021-12-13 16:11:09" itemprop="dateModified" datetime="2021-12-13T16:11:09+08:00">2021-12-13</time>
               </span>
 
           
@@ -257,6 +385,7 @@
 
       
           <h1 id="我的"><a href="#我的" class="headerlink" title="我的"></a><em>我的</em></h1><h1 id="一生至少该有一次-，"><a href="#一生至少该有一次-，" class="headerlink" title="一生至少该有一次 ，"></a><em>一生至少该有一次 ，</em></h1><h1 id="为了某个人而忘了自己-，"><a href="#为了某个人而忘了自己-，" class="headerlink" title="为了某个人而忘了自己 ，"></a><em>为了某个人而忘了自己 ，</em></h1><h1 id="不求有结果-，"><a href="#不求有结果-，" class="headerlink" title="不求有结果 ，"></a><em>不求有结果 ，</em></h1><h1 id="不求同行-，"><a href="#不求同行-，" class="headerlink" title="不求同行 ，"></a><em>不求同行 ，</em></h1><h1 id="不求曾经拥有-，"><a href="#不求曾经拥有-，" class="headerlink" title="不求曾经拥有 ，"></a><em>不求曾经拥有 ，</em></h1><h1 id="甚至不求你爱我-，"><a href="#甚至不求你爱我-，" class="headerlink" title="甚至不求你爱我 ，"></a><em>甚至不求你爱我 ，</em></h1><h1 id="只求在我最美的年华里-，"><a href="#只求在我最美的年华里-，" class="headerlink" title="只求在我最美的年华里 ，"></a><em>只求在我最美的年华里 ，</em></h1><h1 id="遇到你-。"><a href="#遇到你-。" class="headerlink" title="遇到你 。"></a><em>遇到你 。</em></h1><p><em><strong>love is like the wind. You can’t see it but you can feel it.</strong></em></p>
+<img src="/2021/11/14/first-blog/blog\source\_posts\IMG_1266.JPG" style="zoom: 25%;">
 
       
     </div>
@@ -418,12 +547,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
