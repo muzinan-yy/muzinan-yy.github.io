@@ -1,41 +1,647 @@
-{% include 'includes/head.swig' %}
-<div class="random-center hide-area">
-  <div id="random-index">
-    <div class="center-field">
-      <img class="avatar" src="{{ url_for(config.avatar || theme.avatar) }}" width=120 height=120 onClick="openUserCard()">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="欢迎来到muzinan的博客">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="欢迎来到muzinan的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="muzinan">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>欢迎来到muzinan的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <div class="center-field">
-      <div class="title" onClick="openUserCard()">{{ config.title }}</div>
-      <div class="sub-title" onClick="openUserCard()">{{ config.subtitle }}</div>
-    </div>
-    <hr >
-    <div class="center-field">
-      <ul class="index-nav-link">
-        {% set menu = config.menu || theme.menu %}
-        {% for key in Object.keys(menu)  %}
-          {% if menu[key] != '/'  %}
-            <li><a href="{{ url_for(menu[key]) }}">{{ key }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-      {% include 'includes/social-icon.swig' %}
-      {% set homepageArticleCount = config.homepageArticleCount || theme.homepageArticleCount %}
-      {% if homepageArticleCount > 0 %}
-      <div class="index-article-container">
-        <div class="index-article-list">
-          {% set allPosts = site.posts.sort('date', 'desc') %}
-          {% for idx, postItem in allPosts %}
-            {% if idx < homepageArticleCount %}
-            {% include 'includes/post-title-item.swig' %}
-            {% endif %}
-          {% endfor %}
-        </div>
-        <div class="show-all-link">
-          <a href="/archives">{{__('show_all')}} >>></a>
-        </div>
-      </div>
-      {% endif %}
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">欢迎来到muzinan的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
-{% include 'includes/footer.swig' %}
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E5%AD%98%E5%82%A8%E5%99%A8/" class="post-title-link" itemprop="url">计算机组成原理之存储器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-16 13:29:10" itemprop="dateCreated datePublished" datetime="2021-11-16T13:29:10+08:00">2021-11-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-27 15:04:03" itemprop="dateModified" datetime="2021-11-27T15:04:03+08:00">2021-11-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一、存储器："><a href="#一、存储器：" class="headerlink" title="一、存储器："></a>一、存储器：</h1><h2 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h2><h3 id="根据存储介质分类："><a href="#根据存储介质分类：" class="headerlink" title="根据存储介质分类："></a>根据存储介质分类：</h3><pre><code>    1.半导体存储器
+    2.磁表面存储器
+    3.磁芯存储器
+    4.光盘存储器
+</code></pre>
+<h3 id="根据存取的方式进行分类："><a href="#根据存取的方式进行分类：" class="headerlink" title="根据存取的方式进行分类："></a>根据存取的方式进行分类：</h3><pre><code>    1.随机存储器 RAM
+    2.只读存储器 ROM
+    3.串行访问存储器
+</code></pre>
+<h3 id="根据在计算机中的作用分类："><a href="#根据在计算机中的作用分类：" class="headerlink" title="根据在计算机中的作用分类："></a>根据在计算机中的作用分类：</h3><pre><code>    1.主存储器：
+    2.辅助存储器 
+    3.缓冲存储器
+</code></pre>
+<h2 id="存储器的基本结构结构："><a href="#存储器的基本结构结构：" class="headerlink" title="存储器的基本结构结构："></a>存储器的基本结构结构：</h2><pre><code>存储器包括存储的部分以及选址的部分，同时可以控制对于存储器的读或者写
+不同的操作。
+地址线：用来选址的信号传输线。
+片选线（用于容量的扩容）、读写控制线（WE）、数据线。
+</code></pre>
+<p><strong><em>存储器的总容量=存储单元*存储字长</em></strong></p>
+<h2 id="主存储器（主要由RAM和ROM构成）："><a href="#主存储器（主要由RAM和ROM构成）：" class="headerlink" title="主存储器（主要由RAM和ROM构成）："></a>主存储器（主要由RAM和ROM构成）：</h2><pre><code>1.地址寄存器
+2.数据寄存器
+3.存储体：存储元组成存储单元，多个存储单元构成存储体
+    译码器：有2**n个存储单元
+</code></pre>
+<h3 id="RAM："><a href="#RAM：" class="headerlink" title="RAM："></a>RAM：</h3><pre><code>1.SRAM（静态）：触发器（常用作cache）
+2.DRAM（动态随机存储器）：电容（常用作主存）
+    刷新：1）分散刷新 2）集中刷新 3）异步刷新 。（死区的概念）
+</code></pre>
+<h1 id="存储器的性能指标："><a href="#存储器的性能指标：" class="headerlink" title="存储器的性能指标："></a>存储器的性能指标：</h1><pre><code>1.存储容量： 存储字数*存储字长
+2.单位成本： 每位价格=总成本/总容量
+3.存储速度：数据传输率=数据的宽度/存储周期
+</code></pre>
+<h1 id="主存与CPU的连接："><a href="#主存与CPU的连接：" class="headerlink" title="主存与CPU的连接："></a>主存与CPU的连接：</h1><pre><code>    1.容量拓展：*_使能信号_*(低电平有效)
+    字拓展：1）译码片选法 2)线选法 n条线对应n个选片信号
+    位拓展：
+    字和位同时拓展（选择芯片）
+</code></pre>
+<h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><pre><code>系统程序区用ROM
+用户程序区用RAM
+执行区都用RAM
+</code></pre>
+<h1 id="高速缓冲存储器："><a href="#高速缓冲存储器：" class="headerlink" title="高速缓冲存储器："></a>高速缓冲存储器：</h1><pre><code>1.命中率：是指cpu要访问的信息已在cache中的比率
+h=Nc/(Nc+Nm)
+2.访问效率：
+e=tc/ta*100% ta是指平均访问时间
+</code></pre>
+<h2 id="1-cache地址映射："><a href="#1-cache地址映射：" class="headerlink" title="1.cache地址映射："></a>1.cache地址映射：</h2><pre><code>1.全相连映射
+2.组相联映射（其余两者的折中）
+3.直接映射
+</code></pre>
+<h2 id="2-替换算法："><a href="#2-替换算法：" class="headerlink" title="2.替换算法："></a>2.替换算法：</h2><pre><code>1.RAND（随机）
+2.FIFO（先进先出）
+3.LRU （最近最少使用）
+4.LFU  （不经常使用）
+</code></pre>
+<h2 id="3-写策略："><a href="#3-写策略：" class="headerlink" title="3.写策略："></a>3.写策略：</h2><pre><code>1.命中时：（1）.全写法 （2）.写回法
+2.不命中： （1）.写分配法 （2）.非写分配法
+</code></pre>
+<h2 id="虚拟存储器："><a href="#虚拟存储器：" class="headerlink" title="虚拟存储器："></a>虚拟存储器：</h2><pre><code>辅存的地址（磁盘）：
+    磁盘号+盘面号+磁道号+扇区号
+1.虚拟存储器是一个逻辑模型；
+功能：用户给出一个地址，叫做虚地址或者逻辑地址，虚拟存储器要给出该地址对应      的数据
+实现：由辅助硬件将虚地址映射到主存当中的某个单元，主存单元地址称为实地址或       物理地址
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/15/muzinanStart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/15/muzinanStart/" class="post-title-link" itemprop="url">muzinanStart</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-15 20:05:08" itemprop="dateCreated datePublished" datetime="2021-11-15T20:05:08+08:00">2021-11-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-16 10:20:56" itemprop="dateModified" datetime="2021-12-16T10:20:56+08:00">2021-12-16</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Hello World&quot;</span>&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">使用javascript脚本验证表单元素是否为空</span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;author&quot;</span> <span class="attr">content</span>=<span class="string">&quot;http://www.example.com/&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>js验证表单<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">            <span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span></span><br><span class="line"><span class="function"><span class="javascript">            </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> bt=doucment.getElementById(<span class="string">&quot;bt&quot;</span>);</span></span><br><span class="line"><span class="javascript">                bt.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(<span class="built_in">document</span>.myform.name.value==<span class="string">&quot;&quot;</span>)</span></span><br><span class="line"><span class="javascript">                    &#123;</span></span><br><span class="line"><span class="javascript">                        alert(<span class="string">&quot;用户名不能为空!&quot;</span>);</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">document</span>.myform.name.focus();</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">                    &#125;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">document</span>.myform.pw.value==<span class="string">&quot;&quot;</span>)</span></span><br><span class="line"><span class="javascript">                    &#123;</span></span><br><span class="line"><span class="javascript">                        alert(<span class="string">&quot;密码不能为空!&quot;</span>);</span></span><br><span class="line"><span class="javascript">                        <span class="built_in">document</span>.myform.pw.focus();</span></span><br><span class="line"><span class="javascript">                        <span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">                    &#125;</span></span><br><span class="line"><span class="javascript">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">            </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;index.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;get&quot;</span> <span class="attr">name</span>=<span class="string">&quot;myform&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>姓名:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;name&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>密码:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pw&quot;</span> <span class="attr">id</span>=<span class="string">&quot;age&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">id</span>=<span class="string">&quot;bt&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/14/first-blog/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/14/first-blog/" class="post-title-link" itemprop="url">王璐瑶我喜欢你</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-14 09:43:29" itemprop="dateCreated datePublished" datetime="2021-11-14T09:43:29+08:00">2021-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-13 17:40:38" itemprop="dateModified" datetime="2021-12-13T17:40:38+08:00">2021-12-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="我的"><a href="#我的" class="headerlink" title="我的"></a><em>我的</em></h1><h1 id="一生至少该有一次-，"><a href="#一生至少该有一次-，" class="headerlink" title="一生至少该有一次 ，"></a><em>一生至少该有一次 ，</em></h1><h1 id="为了某个人而忘了自己-，"><a href="#为了某个人而忘了自己-，" class="headerlink" title="为了某个人而忘了自己 ，"></a><em>为了某个人而忘了自己 ，</em></h1><h1 id="不求有结果-，"><a href="#不求有结果-，" class="headerlink" title="不求有结果 ，"></a><em>不求有结果 ，</em></h1><h1 id="不求同行-，"><a href="#不求同行-，" class="headerlink" title="不求同行 ，"></a><em>不求同行 ，</em></h1><h1 id="不求曾经拥有-，"><a href="#不求曾经拥有-，" class="headerlink" title="不求曾经拥有 ，"></a><em>不求曾经拥有 ，</em></h1><h1 id="甚至不求你爱我-，"><a href="#甚至不求你爱我-，" class="headerlink" title="甚至不求你爱我 ，"></a><em>甚至不求你爱我 ，</em></h1><h1 id="只求在我最美的年华里-，"><a href="#只求在我最美的年华里-，" class="headerlink" title="只求在我最美的年华里 ，"></a><em>只求在我最美的年华里 ，</em></h1><h1 id="遇到你-。"><a href="#遇到你-。" class="headerlink" title="遇到你 。"></a><em>遇到你 。</em></h1><p><em><strong>love is like the wind. You can’t see it but you can feel it.</strong></em></p>
+<img src="/2021/11/14/first-blog/blog\source\_posts\IMG_1266.JPG" style="zoom: 25%;">
+
+<h3 id="我真的很感谢迄今为止-我遇到的所与人-经历的所有事"><a href="#我真的很感谢迄今为止-我遇到的所与人-经历的所有事" class="headerlink" title="我真的很感谢迄今为止,我遇到的所与人,经历的所有事."></a>我真的很感谢迄今为止,我遇到的所与人,经历的所有事.</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/14/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/14/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-14 09:12:12" itemprop="dateCreated datePublished" datetime="2021-11-14T09:12:12+08:00">2021-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-26 19:52:03" itemprop="dateModified" datetime="2021-11-26T19:52:03+08:00">2021-11-26</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">muzinan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">muzinan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

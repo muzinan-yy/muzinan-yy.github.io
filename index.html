@@ -1,41 +1,1320 @@
-{% include 'includes/head.swig' %}
-<div class="random-center hide-area">
-  <div id="random-index">
-    <div class="center-field">
-      <img class="avatar" src="{{ url_for(config.avatar || theme.avatar) }}" width=120 height=120 onClick="openUserCard()">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="欢迎来到muzinan的博客">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="欢迎来到muzinan的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="muzinan">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>欢迎来到muzinan的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    <div class="center-field">
-      <div class="title" onClick="openUserCard()">{{ config.title }}</div>
-      <div class="sub-title" onClick="openUserCard()">{{ config.subtitle }}</div>
-    </div>
-    <hr >
-    <div class="center-field">
-      <ul class="index-nav-link">
-        {% set menu = config.menu || theme.menu %}
-        {% for key in Object.keys(menu)  %}
-          {% if menu[key] != '/'  %}
-            <li><a href="{{ url_for(menu[key]) }}">{{ key }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-      {% include 'includes/social-icon.swig' %}
-      {% set homepageArticleCount = config.homepageArticleCount || theme.homepageArticleCount %}
-      {% if homepageArticleCount > 0 %}
-      <div class="index-article-container">
-        <div class="index-article-list">
-          {% set allPosts = site.posts.sort('date', 'desc') %}
-          {% for idx, postItem in allPosts %}
-            {% if idx < homepageArticleCount %}
-            {% include 'includes/post-title-item.swig' %}
-            {% endif %}
-          {% endfor %}
-        </div>
-        <div class="show-all-link">
-          <a href="/archives">{{__('show_all')}} >>></a>
-        </div>
-      </div>
-      {% endif %}
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">欢迎来到muzinan的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
-{% include 'includes/footer.swig' %}
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/05/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/05/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">JavaScript学习笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-05 20:31:56" itemprop="dateCreated datePublished" datetime="2022-01-05T20:31:56+08:00">2022-01-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-28 20:48:52" itemprop="dateModified" datetime="2022-02-28T20:48:52+08:00">2022-02-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1><blockquote>
+<ol>
+<li><strong>HTML</strong> 定义了网页的内容</li>
+<li><strong>CSS</strong> 描述了网页的布局</li>
+<li><strong>JavaScript</strong> 控制了网页的行为</li>
+</ol>
+</blockquote>
+<h2 id="JavaScript-是脚本语言"><a href="#JavaScript-是脚本语言" class="headerlink" title="JavaScript 是脚本语言"></a>JavaScript 是脚本语言</h2><p>JavaScript 是一种轻量级的编程语言。</p>
+<p>JavaScript 是可插入 HTML 页面的编程代码。</p>
+<p>JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。</p>
+<h2 id="JavaScript输出"><a href="#JavaScript输出" class="headerlink" title="JavaScript输出"></a>JavaScript输出</h2><blockquote>
+<ul>
+<li>使用 <strong>window.alert()</strong> 弹出警告框。</li>
+<li>使用 <strong>document.write()</strong> 方法将内容写到 HTML 文档中。</li>
+<li>使用 <strong>innerHTML</strong> 写入到 HTML 元素。</li>
+<li>使用 <strong>console.log()</strong> 写入到浏览器的控制台。</li>
+</ul>
+</blockquote>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>**值类型(基本类型)*<em>：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、</em>Symbol(表示独一无二的值)*。</p>
+<p><strong>引用数据类型</strong>：对象(Object)、数组(Array)、函数(Function)。</p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>访问的方法:</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=person.lastname;</span><br><span class="line">name=person[<span class="string">&quot;lastname&quot;</span>];</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="Undefined-和-Null"><a href="#Undefined-和-Null" class="headerlink" title="Undefined 和 Null"></a>Undefined 和 Null</h3><p>Undefined 这个值表示变量不含有值。</p>
+<p>可以通过将变量的值设置为 null 来清空变量。</p>
+<blockquote>
+<p> JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。</p>
+</blockquote>
+<h2 id="HTML-中的全局变量"><a href="#HTML-中的全局变量" class="headerlink" title="HTML 中的全局变量"></a>HTML 中的全局变量</h2><blockquote>
+<p><strong>在 HTML 中, 全局变量是 window 对象: 所有数据变量都属于 window 对象。</strong></p>
+</blockquote>
+<h2 id="常见的HTML事件"><a href="#常见的HTML事件" class="headerlink" title="常见的HTML事件"></a>常见的HTML事件</h2><p>下面是一些常见的HTML事件的列表:</p>
+<table>
+<thead>
+<tr>
+<th align="left">事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onchange</td>
+<td>HTML 元素改变</td>
+</tr>
+<tr>
+<td align="left">onclick</td>
+<td>用户点击 HTML 元素</td>
+</tr>
+<tr>
+<td align="left">onmouseover</td>
+<td>鼠标指针移动到指定的元素上时发生</td>
+</tr>
+<tr>
+<td align="left">onmouseout</td>
+<td>用户从一个 HTML 元素上移开鼠标时发生</td>
+</tr>
+<tr>
+<td align="left">onkeydown</td>
+<td>用户按下键盘按键</td>
+</tr>
+<tr>
+<td align="left">onload</td>
+<td>浏览器已完成页面的加载</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>=== 为绝对相等，即数据类型与值都必须相等。</p>
+</blockquote>
+<p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object。 </p>
+<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p>在 JavaScript 中, <strong>undefined</strong> 是一个没有设置值的变量。</p>
+<p><strong>typeof</strong> 一个没有值的变量会返回 <strong>undefined</strong>。</p>
+<h2 id="JavaScript-初始化不会提升"><a href="#JavaScript-初始化不会提升" class="headerlink" title="JavaScript 初始化不会提升"></a>JavaScript 初始化不会提升</h2><p>JavaScript 只有声明的变量会提升，初始化的不会。</p>
+<blockquote>
+<p> “use strict” 指令只允许出现在脚本或函数的开头。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/06/php%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/12/06/php%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">php学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-12-06 16:00:46" itemprop="dateCreated datePublished" datetime="2021-12-06T16:00:46+08:00">2021-12-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-05 20:25:57" itemprop="dateModified" datetime="2022-01-05T20:25:57+08:00">2022-01-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="1-php中的数据"><a href="#1-php中的数据" class="headerlink" title="1.php中的数据"></a>1.php中的数据</h1><p>echo ‘<hr>‘;</p>
+<p>变量：</p>
+<p>$a;</p>
+<p>常量：</p>
+<p>var_dump（）判断括号中的表达式是否为1</p>
+<p>比较运算符:&gt;= &lt;= == !=</p>
+<p>逻辑运算符：针对不同的结果进行匹配，</p>
+<p>&amp;&amp; 逻辑与    $a=’week’, $b=’good’ ;  $a==’week’ &amp;&amp; $b==’good’</p>
+<p>||逻辑或</p>
+<p>！逻辑非</p>
+<p>连接运算符：</p>
+<p>​    将多个字符串拼接的字符：（.）(.=将左边的内容与右边的内容连接起来，然后赋值给左边的变量)</p>
+<p>错误抑制符：</p>
+<blockquote>
+<p><em>在php中，有些错误可以提前预知</em>，</p>
+<p>在可能出现错误的表达式之前使用@符号即可</p>
+<p>@（$a/$b）</p>
+</blockquote>
+<p>三目运算：</p>
+<p>自操作运算符：</p>
+<blockquote>
+<p>++</p>
+<p>–</p>
+<p>前置和后置</p>
+<p>后置先赋值后操作</p>
+<p>前置先操作后赋值</p>
+</blockquote>
+<p>非：~补码</p>
+<p>&amp;：与操作</p>
+<p>|:或</p>
+<p>异或：^</p>
+<p>左移：&gt;&gt;</p>
+<p>右移：&lt;&lt;</p>
+<p>while循环：</p>
+<p>do{}while()</p>
+<p> $a++;</p>
+<p>如果是基于固定已知条件，而且有规律的话。使用for循环</p>
+<p>while循环</p>
+<p>php是可以嵌入到html中的脚本语言。</p>
+<p>php函数：</p>
+<p>function f_name($a,$b,$c~~~){</p>
+<p>​    fun_body；</p>
+<p>}</p>
+<p>取消引用:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">strlen()获取字符串的长度</span><br><span class="line"></span><br><span class="line"><span class="variable">$string</span>[index] 访问字符串的某个位置的字符</span><br><span class="line"></span><br><span class="line"><span class="variable">$string</span> substr( [<span class="keyword">string</span> <span class="variable">$string</span>,<span class="keyword">int</span> <span class="variable">$start</span>[,<span class="keyword">int</span> <span class="variable">$length</span>]] )访问字符串中的多个字符</span><br><span class="line"></span><br><span class="line"><span class="keyword">string</span> strstr( <span class="keyword">string</span> <span class="variable">$haystack</span>,<span class="keyword">mixed</span> <span class="variable">$needle</span>[,<span class="keyword">bool</span> <span class="variable">$before_needle</span>=<span class="literal">false</span>])判断一个字符是否是另一个字符串的子串</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> strpos(<span class="keyword">string</span> <span class="variable">$haystack</span>,<span class="keyword">mixed</span> <span class="variable">$needle</span>[,<span class="keyword">int</span> <span class="variable">$offset</span>=<span class="number">0</span>]) 查找字符串首次出现的位置</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>（（<span class="variable">$pos</span>=strpos(<span class="variable">$mystr</span>,<span class="string">&quot;1&quot;</span>,<span class="variable">$pos</span>)) !==<span class="literal">false</span> ）&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;The lette&quot;</span>;</span><br><span class="line"></span><br><span class="line">&amp;pos++;</span><br><span class="line"><span class="comment">//获取到字符串在源字符串中的所有位置的索引</span></span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> strtpos() strpos的姐妹函数，作用与strpos基本相同，唯一的差别在于strrpos找的是最后一次匹配的位置。</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> substr_count(<span class="keyword">string</span> <span class="variable">$haystack</span>, <span class="keyword">string</span> <span class="variable">$needle</span>[,<span class="keyword">int</span> <span class="variable">$offset</span>=<span class="number">0</span>[,<span class="keyword">int</span> <span class="variable">$length</span>]]) 函数统计字符串出现的次数</span><br><span class="line"></span><br><span class="line"><span class="keyword">string</span> strpbak(<span class="keyword">string</span> <span class="variable">$haystack</span>,<span class="keyword">string</span> <span class="variable">$char_list</span>) 判断字符串中是否包含一个字符集中的任意一个字符时。</span><br><span class="line"></span><br><span class="line"><span class="keyword">mixed</span> str_replace(<span class="keyword">mixed</span> <span class="variable">$search</span>,<span class="keyword">mixed</span> <span class="variable">$replace</span>,<span class="keyword">mixed</span> <span class="variable">$subject</span>[,<span class="keyword">int</span> <span class="variable">$count</span>])</span><br><span class="line"><span class="keyword">mixed</span> substr_replace(<span class="keyword">mixed</span> <span class="variable">$search</span>,<span class="keyword">mixed</span> <span class="variable">$replacement</span>,<span class="keyword">mixed</span> <span class="variable">$start</span>[,<span class="keyword">mixed</span> <span class="variable">$length</span>])</span><br><span class="line"><span class="keyword">string</span> strtr(<span class="keyword">string</span> <span class="variable">$str</span>,<span class="keyword">string</span> <span class="variable">$from</span>,<span class="keyword">string</span> <span class="variable">$to</span>)</span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>数据精度：</p>
+<p>%.2f 表示小数的位数为两位</p>
+<p>printf函数的作用：</p>
+<p>1）类型说明</p>
+<p>2）符号说明</p>
+<p>3）宽度说明</p>
+<p>4）说明数值精度</p>
+<p>5）交换转换符的顺序</p>
+<p>6）存储格式化效果 sprintf（）函数可以将结果字符串作为函数值返回</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#删除字符串中的空白符</span></span><br><span class="line">trim() 删除字符串首尾的空白符</span><br><span class="line">ltrim() 只删除字符串首部的空白符</span><br><span class="line">rtrim() 只删除字符串尾部的空白符</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h4 id="数组的创建"><a href="#数组的创建" class="headerlink" title="数组的创建"></a>数组的创建</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#### </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span> <span class="keyword">array</span>([<span class="keyword">mixed</span> $])</span><br><span class="line"></span><br><span class="line"><span class="variable">$mybook</span>=<span class="keyword">array</span>(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#在创建好的数组之后添加数据</span></span><br><span class="line"><span class="variable">$mybook</span>[]=<span class="keyword">new</span> ele;</span><br><span class="line"><span class="comment">#利用array()构造函数首先初始化数组</span></span><br><span class="line"><span class="comment">#通过print_r函数输出数组的元素</span></span><br><span class="line">print_r(输出所有的数组元素)</span><br><span class="line"><span class="comment">#切割数组：</span></span><br><span class="line">  <span class="keyword">array</span> array_slice(<span class="keyword">array</span> <span class="variable">$array</span>,<span class="keyword">int</span> <span class="variable">$offset</span>[,<span class="keyword">int</span> <span class="variable">$length</span>=<span class="literal">null</span>[,<span class="keyword">bool</span> <span class="variable">$preserve_keys</span>=<span class="literal">false</span>]])</span><br><span class="line"><span class="comment">#统计数组中的个数：</span></span><br><span class="line">    <span class="keyword">int</span> count(<span class="variable">$array</span>)</span><br><span class="line"><span class="comment">#访问数组中的元素：</span></span><br><span class="line">    <span class="number">1</span>.通过数组指针访问数组中的元素：</span><br><span class="line">    <span class="number">2</span>.通过each()函数逐个访问数组的元素</span><br><span class="line">    <span class="number">3</span>.用<span class="keyword">foreach</span>遍历数组：</span><br><span class="line">    <span class="keyword">for</span> (<span class="variable">$array</span> <span class="keyword">as</span> <span class="variable">$value</span>)&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="variable">$value</span>.<span class="string">&quot;&lt;br/&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="number">4</span>.用<span class="keyword">foreach</span>遍历数组的键和值：</span><br><span class="line">    <span class="number">5</span>.用<span class="keyword">foreach</span>遍历修改数组元素的值：</span><br><span class="line">        <span class="keyword">for</span>(<span class="variable">$array</span> <span class="keyword">as</span> &amp;<span class="variable">$val</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="variable">$val</span>==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">                <span class="variable">$val</span>=<span class="string">&quot;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">unset</span>(<span class="variable">$val</span>);</span><br><span class="line">            <span class="keyword">echo</span><span class="string">&quot;&lt;br/&gt;&quot;</span>;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组的操作"><a href="#数组的操作" class="headerlink" title="数组的操作"></a>数组的操作</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sort（）和rsort（） 用于索引数组的排序</span><br><span class="line">asort（）和arsort（） 用于关联数组的排序</span><br><span class="line">ksort（）和krsort（）根据关联数组的键而非值对数组进行排序</span><br><span class="line">array_multisort():可以同时会多个数组或者多维数组进行排序</span><br></pre></td></tr></table></figure>
+
+<h3 id="add和delete数组元素"><a href="#add和delete数组元素" class="headerlink" title="add和delete数组元素"></a>add和delete数组元素</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">array_unshift();将一个或多个新元素添加到数组的开始位置</span><br><span class="line">array_shift();删除数组的最后一个元素</span><br><span class="line">array_push();在数组的末尾添加一个或多个新的元素<span class="keyword">int</span> array_push(<span class="keyword">array</span> <span class="variable">$array</span>,<span class="keyword">mixed</span> <span class="variable">$value1</span>[,<span class="keyword">mixed</span> $...])</span><br><span class="line">array_pop();删除数组的最后一个元素</span><br><span class="line">array_splice();删除数组中从某个位置开始的元素，或把新元素插入到数组得某个位置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span> array_merge(<span class="keyword">array</span> <span class="variable">$array1</span>[,<span class="keyword">array</span> $...])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组和字符串之间的转换"><a href="#数组和字符串之间的转换" class="headerlink" title="数组和字符串之间的转换"></a>数组和字符串之间的转换</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span> explode(<span class="keyword">string</span> separator,<span class="keyword">string</span> <span class="keyword">string</span>[,<span class="keyword">int</span> limit])</span><br><span class="line"><span class="keyword">string</span> implode(<span class="keyword">string</span> glue,<span class="keyword">array</span> pieces)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组转换为变量列表"><a href="#数组转换为变量列表" class="headerlink" title="数组转换为变量列表"></a>数组转换为变量列表</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span> <span class="keyword">list</span>(<span class="keyword">mixed</span> <span class="variable">$var1</span>[,<span class="keyword">mixed</span> <span class="variable">$var2</span>...])</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-正则表达式"><a href="#2-正则表达式" class="headerlink" title="2.正则表达式"></a>2.正则表达式</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">行定位符：</span><br><span class="line">	^tm tm$ tm</span><br><span class="line">单词定界符：</span><br><span class="line">	\btm\b \Btm\B</span><br><span class="line">字符类：</span><br><span class="line">	[]</span><br><span class="line">	正则表达式是区分大小写的</span><br><span class="line">	选择字符（|）</span><br><span class="line">	连字符（-）</span><br><span class="line">	排除字符（^）</span><br><span class="line">	限定字符（？*+&#123;n,m&#125;）</span><br><span class="line">	点字符（.）</span><br><span class="line">	转义字符（\）</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>\反斜杠</th>
+<th align="left">转义，指定预定义的字符集，定义断言，显示不可打印的字符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>（）圆括号</td>
+<td align="left">改变限定符的作用范围，进行分组</td>
+</tr>
+<tr>
+<td></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>反向引用：</p>
+<p>php中的模式匹配函数：</p>
+<p>int preg_match(string $pattern,string $subject[,array &amp;$matces[,int $flag=0[,int $offset=0]]])</p>
+<p>用preg_match_all( )函数实现多次匹配：</p>
+<p>int preg_match_all(string $pattern,string $subject[,array &amp;$matches[,int $flag=PREG_PATTERN_ORDER[,int $offset=0]]])</p>
+<p>matches数组用来表示匹配的结果。</p>
+<h1 id="3-PHP和Web页面的交互"><a href="#3-PHP和Web页面的交互" class="headerlink" title="3.PHP和Web页面的交互"></a>3.PHP和Web页面的交互</h1><h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>功能：让浏览者和网站有一个互动的平台。用来将数据发送到服务器。</p>
+<h2 id="获取表单数据"><a href="#获取表单数据" class="headerlink" title="获取表单数据"></a>获取表单数据</h2><h3 id="post"><a href="#post" class="headerlink" title="post"></a>post</h3><p>ｐｏｓｔ方式的提交不依赖于ｕｒｌ，表单中的参数值不会显示再地址栏中，安全性高，能够提交大容量数据</p>
+<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>ｇｅｔ方式是表单数据默认的提交方式，即ｆｏｒｍ元素的ｍｅｔｈｏｄ属性的默认值．</p>
+<h3 id="php参数传递的常用方法"><a href="#php参数传递的常用方法" class="headerlink" title="php参数传递的常用方法"></a>php参数传递的常用方法</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_POST</span>[<span class="string">&quot;name&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="variable">$_POST</span>[<span class="string">&quot;name&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>需要区分大小写</p>
+<h3 id="在网页中嵌入php脚本"><a href="#在网页中嵌入php脚本" class="headerlink" title="在网页中嵌入php脚本"></a>在网页中嵌入php脚本</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在html标签中添加php脚本：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对value进行赋值：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"></span><br><span class="line"><span class="variable">$user_name</span>=<span class="string">&quot;landy&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;user-name&quot;</span> value=<span class="string">&quot;&lt;?php echo <span class="subst">$user_name</span>;?&gt;&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在php中获取表单数据"><a href="#在php中获取表单数据" class="headerlink" title="在php中获取表单数据"></a>在php中获取表单数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form name=&quot;from1&quot; method=&quot;post&quot; action=&quot;index.php&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">        &lt;table width=&quot;405&quot; border=&quot;0&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot; bordercolor=&quot;#FFFFFF&quot; bgcolor=&quot;#999999&quot;&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;用户名：&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&quot;user_name&quot; type=&quot;text&quot; id=&quot;user&quot;size=&quot;20&quot; </span><br><span class="line">                    maxlength=&quot;100&quot;/&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;密码&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;&lt;input name=&quot;password&quot; type=&quot;password&quot; id=&quot;user&quot;size=&quot;20&quot; </span><br><span class="line">                maxlength=&quot;100&quot;/&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;确认密码&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;&lt;input name=&quot;cfm_password&quot; type=&quot;password&quot; id=&quot;user&quot;size=&quot;20&quot; </span><br><span class="line">                maxlength=&quot;100&quot;/&gt;&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/tr&gt;               </span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;性别&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&quot;sex&quot; type=&quot;radio&quot; value=&quot;男&quot; checked&gt;男&lt;/input&gt;</span><br><span class="line">                    &lt;input name=&quot;sex&quot; type=&quot;radio&quot; value=&quot;女&quot;&gt;女&lt;/input&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#a61b29&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;爱好&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&quot;fond[]&quot; type=&quot;checkbox&quot; id=&quot;fond[]&quot; value=&quot;music&quot;&gt;music&lt;/input&gt;</span><br><span class="line">                    &lt;input name=&quot;fond[]&quot; type=&quot;checkbox&quot; id=&quot;fond[]&quot; value=&quot;ball&quot;&gt;ball&lt;/input&gt;</span><br><span class="line">                &lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#FFCC33&quot;&gt;</span><br><span class="line">                    &lt;td colspan=&quot;2&quot; height=&quot;25&quot; align=&quot;center&quot;&gt;</span><br><span class="line">                        &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot;/&gt;</span><br><span class="line">                        &lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;reset&quot;/&gt;</span><br><span class="line">                    &lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#a61b29&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;学历&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;select name=&quot;select&quot; size=&quot;1&quot;&gt;</span><br><span class="line">                        &lt;option value=&quot;专科&quot;&gt;专科&lt;/option&gt;</span><br><span class="line">                        &lt;option value=&quot;本科&quot;&gt;本科&lt;/option&gt;</span><br><span class="line">                        &lt;option value=&quot;硕士&quot;&gt;硕士&lt;/option&gt;</span><br><span class="line">                        &lt;option value=&quot;博士&quot;&gt;博士&lt;/option&gt;</span><br><span class="line">                        &lt;/select&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">            &lt;tr bgcolor=&quot;#a61b29&quot;&gt;</span><br><span class="line">                &lt;td width=&quot;103&quot; height=&quot;25&quot; align=&quot;right&quot;&gt;上传头像&lt;/td&gt;</span><br><span class="line">                &lt;td width=&quot;144&quot; height=&quot;25&quot;&gt;</span><br><span class="line">                    &lt;input name=&#x27;img&#x27; type=&#x27;file&#x27; id=&quot;img&quot; size=&quot;20&quot; maxlength=&quot;100&quot;/&gt;</span><br><span class="line">                &lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">// 获取基本元素的值</span><br><span class="line">echo &quot;请确认表单的信息：&lt;br&gt;&quot;;</span><br><span class="line">echo &quot;&quot;.trim($_POST[&#x27;user_name&#x27;]).&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo &quot;&quot;.trim($_POST[&#x27;password&#x27;]).&quot;&lt;br&gt;&quot;; </span><br><span class="line">echo &quot;&quot;.trim($_POST[&#x27;cfm_password&#x27;]).&quot;&lt;br&gt;&quot;;</span><br><span class="line">// 获取单选按钮的值</span><br><span class="line">echo &quot;性别&quot;.trim($_POST[&#x27;sex&#x27;]).&quot;&lt;br&gt;&quot;; </span><br><span class="line">// 获取复选框的值</span><br><span class="line">if($_POST[&#x27;fond&#x27;]!=null)&#123;</span><br><span class="line">    echo &quot;宁的爱好是：&quot;;</span><br><span class="line">    for($i=0;$i&lt;count($_POST[&#x27;fond&#x27;]);$i++)&#123;</span><br><span class="line">        echo $_POST[&#x27;fond&#x27;][$i].&quot;&amp;nbsp;&amp;nbsp;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 获取菜单列表框的值</span><br><span class="line">if($_POST[&#x27;select&#x27;]!=&#x27;&#x27;)&#123;</span><br><span class="line">    echo &quot;你的学历&quot;.$_POST[&#x27;select&#x27;];</span><br><span class="line">&#125;</span><br><span class="line">// 获取文件域的值</span><br><span class="line">echo &quot;上传文件的信息&quot;;</span><br><span class="line">echo &#x27;文件名&#x27;.$_FILES[&#x27;img&#x27;][&#x27;name&#x27;].&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;文件类型&#x27;.$_FILES[&#x27;img&#x27;][&#x27;type&#x27;].&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;文件大小&#x27;.($_FILES[&#x27;img&#x27;][&#x27;size&#x27;]/1024).&#x27;KB&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;临时文件名&#x27;.$_FILES[&#x27;img&#x27;][&#x27;tmp_name&#x27;].&#x27;&lt;br&gt;&#x27;;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对URL传递的参数进行编码和解码"><a href="#对URL传递的参数进行编码和解码" class="headerlink" title="对URL传递的参数进行编码和解码"></a>对URL传递的参数进行编码和解码</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> urlencode(<span class="keyword">string</span> str)</span><br><span class="line"><span class="keyword">string</span> urldecode(<span class="keyword">string</span> str)</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<h2 id="web服务器端的其他数据采集方法"><a href="#web服务器端的其他数据采集方法" class="headerlink" title="web服务器端的其他数据采集方法"></a>web服务器端的其他数据采集方法</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_REQUEST</span>[<span class="string">&#x27;NAME&#x27;</span>]</span><br><span class="line">    <span class="comment">//是post和get,cookie的综合</span></span><br><span class="line"><span class="comment">//预定义变量</span></span><br><span class="line">    <span class="variable">$_SERVE</span>是一个包含诸如头信息,路径以及脚本位置等信息的数组</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<h1 id="4-日期和时间的操作"><a href="#4-日期和时间的操作" class="headerlink" title="4.日期和时间的操作"></a>4.日期和时间的操作</h1><h3 id="获取当前日期和时间"><a href="#获取当前日期和时间" class="headerlink" title="获取当前日期和时间"></a>获取当前日期和时间</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示的是unix时间戳</span></span><br><span class="line"><span class="keyword">echo</span> time();</span><br><span class="line"><span class="comment">//设置默认时区为北京时间</span></span><br><span class="line">date_default_timezone_set(<span class="string">&#x27;PRC&#x27;</span>)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="创建时间戳"><a href="#创建时间戳" class="headerlink" title="创建时间戳"></a>创建时间戳</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据日期和时间生成时间戳</span></span><br><span class="line"><span class="keyword">echo</span> mktime(<span class="number">18</span>,<span class="number">30</span>,<span class="number">00</span>,<span class="number">12</span>,<span class="number">12</span>,<span class="number">2021</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="comment">//从GMT日期和时间值生成时间戳</span></span><br><span class="line"><span class="keyword">echo</span> gmmktime(<span class="number">18</span>,<span class="number">30</span>,<span class="number">00</span>,<span class="number">12</span>,<span class="number">12</span>,<span class="number">2021</span>);</span><br><span class="line"><span class="comment">//从日期和时间字符串生成时间戳</span></span><br><span class="line"><span class="keyword">echo</span> strtotime(<span class="keyword">string</span> <span class="variable">$time</span>[,<span class="keyword">int</span> <span class="variable">$now</span>=time()])</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换时间戳"><a href="#转换时间戳" class="headerlink" title="转换时间戳"></a>转换时间戳</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转换时间戳</span></span><br><span class="line"><span class="keyword">array</span> getdate([<span class="keyword">int</span> <span class="variable">$timestamp</span>=time()])</span><br><span class="line"><span class="comment">//接受一个时间戳作为参数,返回一个关联数组</span></span><br><span class="line"><span class="comment">//如果只想从时间戳中读取时间或日期,可以使用idate()函数</span></span><br><span class="line"><span class="keyword">int</span> idate(<span class="keyword">string</span> <span class="variable">$format</span>[,<span class="keyword">int</span> <span class="variable">$timestamp</span>])</span><br><span class="line"><span class="comment">//需要两个参数,一个格式串和一个可选的时间戳$timestamp</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="格式化日期字符串"><a href="#格式化日期字符串" class="headerlink" title="格式化日期字符串"></a>格式化日期字符串</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> date(<span class="keyword">string</span> <span class="variable">$format</span>[,<span class="keyword">int</span> <span class="variable">$timestamp</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="检查日期值"><a href="#检查日期值" class="headerlink" title="检查日期值"></a>检查日期值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> checkdate(<span class="keyword">int</span> <span class="variable">$month</span>,<span class="keyword">int</span> <span class="variable">$day</span>,<span class="keyword">int</span> <span class="variable">$year</span>)</span><br><span class="line"><span class="comment">//该函数需要接收1~12月,1~31日和年是哪个参数,如果这个日期是有效的话,返回true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="毫秒的使用"><a href="#毫秒的使用" class="headerlink" title="毫秒的使用"></a>毫秒的使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mixed microtime([bool $get_as_float])</span><br><span class="line">//这个函数回合time()一样,返回当前时间的时间戳.但是还会返回一个毫秒值.这样会使时间更加精确</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="DateTime"><a href="#DateTime" class="headerlink" title="DateTime"></a>DateTime</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">????</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-http的使用"><a href="#5-http的使用" class="headerlink" title="5.http的使用"></a>5.http的使用</h1><h2 id="http请求"><a href="#http请求" class="headerlink" title="http请求"></a>http请求</h2><p>请求行:GET/about/index.php HTTP/1.1</p>
+<p>http头列表:</p>
+<p>空行:</p>
+<p>可选消息体:其中可能包括通过post方法传递的数据</p>
+<h2 id="http响应"><a href="#http响应" class="headerlink" title="http响应"></a>http响应</h2><p>状态行:(200 ok  )</p>
+<p>http头列表:(各个响应头)</p>
+<p>空行</p>
+<p>一个可选的消息头:</p>
+<h1 id="6-cookie"><a href="#6-cookie" class="headerlink" title="6.cookie"></a>6.cookie</h1><p>cookie是一种在客户端浏览器中存储数据并以此跟踪和识别用户的机制</p>
+<p>cookie的功能:</p>
+<p>1.记录访客的某些信息.</p>
+<p>2.在页面之间传递变量</p>
+<p>3.将查看的网页存储在cookie临时文件中.提高浏览的速度</p>
+<h2 id="创建cookie"><a href="#创建cookie" class="headerlink" title="创建cookie"></a>创建cookie</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> setcookie(<span class="keyword">string</span> name[,<span class="keyword">string</span> value[,<span class="keyword">int</span> expire[,<span class="keyword">string</span> path[,<span class="keyword">string</span> domain[,<span class="keyword">int</span> secure]]]]])</span><br><span class="line">    name:cookie的名称,可以通过<span class="variable">$_COOKIE</span>[<span class="string">&#x27;cookie_name&#x27;</span>]调用变量名为cookie_name的cookie</span><br><span class="line">    value:cookie变量的值,该值保存在客户端,不能用来保存敏感的数据<span class="variable">$_COOKIE</span>[<span class="string">&#x27;values&#x27;</span>]获取名为values的值</span><br><span class="line">    expire:cookie的时效,用time()或者mktime()获取</span><br><span class="line">    path:cookie在服务器端的有效路径</span><br><span class="line">    domain:cookie的有效域名</span><br><span class="line">    secure:指明cookie是否仅通过安全的https,值为<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="读取cookie"><a href="#读取cookie" class="headerlink" title="读取cookie"></a>读取cookie</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在php中可以直接通过超级全局数组$_COOKIE[]来读取浏览器端的cookie的值</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">isset</span>(<span class="variable">$_COOKIE</span>[<span class="string">&#x27;visit_time&#x27;</span>]))&#123;</span><br><span class="line">setcookie(<span class="string">&#x27;visit_time&#x27;</span>,date(<span class="string">&#x27;y-m-d H:i:s&#x27;</span>));</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;欢迎首次访问网络&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    setcookie(<span class="string">&#x27;visit_time&#x27;</span>,date(<span class="string">&#x27;y-m-d H:i:s&#x27;</span>),time()+<span class="number">60</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;上次访问时间为:&quot;</span>.<span class="variable">$_COOKIE</span>[<span class="string">&#x27;visit_time&#x27;</span>];</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;&lt;br&gt;&#x27;</span>;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;您上次访问网站的时间为:&#x27;</span>.date(<span class="string">&quot;y-m-d H:i:s&quot;</span>);</span><br><span class="line">    <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setcookie(<span class="string">&quot;visit_time&quot;</span>,<span class="string">&quot;&quot;</span>,time()-<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="cookie的生命周期"><a href="#cookie的生命周期" class="headerlink" title="cookie的生命周期"></a>cookie的生命周期</h2><blockquote>
+<p>如果不为cookie设置时间,则他的生命周期就是浏览器会话时间范围</p>
+<p>只要关闭浏览器,cookie就会消失</p>
+<p><strong>cookie</strong>不是一成不变的,每个cookie文件的大小有限,每个域名最多支持20个cookie</p>
+</blockquote>
+<h1 id="7-session"><a href="#7-session" class="headerlink" title="7.session"></a>7.session</h1><h2 id="创建session"><a href="#创建session" class="headerlink" title="创建session"></a>创建session</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//session是指有始有终的一系列的动作和消息 比如说登陆的整个过程</span></span><br><span class="line"><span class="comment">// 1.启动session</span></span><br><span class="line"><span class="comment">//bool session_start(void)  </span></span><br><span class="line"><span class="comment">//session_register()函数用来创建session</span></span><br><span class="line">    <span class="comment">//设置session的失效时间</span></span><br><span class="line">	<span class="variable">$time</span>=<span class="number">1</span>*<span class="number">60</span>;</span><br><span class="line">	session_set_cookie_params(<span class="variable">$time</span>);<span class="comment">//将session和cookie结合起来设置失效时间</span></span><br><span class="line">	<span class="comment">//启动session</span></span><br><span class="line">	session_start();</span><br><span class="line">	<span class="comment">//使用setcookie()函数可以对session设置失效时间</span></span><br><span class="line">	setcookie(session_name(),session_id(),time()+<span class="number">60</span>,<span class="string">&quot;/&quot;</span>);</span><br><span class="line">	<span class="comment">// 注册session变量,赋值为用户的名称</span></span><br><span class="line">	<span class="variable">$_SESSION</span>[<span class="string">&#x27;user_name&#x27;</span>]=<span class="literal">null</span>;</span><br><span class="line">	<span class="comment">// 赋值为用户id</span></span><br><span class="line">	<span class="variable">$_SESSION</span>[<span class="string">&#x27;uid&#x27;</span>]=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/12/06/php%E5%AD%A6%E4%B9%A0/blog\source\_posts\image-20211213160703940.png" alt="image-20211213160703940" style="zoom:80%;">
+
+<h2 id="用户操作权限实例"><a href="#用户操作权限实例" class="headerlink" title="用户操作权限实例"></a>用户操作权限实例</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">&lt;script text=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">form</span>)</span>&#123;</span><br><span class="line"> <span class="keyword">if</span>(form.user.value==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">	 alert(<span class="string">&quot;请输入用户名:&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span>(form.pwd.value==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">	alert(<span class="string">&quot;请输入密码:&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> form.submit();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//为了防止其他的用户非法登陆系统</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$_SESSION</span>[<span class="string">&#x27;user&#x27;</span>]==<span class="string">&quot;&quot;</span>)&#123;</span><br><span class="line">	<span class="keyword">echo</span><span class="string">&#x27;&lt;script type=&quot;text/javascript&quot;&gt;alert(&quot;请使用正确的途径登陆:&quot;);history.back();&lt;/script&gt;&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form name=<span class="string">&quot;form 1&quot;</span> method=<span class="string">&quot;post&quot;</span> action=<span class="string">&quot;test.php&quot;</span>&gt;</span><br><span class="line">&lt;table width=<span class="string">&quot;529&quot;</span> height=<span class="string">&quot;390&quot;</span> border=<span class="string">&quot;0&quot;</span> cellpadding=<span class="string">&quot;0&quot;</span>&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">	&lt;td valign=<span class="string">&quot;top&quot;</span>&gt;</span><br><span class="line">		&lt;table width=<span class="string">&quot;520&quot;</span> border=<span class="string">&quot;0&quot;</span> cellpadding=<span class="string">&quot;0&quot;</span> cellspacing=<span class="string">&quot;0&quot;</span>&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">		&lt;td width=<span class="string">&quot;24&quot;</span> align=<span class="string">&quot;right&quot;</span>&gt;用户名:&lt;/td&gt;</span><br><span class="line">		&lt;td width=<span class="string">&quot;24&quot;</span> align=<span class="string">&quot;left&quot;</span>&gt;</span><br><span class="line">		&lt;input name=<span class="string">&quot;user&quot;</span> type=<span class="string">&quot;text&quot;</span> id=<span class="string">&quot;user&quot;</span> size=<span class="string">&quot;20&quot;</span>&gt;</span><br><span class="line">		&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td width=<span class="string">&quot;24&quot;</span> align=<span class="string">&quot;right&quot;</span>&gt;密码:&lt;/td&gt;</span><br><span class="line">		&lt;td width=<span class="string">&quot;24&quot;</span> align=<span class="string">&quot;left&quot;</span>&gt;</span><br><span class="line">		&lt;input name=<span class="string">&quot;pwd&quot;</span> type=<span class="string">&quot;password&quot;</span> id=<span class="string">&quot;pwd&quot;</span> size=<span class="string">&quot;20&quot;</span>&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">	&lt;td height=<span class="string">&quot;24&quot;</span> colspan=<span class="string">&quot;2&quot;</span>&gt;</span><br><span class="line">		&lt;input name=<span class="string">&quot;submit&quot;</span> type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;提交&quot;</span> onclick=<span class="string">&quot;return check(form);&quot;</span>&gt;</span><br><span class="line">		&lt;input name=<span class="string">&quot;reset&quot;</span> type=<span class="string">&quot;reset&quot;</span> value=<span class="string">&quot;重置&quot;</span>&gt;</span><br><span class="line">	&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">	&lt;td height=<span class="string">&quot;76&quot;</span>&gt;</span><br><span class="line">		&lt;span&gt;超级用户:admin&amp;nbps;密码:<span class="number">111</span>&lt;/span&gt;</span><br><span class="line">		&lt;br&gt;&lt;br&gt;</span><br><span class="line">		&lt;span&gt;普通用户:tom&amp;nbps;密码:<span class="number">000</span>&lt;/span&gt;</span><br><span class="line">		&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">		&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">            </span><br><span class="line"><span class="comment">//session变量</span></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">session_start();</span><br><span class="line"><span class="variable">$_SESSION</span>[<span class="string">&#x27;user&#x27;</span>]=<span class="variable">$_POST</span>[<span class="string">&#x27;user&#x27;</span>];</span><br><span class="line"><span class="variable">$_SESSION</span>[<span class="string">&#x27;pwd&#x27;</span>]=<span class="variable">$_POST</span>[<span class="string">&#x27;pwd&#x27;</span>]</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;table align=<span class="string">&quot;center&quot;</span> cellpadding=<span class="string">&quot;0&quot;</span> cellspacing=<span class="string">&quot;0&quot;</span>&gt;</span><br><span class="line">	&lt;tr align=<span class="string">&quot;center&quot;</span>&gt; valign=<span class="string">&quot;middle&quot;</span>&gt;</span><br><span class="line">		&lt;td style=<span class="string">&quot;width:140px;color:red;&quot;</span>&gt;当前用户:</span><br><span class="line">		&lt;!--输出当前用户级别--&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$_SESSION</span>[<span class="string">&#x27;user&#x27;</span>]==<span class="string">&#x27;admin&#x27;</span>&amp;&amp;<span class="variable">$_SESSION</span>[<span class="string">&#x27;pwd&#x27;</span>]==<span class="string">&#x27;111&#x27;</span>)&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&quot;管理员&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&quot;普通用户&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"> &lt;/td&gt;</span><br><span class="line"> &lt;td width=<span class="string">&quot;70&quot;</span>&gt;&lt;a href=<span class="string">&quot;default.php&quot;</span>&gt;首页&lt;/a&gt;&lt;td&gt;</span><br><span class="line"> &lt;td width=<span class="string">&quot;70&quot;</span>&gt;&lt;a href=<span class="string">&quot;default.php&quot;</span>&gt;文章&lt;/a&gt;&lt;td&gt;</span><br><span class="line"> &lt;td width=<span class="string">&quot;70&quot;</span>&gt;&lt;a href=<span class="string">&quot;default.php&quot;</span>&gt;相册&lt;/a&gt;&lt;td&gt;</span><br><span class="line"> &lt;td width=<span class="string">&quot;70&quot;</span>&gt;&lt;a href=<span class="string">&quot;default.php&quot;</span>&gt;修改密码&lt;/a&gt;&lt;td&gt;</span><br><span class="line"> <span class="meta">&lt;?php</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$_SESSION</span>[<span class="string">&#x27;user&#x27;</span>]==<span class="string">&#x27;admin&#x27;</span>&amp;&amp;<span class="variable">$_SESSION</span>[<span class="string">&#x27;pwd&#x27;</span>]==<span class="string">&#x27;111&#x27;</span>)&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&#x27;&lt;td width=&quot;100&quot;&gt;|&lt;a href=&quot;default.php&quot;&gt;用户管理&lt;/a&gt;&lt;td&gt;&#x27;</span>;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"> <span class="meta">?&gt;</span></span><br><span class="line"> &lt;td width=<span class="string">&quot;100&quot;</span>&gt;|&lt;a href=<span class="string">&quot;safe.php&quot;</span>&gt;注销用户&lt;/a&gt;&lt;td&gt;</span><br><span class="line"> &lt;/tr&gt;</span><br><span class="line"> &lt;/table&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除和销毁session"><a href="#删除和销毁session" class="headerlink" title="删除和销毁session"></a>删除和销毁session</h2><h3 id="删除单个会话"><a href="#删除单个会话" class="headerlink" title="删除单个会话"></a>删除单个会话</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unset</span>(<span class="variable">$_SESSION</span>[<span class="string">&#x27;user&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除多个会话"><a href="#删除多个会话" class="headerlink" title="删除多个会话"></a>删除多个会话</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_SESSION</span>=<span class="keyword">array</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="结束当前会话"><a href="#结束当前会话" class="headerlink" title="结束当前会话"></a>结束当前会话</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session_destroy();</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-图像操作"><a href="#8-图像操作" class="headerlink" title="8.图像操作"></a>8.图像操作</h1><h2 id="8-1图像的基本操作"><a href="#8-1图像的基本操作" class="headerlink" title="8.1图像的基本操作"></a>8.1图像的基本操作</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">header(<span class="string">&#x27;Content-type:image/jpeg&#x27;</span>);<span class="comment">//最好放在最前面 可以设置charset的方式</span></span><br><span class="line"><span class="variable">$img</span>=imagecreatetruecolor(<span class="number">200</span>,<span class="number">200</span>);<span class="comment">//新建一个图像</span></span><br><span class="line"><span class="variable">$color1</span>=imagecolorallocate(<span class="variable">$img</span>,<span class="number">92</span>,<span class="number">34</span>,<span class="number">35</span>);<span class="comment">//分配颜色</span></span><br><span class="line"><span class="variable">$color2</span>=imagecolorallocate(<span class="variable">$img</span>,<span class="number">200</span>,<span class="number">200</span>,<span class="number">200</span>);</span><br><span class="line">imagefill(<span class="variable">$img</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">$color1</span>);</span><br><span class="line">imagerectangle(<span class="variable">$img</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="variable">$color2</span>);</span><br><span class="line">imagejpeg(<span class="variable">$img</span>); <span class="comment">//创建图像 最好用相对路径</span></span><br><span class="line">imagedestroy(<span class="variable">$img</span>);<span class="comment">//销毁图像</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//绘制函数</span></span><br><span class="line">imageellipse( resource <span class="variable">$image</span>, <span class="keyword">int</span> <span class="variable">$cx</span>, <span class="keyword">int</span> <span class="variable">$cy</span>, <span class="keyword">int</span> <span class="variable">$width</span>, <span class="keyword">int</span> <span class="variable">$height</span>, <span class="keyword">int</span> <span class="variable">$color</span>) : <span class="keyword">bool</span><span class="comment">//在指定的坐标上画一个椭圆。 </span></span><br><span class="line">    </span><br><span class="line">imagearc( resource <span class="variable">$image</span>, <span class="keyword">int</span> <span class="variable">$cx</span>, <span class="keyword">int</span> <span class="variable">$cy</span>, <span class="keyword">int</span> <span class="variable">$w</span>, <span class="keyword">int</span> <span class="variable">$h</span>, <span class="keyword">int</span> <span class="variable">$s</span>, <span class="keyword">int</span> <span class="variable">$e</span>, <span class="keyword">int</span> <span class="variable">$color</span>) : <span class="keyword">bool</span></span><br><span class="line"><span class="comment">//imagearc() 以 cx，cy（图像左上角为 0, 0）为中心在 image 所代表的图像中画一个椭圆弧。w 和 h 分别指定了椭圆的宽度和高度，起始和结束点以 s 和 e 参数以角度指定。0°位于三点钟位置，以顺时针方向绘画。 </span></span><br><span class="line"></span><br><span class="line">imagepolygon( resource <span class="variable">$image</span>, <span class="keyword">array</span> <span class="variable">$points</span>, <span class="keyword">int</span> <span class="variable">$num_points</span>, <span class="keyword">int</span> <span class="variable">$color</span>) : <span class="keyword">bool</span></span><br><span class="line"><span class="comment">//imagepolygon() 在图像中创建一个多边形。points 是一个 PHP 数组，包含了多边形的各个顶点坐标，即 points[0]= x0，points[1] = y0，points[2]= x1，points[3] = y1，以此类推。num_points 是顶点的总数。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="8-2验证码实例"><a href="#8-2验证码实例" class="headerlink" title="8.2验证码实例"></a>8.2验证码实例</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">header(<span class="string">&#x27;Content-type:image/jpeg&#x27;</span>); <span class="comment">//发送原生 HTTP 头 </span></span><br><span class="line"><span class="variable">$width</span>=<span class="number">120</span>;<span class="comment">//设置宽度</span></span><br><span class="line"><span class="variable">$height</span>=<span class="number">40</span>;<span class="comment">//设置高度</span></span><br><span class="line"><span class="variable">$element</span>=<span class="keyword">array</span>(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;f&#x27;</span>,<span class="string">&#x27;g&#x27;</span>,<span class="string">&#x27;r&#x27;</span>);<span class="comment">//含多个字符的数组</span></span><br><span class="line"><span class="variable">$string</span>=<span class="string">&#x27;&#x27;</span>;<span class="comment">//初始化字符串</span></span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="number">5</span>;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	<span class="variable">$string</span>.=<span class="variable">$element</span>[rand(<span class="number">0</span>,count(<span class="variable">$element</span>)-<span class="number">1</span>)];<span class="comment">//生成要显示的字符串</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$img</span>=imagecreatetruecolor(<span class="variable">$width</span>,<span class="variable">$height</span>);<span class="comment">//新建新的画布</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$color_bg</span>=imagecolorallocate(<span class="variable">$img</span>,rand(<span class="number">200</span>,<span class="number">255</span>),rand(<span class="number">200</span>,<span class="number">255</span>),rand(<span class="number">200</span>,<span class="number">255</span>));</span><br><span class="line"><span class="variable">$color_border</span>=imagecolorallocate(<span class="variable">$img</span>,rand(<span class="number">200</span>,<span class="number">255</span>),rand(<span class="number">200</span>,<span class="number">255</span>),rand(<span class="number">200</span>,<span class="number">255</span>));</span><br><span class="line"><span class="variable">$color_string</span>=imagecolorallocate(<span class="variable">$img</span>,rand(<span class="number">10</span>,<span class="number">100</span>),rand(<span class="number">10</span>,<span class="number">100</span>),rand(<span class="number">10</span>,<span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">imagefill(<span class="variable">$img</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">$color_bg</span>);<span class="comment">//对img对象进行填充</span></span><br><span class="line">imagerectangle(<span class="variable">$img</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">$width</span>-<span class="number">1</span>,<span class="variable">$height</span>-<span class="number">1</span>,<span class="variable">$color_border</span>);<span class="comment">//在img上画一个矩形</span></span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="number">100</span>;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	imagesetpixel(<span class="variable">$img</span>,rand(<span class="number">0</span>,<span class="variable">$width</span>-<span class="number">1</span>),rand(<span class="number">0</span>,<span class="variable">$height</span>-<span class="number">1</span>),imagecolorallocate(<span class="variable">$img</span>,rand(<span class="number">10</span>,<span class="number">100</span>),rand(<span class="number">10</span>,<span class="number">100</span>),rand(<span class="number">10</span>,<span class="number">100</span>)));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="number">3</span>;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	imageline(<span class="variable">$img</span>,rand(<span class="number">0</span>,<span class="variable">$width</span>/<span class="number">2</span>),rand(<span class="number">0</span>,<span class="variable">$height</span>),rand(<span class="variable">$width</span>/<span class="number">2</span>,<span class="variable">$width</span>),rand(<span class="number">0</span>,<span class="variable">$height</span>),imagecolorallocate(<span class="variable">$img</span>,rand(<span class="number">10</span>,<span class="number">100</span>),rand(<span class="number">10</span>,<span class="number">100</span>),rand(<span class="number">10</span>,<span class="number">100</span>)));</span><br><span class="line">&#125;</span><br><span class="line">imagettftext(<span class="variable">$img</span>,<span class="number">25</span>,rand(-<span class="number">5</span>,<span class="number">5</span>),rand(<span class="number">5</span>,<span class="number">25</span>),rand(<span class="number">20</span>,<span class="number">30</span>),<span class="variable">$color_string</span>,<span class="string">&#x27;font/FZZJ-JYTJW.TTF&#x27;</span>,<span class="variable">$string</span>);<span class="comment">//使用相对路径引入字体</span></span><br><span class="line">imagejpeg(<span class="variable">$img</span>);<span class="comment">//输出图像到浏览器或者文件</span></span><br><span class="line">imagedestroy(<span class="variable">$img</span>);<span class="comment">//000</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="8-3水印"><a href="#8-3水印" class="headerlink" title="8.3水印"></a>8.3水印</h2><h3 id="8-3-1文字水印"><a href="#8-3-1文字水印" class="headerlink" title="8.3.1文字水印"></a>8.3.1文字水印</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加一个简单的文字水印</span></span><br><span class="line">header(<span class="string">&#x27;Content-type:image/jpeg&#x27;</span>); <span class="comment">//发送原生 HTTP 头 </span></span><br><span class="line"><span class="variable">$img</span>=imagecreatefromjpeg(<span class="string">&#x27;images/girl.jpeg&#x27;</span>);</span><br><span class="line"><span class="variable">$color</span>=imagecolorallocate(<span class="variable">$img</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>);</span><br><span class="line">imagettftext(<span class="variable">$img</span>,<span class="number">14</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">100</span>,<span class="variable">$color</span>,<span class="string">&#x27;font/black.ttf&#x27;</span>,<span class="string">&#x27;木子南&#x27;</span>);</span><br><span class="line"></span><br><span class="line">imagejpeg(<span class="variable">$img</span>,<span class="string">&#x27;wow.jpeg&#x27;</span>);</span><br><span class="line">imagedestroy(<span class="variable">$img</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">imagesx( resource <span class="variable">$image</span>) : <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//imagesx() 返回 image 所代表的图像的宽度。</span></span><br><span class="line"></span><br><span class="line">imagesy( resource <span class="variable">$image</span>) : <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//imagesy() 返回 image 所代表的图像的高度。 </span></span><br><span class="line"></span><br><span class="line">imagettfbbox( <span class="keyword">float</span> <span class="variable">$size</span>, <span class="keyword">float</span> <span class="variable">$angle</span>, <span class="keyword">string</span> <span class="variable">$fontfile</span>, <span class="keyword">string</span> <span class="variable">$text</span>) : <span class="keyword">array</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*本函数计算并返回一个包围着 TrueType 文本范围的虚拟方框的像素大小。 </span></span><br><span class="line"><span class="comment">size 像素单位的字体大小。 angle text 将被度量的角度大小。 fontfile TrueType 字体文件的文件名（可以是 URL）。根据 PHP 所使用的 GD 库版本，可能尝试搜索那些不是以 &#x27;/&#x27; 开头的文件名并加上 &#x27;.ttf&#x27; 的后缀并搜索库定义的字体路径。  text 要度量的字符串。 imagettfbbox() 返回一个含有 8 个单元的数组表示了文本外框的四个角： </span></span><br><span class="line"><span class="comment">0 左下角 X 位置 </span></span><br><span class="line"><span class="comment">1 左下角 Y 位置 </span></span><br><span class="line"><span class="comment">2 右下角 X 位置 </span></span><br><span class="line"><span class="comment">3 右下角 Y 位置 </span></span><br><span class="line"><span class="comment">4 右上角 X 位置 </span></span><br><span class="line"><span class="comment">5 右上角 Y 位置 </span></span><br><span class="line"><span class="comment">6 左上角 X 位置 </span></span><br><span class="line"><span class="comment">7 左上角 Y 位置 </span></span><br><span class="line"><span class="comment">这些点是相对于文本的而和角度无关，因此&quot;左上角&quot;指的是以水平方向看文字时其左上角。*/</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-2图片水印"><a href="#8-3-2图片水印" class="headerlink" title="8.3.2图片水印"></a>8.3.2图片水印</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">imagecopy( resource <span class="variable">$dst_im</span>, resource <span class="variable">$src_im</span>, <span class="keyword">int</span> <span class="variable">$dst_x</span>, <span class="keyword">int</span> <span class="variable">$dst_y</span>, <span class="keyword">int</span> <span class="variable">$src_x</span>, <span class="keyword">int</span> <span class="variable">$src_y</span>, <span class="keyword">int</span> <span class="variable">$src_w</span>, <span class="keyword">int</span> <span class="variable">$src_h</span>) : <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将 src_im 图像中坐标从 src_x，src_y  开始，宽度为 src_w，高度为 src_h 的一部分拷贝到 dst_im 图像中坐标为 dst_x 和 dst_y 的位置上。 </span></span><br><span class="line">imagecopymerge( resource <span class="variable">$dst_im</span>, resource <span class="variable">$src_im</span>, <span class="keyword">int</span> <span class="variable">$dst_x</span>, <span class="keyword">int</span> <span class="variable">$dst_y</span>, <span class="keyword">int</span> <span class="variable">$src_x</span>, <span class="keyword">int</span> <span class="variable">$src_y</span>, <span class="keyword">int</span> <span class="variable">$src_w</span>, <span class="keyword">int</span> <span class="variable">$src_h</span>, <span class="keyword">int</span> <span class="variable">$pct</span>) : <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将 src_im 图像中坐标从 src_x，src_y  开始，宽度为 src_w，高度为 src_h 的一部分拷贝到 dst_im 图像中坐标为 dst_x 和 dst_y 的位置上。两图像将根据 pct 来决定合并程度，其值范围从 0 到 100。当 pct = 0 时，实际上什么也没做，当为 100 时对于调色板图像本函数和 imagecopy() 完全一样，它对真彩色图像实现了 alpha 透明。 </span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-3透明处理"><a href="#8-3-3透明处理" class="headerlink" title="8.3.3透明处理"></a>8.3.3透明处理</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">imagecolorat( resource <span class="variable">$image</span>, <span class="keyword">int</span> <span class="variable">$x</span>, <span class="keyword">int</span> <span class="variable">$y</span>) : <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//返回 image 所指定的图形中指定位置像素的颜色索引值。 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果 PHP 编译时加上了 GD 库 2.0 或更高的版本并且图像是真彩色图像，则本函数以整数返回该点的 RGB 值。用移位加掩码来取得红，绿，蓝各自成分的值： </span></span><br><span class="line"></span><br><span class="line">imagecolorexact( resource <span class="variable">$image</span>, <span class="keyword">int</span> <span class="variable">$red</span>, <span class="keyword">int</span> <span class="variable">$green</span>, <span class="keyword">int</span> <span class="variable">$blue</span>) : <span class="keyword">int</span></span><br><span class="line"><span class="comment">//返回图像调色板中指定颜色的索引值。 </span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">imagecolortransparent( resource <span class="variable">$image</span>, <span class="keyword">int</span> <span class="variable">$color</span> = ?) : <span class="keyword">int</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//imagecolortransparent() 将 image 图像中的透明色设定为 color。image 是 imagecreatetruecolor() 返回的图像标识符，color 是 imagecolorallocate() 返回的颜色标识符。 </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-4缩放和裁剪"><a href="#8-4缩放和裁剪" class="headerlink" title="8.4缩放和裁剪"></a>8.4缩放和裁剪</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">imagecopyresampled( resource <span class="variable">$dst_image</span>, resource <span class="variable">$src_image</span>, <span class="keyword">int</span> <span class="variable">$dst_x</span>, <span class="keyword">int</span> <span class="variable">$dst_y</span>, <span class="keyword">int</span> <span class="variable">$src_x</span>, <span class="keyword">int</span> <span class="variable">$src_y</span>, <span class="keyword">int</span> <span class="variable">$dst_w</span>, <span class="keyword">int</span> <span class="variable">$dst_h</span>, <span class="keyword">int</span> <span class="variable">$src_w</span>, <span class="keyword">int</span> <span class="variable">$src_h</span>) : <span class="keyword">bool</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//imagecopyresampled() 将一幅图像中的一块正方形区域拷贝到另一个图像中，平滑地插入像素值，因此，尤其是，减小了图像的大小而仍然保持了极大的清晰度。 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//In other words, imagecopyresampled() will take arectangular area from src_image of width src_w and height src_h atposition (src_x,src_y)and place it in a rectangular area of dst_image of width dst_w and height dst_hat position (dst_x,dst_y). </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果源和目标的宽度和高度不同，则会进行相应的图像收缩和拉伸。坐标指的是左上角。本函数可用来在同一幅图内部拷贝（如果 dst_image 和 src_image 相同的话）区域，但如果区域交迭的话则结果不可预知。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="9-文件操作"><a href="#9-文件操作" class="headerlink" title="9.文件操作"></a>9.文件操作</h1><h2 id="9-1获取文件的信息"><a href="#9-1获取文件的信息" class="headerlink" title="9.1获取文件的信息"></a>9.1获取文件的信息</h2><h3 id="9-1-1获取文件的时间属性"><a href="#9-1-1获取文件的时间属性" class="headerlink" title="9.1.1获取文件的时间属性"></a>9.1.1获取文件的时间属性</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">is_file()</span><br><span class="line"><span class="comment">//判断是否是一个文件</span></span><br><span class="line">is_dir()</span><br><span class="line"><span class="comment">//判断是不是一个目录</span></span><br><span class="line">   </span><br><span class="line">file_exists( <span class="keyword">string</span> <span class="variable">$filename</span>) : <span class="keyword">bool</span></span><br><span class="line"><span class="comment">//检查文件或目录是否存在。 </span></span><br><span class="line">filesize( <span class="keyword">string</span> <span class="variable">$filename</span>) : <span class="keyword">int</span></span><br><span class="line"><span class="comment">//取得指定文件的大小。 </span></span><br><span class="line"></span><br><span class="line">fileatime( <span class="keyword">string</span> <span class="variable">$filename</span>) : <span class="keyword">int</span></span><br><span class="line"><span class="comment">//取得文件的上次访问时间。 </span></span><br><span class="line"><span class="variable">$a</span>=fileatime(<span class="string">&#x27;wow.jpeg&#x27;</span>);</span><br><span class="line"><span class="keyword">echo</span> date(<span class="string">&#x27;Y-m-d H:i:s&#x27;</span>,<span class="variable">$a</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$time</span>=filectime(<span class="string">&#x27;wow.jpeg&#x27;</span>);</span><br><span class="line"><span class="comment">//取得文件的 inode 修改时间。 </span></span><br><span class="line"><span class="keyword">echo</span> date(<span class="string">&#x27;H:i:s Y-m-d&#x27;</span>,<span class="variable">$time</span>);</span><br><span class="line"></span><br><span class="line">filemtime( <span class="keyword">string</span> <span class="variable">$filename</span>) : <span class="keyword">int</span></span><br><span class="line"><span class="comment">//本函数返回文件中的数据块上次被写入的时间，也就是说，文件的内容上次被修改的时间。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-1-2从路径获取文件名"><a href="#9-1-2从路径获取文件名" class="headerlink" title="9.1.2从路径获取文件名"></a>9.1.2从路径获取文件名</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> basename(<span class="keyword">string</span> <span class="variable">$path</span>[,<span class="keyword">string</span> <span class="variable">$suffix</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-1-3打开和关闭文件"><a href="#9-1-3打开和关闭文件" class="headerlink" title="9.1.3打开和关闭文件"></a>9.1.3打开和关闭文件</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resource fopen(<span class="keyword">string</span> <span class="variable">$filename</span>,<span class="keyword">string</span> <span class="variable">$mode</span>[,<span class="keyword">bool</span> <span class="variable">$use_include_path</span>=<span class="literal">false</span>[,resource <span class="variable">$context</span>]])</span><br><span class="line">    </span><br><span class="line">用fopen函数可以对远程的文件进行读操作</span><br><span class="line">    </span><br><span class="line">fclose(resource <span class="variable">$name</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="10php操作mysql数据库"><a href="#10php操作mysql数据库" class="headerlink" title="10php操作mysql数据库"></a>10php操作mysql数据库</h1><h2 id="10-1基本步骤"><a href="#10-1基本步骤" class="headerlink" title="10.1基本步骤"></a>10.1基本步骤</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">连接数据库服务器</span><br><span class="line">mysql_connect();</span><br><span class="line">选择数据库</span><br><span class="line">mysql_select_db();</span><br><span class="line">执行sql语句</span><br><span class="line">mysql_query();</span><br><span class="line">关闭数据集</span><br><span class="line">mysql_free_result(<span class="variable">$result</span>);</span><br><span class="line">关闭数据库服务器</span><br><span class="line">mysql_close(<span class="variable">$Link</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="10-2操作"><a href="#10-2操作" class="headerlink" title="10.2操作"></a>10.2操作</h2><h3 id="10-2-1连接数据库"><a href="#10-2-1连接数据库" class="headerlink" title="10.2.1连接数据库"></a>10.2.1连接数据库</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql_connect( <span class="keyword">string</span> <span class="variable">$server</span> = ini_get(<span class="string">&quot;mysql.default_host&quot;</span>), <span class="keyword">string</span> <span class="variable">$username</span> = ini_get(<span class="string">&quot;mysql.default_user&quot;</span>), <span class="keyword">string</span> <span class="variable">$password</span> = ini_get(<span class="string">&quot;mysql.default_password&quot;</span>), <span class="keyword">bool</span> <span class="variable">$new_link</span> = <span class="literal">false</span>, <span class="keyword">int</span> <span class="variable">$client_flags</span> = <span class="number">0</span>) : resource|<span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//打开或重复使用一个到 MySQL 服务器的连接。 </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="11-面向对象编程"><a href="#11-面向对象编程" class="headerlink" title="11.面向对象编程"></a>11.面向对象编程</h1><h2 id="11-1类的构成"><a href="#11-1类的构成" class="headerlink" title="11.1类的构成"></a>11.1类的构成</h2><h3 id="11-1-1类的成员变量"><a href="#11-1-1类的成员变量" class="headerlink" title="11.1.1类的成员变量"></a>11.1.1类的成员变量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="variable">$name</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="variable">$action</span>;</span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">function__construct(<span class="variable">$_name</span>,<span class="variable">$_action</span>)&#123;</span><br><span class="line">	<span class="keyword">$this</span>-&gt;name=<span class="variable">$_name</span>;</span><br><span class="line">	<span class="keyword">$this</span>-&gt;action=<span class="variable">$_action</span>;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">//自定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">action</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;name.<span class="keyword">$this</span>-&gt;action;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//析构函数</span></span><br><span class="line">function__destruct()&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;name;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;action;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">//这里使用__destruct()函数清理由析构函数创建爱你的$name,$action资源,这个过程是自动进行的,不返回任何的消息,析构函数是不必要的,因为php内置了垃圾回收机制.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="variable">$name</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="variable">$action</span>;</span><br><span class="line">funtion action()&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;name.<span class="keyword">$this</span>-&gt;action; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//有构造类的函数</span></span><br><span class="line"><span class="variable">$class1</span>=<span class="keyword">new</span> A(<span class="string">&quot;mike&quot;</span>,<span class="string">&quot;fuck herself&quot;</span>);</span><br><span class="line"><span class="variable">$class1</span>-&gt;action();</span><br><span class="line"><span class="comment">//没有构造类的函数</span></span><br><span class="line"><span class="variable">$class2</span>=<span class="keyword">new</span> class2();</span><br><span class="line"><span class="variable">$class2</span>-&gt;name=<span class="string">&quot;nike&quot;</span>;</span><br><span class="line"><span class="variable">$class2</span>-&gt;action=<span class="string">&quot;fuck me&quot;</span>;</span><br><span class="line"><span class="variable">$class2</span>-&gt;action()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在一个php文件中,导入 另一个php文件</p>
+<p>require(‘filename’);</p>
+</blockquote>
+<blockquote>
+<p>可以直接使用print_r()函数进行对象的输出</p>
+</blockquote>
+<h3 id="11-1-1静态属性"><a href="#11-1-1静态属性" class="headerlink" title="11.1.1静态属性"></a>11.1.1静态属性</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myclass</span></span>&#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="built_in">static</span> <span class="variable">$myProperty</span>;</span><br><span class="line">&#125;</span><br><span class="line">myclass::<span class="variable">$myProperty</span>=<span class="number">123</span>;<span class="comment">//初始化</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="11-1-3类常量"><a href="#11-1-3类常量" class="headerlink" title="11.1.3类常量"></a>11.1.3类常量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义类常量,需要使用const关键字</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line"> <span class="keyword">const</span> MYCONST=<span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> MyClass::MYCONST;</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-1-4方法"><a href="#11-1-4方法" class="headerlink" title="11.1.4方法"></a>11.1.4方法</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在创建方法时可以对方法的可见性进行约定</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&#x27;这是代码&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$object</span>=<span class="keyword">new</span> MyClass;</span><br><span class="line"><span class="variable">$object</span>-&gt;hello();</span><br><span class="line"><span class="comment">//方法的参数:$Parma,$parm2;</span></span><br><span class="line"><span class="comment">//返回值:</span></span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="11-1-4-1静态方法"><a href="#11-1-4-1静态方法" class="headerlink" title="11.1.4.1静态方法"></a>11.1.4.1静态方法</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>()</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">staticmethod</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//方法体</span></span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyClass::staticmethod();</span><br><span class="line"><span class="comment">//与类有关但与实例对象无关的功能</span></span><br><span class="line"></span><br><span class="line">可以使用<span class="built_in">self</span>访问<span class="built_in">static</span>变量</span><br><span class="line">与<span class="keyword">$this</span>的作用类似</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-1-5用-get-set-call-重载对象"><a href="#11-1-5用-get-set-call-重载对象" class="headerlink" title="11.1.5用__get(),__set(),call()重载对象"></a>11.1.5用__get(),__set(),call()重载对象</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">用__get()和__set()方法重载属性访问:</span><br><span class="line"><span class="comment">//get和set方法可以将不存在的属性存储到一个私有的数组中.这种方法可以创建一个类,类中的虚拟属性的个数几乎不受限制,而且这些虚拟属性可以安全地和这个类的真是属性相隔离.这种方法经常用来创建需要保存任意数据的类</span></span><br><span class="line"><span class="keyword">public</span> function__get(<span class="variable">$propertyName</span>)&#123;</span><br><span class="line">    <span class="comment">//return &#x27;okok&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/用__call()重载方法调用</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<h1 id="12-Ajax技术的了解"><a href="#12-Ajax技术的了解" class="headerlink" title="12.Ajax技术的了解"></a>12.Ajax技术的了解</h1><blockquote>
+<p>对于用户的每个行为,通过对Ajax进行一次javascript调用,能够在不刷新整个页面的情况下,对于部分数据进行更新.</p>
+</blockquote>
+<blockquote>
+<p>AJAX 不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。</p>
+</blockquote>
+<h2 id="12-1javascript的介绍"><a href="#12-1javascript的介绍" class="headerlink" title="12.1javascript的介绍"></a>12.1javascript的介绍</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">javascript通过修改网页元素的css样式,达到动态地改变网页的外观.</span><br><span class="line">&lt;script src=外部脚本文件的路径&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="12-2html介绍"><a href="#12-2html介绍" class="headerlink" title="12.2html介绍"></a>12.2html介绍</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;类型&quot;</span> <span class="attr">name</span>=<span class="string">&quot;名称&quot;</span> <span class="attr">value</span>=<span class="string">&quot;可选属性指定表单元素的初始值&quot;</span> <span class="attr">Size</span>=<span class="string">&quot;元素显示长度&quot;</span> <span class="attr">maxlength</span>=<span class="string">&quot;指定在text和password表单元素中可用于文本输入的表单元素&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;指定按钮是否选中&quot;</span> <span class="attr">src</span>=<span class="string">&quot;url表示图像的位置&quot;</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B9%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF/" class="post-title-link" itemprop="url">计算机组成原理之流水线技术</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-30 17:24:14" itemprop="dateCreated datePublished" datetime="2021-11-30T17:24:14+08:00">2021-11-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-12-21 08:56:48" itemprop="dateModified" datetime="2021-12-21T08:56:48+08:00">2021-12-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>[TOC]</p>
+<h1 id="一-流水线的相关："><a href="#一-流水线的相关：" class="headerlink" title="一.流水线的相关："></a>一.流水线的相关：</h1><p>​    1）结构相关：硬件方面（当硬件资源满足不了指令重叠执行时的要求时产生的）</p>
+<p>​    2）数据相关：如果一条指令需要的某个数据正在被之前的指令操作着，那这条指令就无法执行，就导致了数据相关.（指令在流水线中重叠执行时，当后继指令需要用到前面指令的执行结果时发生的）</p>
+<p>​    3）控制相关：如果现在要执行哪条指令，是由之前指令的运行结果决定，而现在那条之前指令的结果还没产生，就导致了控制相关.（当流水线遇到分支指令和其他改变PC值得指令时引起的）</p>
+<h2 id="1-1结构相关"><a href="#1-1结构相关" class="headerlink" title="1.1结构相关"></a>1.1结构相关</h2><p>由访存引起的结构相关：取数和取指都需要访存。</p>
+<p>·1：引起流水线停顿（stall），产生空泡（bubble）</p>
+<p>·2：</p>
+<p>解决访存冲突的方法：设置两个独立的存储器分别存放操作数和指令。</p>
+<h2 id="1-2数据相关"><a href="#1-2数据相关" class="headerlink" title="1.2数据相关"></a>1.2数据相关</h2><p>1)RAW(Read After Write）后面指令用到前面所写的数据。</p>
+<p>2)WAW(Write After Write）–两条指令写同一个单元，在简单流水线中没有此类相关，因为不会乱序执行</p>
+<p>3)WAR(Write After Read)    后面指令覆盖前面指令所读的单元，在简单流水线中没有此类相关</p>
+<p>•在动态流水线中会有WAR和WAW相关</p>
+<h3 id="1-2-1解决数据相关的方法"><a href="#1-2-1解决数据相关的方法" class="headerlink" title="1.2.1解决数据相关的方法"></a>1.2.1解决数据相关的方法</h3><h4 id="1-2-1-1-forwarding技术"><a href="#1-2-1-1-forwarding技术" class="headerlink" title="1.2.1.1 forwarding技术"></a>1.2.1.1 forwarding技术</h4><blockquote>
+<p>（旁路技术，相关专用通路技术）</p>
+<p>数据在EX阶段就被计算出，所以可将它送到下一条指令ALU的输入，而不需要添加气泡（bubble）。</p>
+</blockquote>
+<h2 id="1-3控制相关"><a href="#1-3控制相关" class="headerlink" title="1.3控制相关"></a>1.3控制相关</h2><blockquote>
+<p>主要是由转移指令引起的;</p>
+<p>解决方法：尽早判断转移是否发生，尽早生成转移目标地址，预取转移成功或不成功两个控制流方向上的目标指令，加快和提前形成条件码，提高转移方向的猜准率。</p>
+</blockquote>
+<h1 id="二-流水线的性能"><a href="#二-流水线的性能" class="headerlink" title="二.流水线的性能"></a>二.流水线的性能</h1><p>1）吞吐量：</p>
+<p>T=1/▲t</p>
+<p>2）加速比:（speedup Ratio）</p>
+<p>Sp=m·n÷（m+n-1）</p>
+<p>3）效率：</p>
+<p>E=Sp÷m</p>
+<h1 id="三-流水线中的多发技术"><a href="#三-流水线中的多发技术" class="headerlink" title="三.流水线中的多发技术"></a>三.流水线中的多发技术</h1><p>·超标量技术</p>
+<p>·超流水线技术</p>
+<p>·超长指令字技术</p>
+<h1 id="四-动态流水线技术"><a href="#四-动态流水线技术" class="headerlink" title="四.动态流水线技术"></a>四.动态流水线技术</h1><h2 id="指令集并行技术"><a href="#指令集并行技术" class="headerlink" title="指令集并行技术"></a>指令集并行技术</h2><h2 id="动态调度技术"><a href="#动态调度技术" class="headerlink" title="动态调度技术"></a>动态调度技术</h2><h2 id="记分板"><a href="#记分板" class="headerlink" title="记分板"></a>记分板</h2><p>Q j：当前把源寄存器F j当做目标寄存器的功能部件号</p>
+<p>Q k: 当前把源寄存器当作当作目标寄存器的功能部件号</p>
+<p>F i:目标寄存器号</p>
+<p>F j:源寄存器号</p>
+<p>F k:源寄存器号</p>
+<p>R j:指示F j是否可用</p>
+<p>R k:指示F k是否可用</p>
+<h2 id="循环展开技术"><a href="#循环展开技术" class="headerlink" title="循环展开技术"></a>循环展开技术</h2><h2 id="Tomasulo算法"><a href="#Tomasulo算法" class="headerlink" title="Tomasulo算法"></a>Tomasulo算法</h2><h1 id="五-中断系统"><a href="#五-中断系统" class="headerlink" title="五.中断系统"></a>五.中断系统</h1><h2 id="中断请求标记和中断请求判优逻辑"><a href="#中断请求标记和中断请求判优逻辑" class="headerlink" title="中断请求标记和中断请求判优逻辑"></a>中断请求标记和中断请求判优逻辑</h2><p>由于漏电阻的存在，DRAM存储单元经过一段时间会泄放掉其充积的电荷，导致信息丢失或者错误，为了保证存储信息的正确性。需要每隔一段时间为DRAM的所有单元电路进行充电，此过程为刷新。</p>
+<p>刷新分为异步,同步,</p>
+<p>寻址方式主要包括：</p>
+<p>指令寻址</p>
+<p>数据寻址</p>
+<p>主状态周期，节拍电位，节拍脉冲</p>
+<p>cpu中断保护时的两个关键的硬件技术：程序断点和程序状态字</p>
+<p>解释：是指将一种语言编写的程序的一条语句翻译成另一种语言的一条或者多条语句，然后执行。解释完一条语句之后，再解释下一条。</p>
+<p>翻译：是指将一种语言编写的程序的所有语句翻译成另一种语言，然后再执行</p>
+<p>计算机的属性</p>
+<p>如何实现计算机体系结构表现出来的属性</p>
+<p>二进制；</p>
+<p>运算器：</p>
+<p>五个部件：cdd</p>
+<p>指令和数据都在存储器中：并可以按照地址访问</p>
+<p>控制器：</p>
+<p>翻译是指低等级的计算机将高一级机器上的程序整个翻译成低等级计算机能够执行的等效的程序,然后再在低一级的机器上去实现的技术.</p>
+<p>解释是指在低一级的机器上用他的一串语句或者指令来仿真高一级机器上的一条语句或者指令的功能 通过对高一级机器语言程序中的每条语句或者指令解释来实现的技术</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/26/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0(1)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/26/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0(1)/" class="post-title-link" itemprop="url">Mysql数据库学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-26 18:50:36" itemprop="dateCreated datePublished" datetime="2021-11-26T18:50:36+08:00">2021-11-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-28 17:40:51" itemprop="dateModified" datetime="2022-02-28T17:40:51+08:00">2022-02-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="一-sql、DB、DBMS"><a href="#一-sql、DB、DBMS" class="headerlink" title="一.sql、DB、DBMS"></a>一.sql、DB、DBMS</h1><pre><code>DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在）
+DBMS: DataBase Management System（数据库管理系统，常见的有：MySQL Oracle DB2 Sybase           SqlServer...）
+SQL: 结构化查询语言，是一门标准通用的语言。标准的sql适合于所有的数据库产品。
+     SQL属于高级语言。只要能看懂英语单词的，写出来的sql语句，可以读懂什么意思。
+     SQL语句在执行的时候，实际上内部也会先进行编译，然后再执行sql。（sql语句的编译由DBMS完成。）
+     DBMS负责执行sql语句，通过执行sql语句来操作DB当中的数据。
+DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
+</code></pre>
+<h1 id="二-表的概念"><a href="#二-表的概念" class="headerlink" title="二.表的概念"></a>二.表的概念</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">表：<span class="keyword">table</span>是数据库的基本组成单元，所有的数据都以表格的形式组织，目的是可读性强。</span><br><span class="line">一个表包括行和列：</span><br><span class="line">	行：被称为数据<span class="operator">/</span>记录(data)</span><br><span class="line">	列：被称为字段(<span class="keyword">column</span>)</span><br><span class="line">学号(<span class="type">int</span>)	姓名(<span class="type">varchar</span>)	年龄(<span class="type">int</span>)</span><br><span class="line"><span class="comment">------------------------------------</span></span><br><span class="line"><span class="number">110</span>			张三				<span class="number">20</span></span><br><span class="line"><span class="number">120</span>			李四				<span class="number">21</span></span><br></pre></td></tr></table></figure>
+<h1 id="三-字段的属性"><a href="#三-字段的属性" class="headerlink" title="三.字段的属性"></a>三.字段的属性</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名、数据类型、相关的约束。</span><br></pre></td></tr></table></figure>
+<h1 id="四-SQL语句的分类"><a href="#四-SQL语句的分类" class="headerlink" title="四.SQL语句的分类"></a>四.SQL语句的分类</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DQL（数据查询语言）: 查询语句，凡是<span class="keyword">select</span>语句都是DQL。</span><br><span class="line">DML（数据操作语言）：<span class="keyword">insert</span> <span class="keyword">delete</span> update，对表当中的数据进行增删改。</span><br><span class="line">DDL（数据定义语言）：<span class="keyword">create</span> <span class="keyword">drop</span> <span class="keyword">alter</span>，对表结构的增删改。</span><br><span class="line">TCL（事务控制语言）：<span class="keyword">commit</span>提交事务，<span class="keyword">rollback</span>回滚事务。(TCL中的T是       	Transaction)</span><br><span class="line">DCL（数据控制语言）: <span class="keyword">grant</span>授权、<span class="keyword">revoke</span>撤销权限等。</span><br></pre></td></tr></table></figure>
+<h1 id="五-登录数据库"><a href="#五-登录数据库" class="headerlink" title="五.登录数据库"></a>五.登录数据库</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命令行窗口输入：<span class="operator">-</span>uroot <span class="operator">-</span>p你的密码</span><br><span class="line">初始化数据：source 文件路径</span><br><span class="line">(以<span class="keyword">sql</span>结尾的文件称为<span class="keyword">sql</span>脚本，其中包含着许多的<span class="keyword">sql</span>语句)</span><br><span class="line"><span class="keyword">sql</span>脚本中的数据量太大的时候，无法打开，请使用source命令完成初始化。</span><br></pre></td></tr></table></figure>
+
+<h1 id="六-常用sql命令"><a href="#六-常用sql命令" class="headerlink" title="六.常用sql命令"></a>六.常用sql命令</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>) mysql<span class="operator">&gt;</span> <span class="keyword">select</span> database(); 查看当前使用的是哪个数据库</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>) mysql<span class="operator">&gt;</span> <span class="keyword">select</span> version(); 查看mysql的版本号。</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>) \c  命令，结束一条语句。</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>) exit 命令，退出mysql。</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>)<span class="keyword">show</span> tables;(显示当前数据库中的所有的表)</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>)<span class="keyword">create</span> &#123;database<span class="operator">|</span>schema&#125; [if <span class="keyword">not</span> <span class="keyword">exists</span>] 数据库名<span class="operator">/</span><span class="operator">/</span>创建数据库</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>)<span class="keyword">show</span> databases [<span class="keyword">like</span> wild]显示当前有的所有数据库</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>)use db_name 选择要使用的数据库名(该语句可以用来从一个数据库转移到另一个数据库，用<span class="keyword">create</span>语句创建的数据库不会自动成为当前数据库，需要用use语句指定当前的数据库)</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>)<span class="keyword">drop</span> database [if <span class="keyword">exists</span> ]sqlname;删库</span><br><span class="line"></span><br><span class="line"><span class="number">10</span>)<span class="keyword">show</span> <span class="keyword">create</span> database sqlname 查看数据库的定义</span><br><span class="line"></span><br><span class="line"><span class="number">11</span>)对于数据库的修改：<span class="keyword">alter</span> database db_name <span class="keyword">default</span> <span class="type">character</span> <span class="keyword">set</span> charset_name</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<h1 id="七-mysql数据表操作"><a href="#七-mysql数据表操作" class="headerlink" title="七.mysql数据表操作"></a>七.mysql数据表操作</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>)<span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tablename 查看数据表的定义</span><br><span class="line">	</span><br><span class="line"><span class="number">2</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 旧表名 rename 新表名</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> 字段名 数据类型...;(添加新的字段)</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 原字段名 新字段名 数据类型...；(修改字段)</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>)<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> 字段名（删除字段）</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>)在创建完表之后添加主键约束：<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 主键名 <span class="keyword">primary</span> key 表名（主键字段）</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>)在创建完表之后进行外键约束：<span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 外键名 <span class="keyword">foreign</span> key（外键字段）<span class="keyword">references</span> 关联表名（关联字段）</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>)<span class="keyword">desc</span> table_name 查看表的结构</span><br><span class="line"> <span class="keyword">desc</span> t_student;</span><br><span class="line">       <span class="operator">+</span><span class="comment">-------+--------------+------+-----+---------+-------+</span></span><br><span class="line">       <span class="operator">|</span> Field <span class="operator">|</span> Type         <span class="operator">|</span> <span class="keyword">Null</span> <span class="operator">|</span> Key <span class="operator">|</span> <span class="keyword">Default</span> <span class="operator">|</span> Extra <span class="operator">|</span></span><br><span class="line">       <span class="operator">+</span><span class="comment">-------+--------------+------+-----+---------+-------+</span></span><br><span class="line">       <span class="operator">|</span> <span class="keyword">no</span>    <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)      <span class="operator">|</span> YES  <span class="operator">|</span> PRI <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line">       <span class="operator">|</span> sname <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">255</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line">       <span class="operator">|</span> age   <span class="operator">|</span> <span class="type">int</span>(<span class="number">11</span>)      <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line">       <span class="operator">|</span> email <span class="operator">|</span> <span class="type">varchar</span>(<span class="number">255</span>) <span class="operator">|</span> YES  <span class="operator">|</span>     <span class="operator">|</span> <span class="keyword">NULL</span>    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line">       <span class="operator">+</span><span class="comment">-------+--------------+------+-----+---------+-------+</span></span><br><span class="line"></span><br><span class="line"><span class="number">10</span>)<span class="keyword">create</span> [temporary] <span class="keyword">table</span> [if <span class="keyword">not</span> <span class="keyword">exists</span>]tab_name </span><br><span class="line">	[([column_definition],<span class="operator">~</span><span class="operator">~</span><span class="operator">~</span><span class="operator">|</span>[index_definition])]</span><br><span class="line">	[table_option][select_statement];</span><br><span class="line">	创建数据表：temporary创建临时表，此表只能对创建它的用户可见，当断开与数据库的连接时，会自动删除临时表</span><br><span class="line">			  index<span class="operator">-</span>definition:表索引项定义</span><br><span class="line">			  table_option:用于描述表的选项</span><br><span class="line">			  select_statement:可以在语句的末尾添加一个<span class="keyword">select</span>语句，在一个表的基础上创建一个表</span><br><span class="line">			  </span><br><span class="line"><span class="number">11</span>)删除数据表：<span class="keyword">drop</span> [temporary] <span class="keyword">table</span> [id <span class="keyword">exists</span>]tbl_name<span class="operator">~</span><span class="operator">~</span><span class="operator">~</span>可以一次删除多个表</span><br><span class="line"></span><br><span class="line"><span class="number">12</span>)复制数据表：<span class="keyword">create</span> <span class="keyword">table</span> new_tbl_name <span class="keyword">like</span> old_tbl_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-1创建数据表"><a href="#7-1创建数据表" class="headerlink" title="7.1创建数据表"></a>7.1创建数据表</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">建表语句的语法格式： </span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line"></span><br><span class="line">字段名<span class="number">1</span> 数据类型,</span><br><span class="line"></span><br><span class="line">字段名<span class="number">2</span> 数据类型,</span><br><span class="line"></span><br><span class="line">字段名<span class="number">3</span> 数据类型,</span><br><span class="line"></span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>关于MySQL当中字段的数据类型：</p>
+<p>int        整数型(java中的int)</p>
+<p>bigint          长整型(java中的long)</p>
+<p>float        浮点型(java中的float double)</p>
+<p>char        定长字符串(String)</p>
+<p>Varchar     可变长字符串(StringBuffer/StringBuilder)</p>
+<p>date        日期类型 （对应Java中的java.sql.Date类型）</p>
+<p>BLOB        二进制大对象（存储图片、视频等流媒体信息） Binary Large OBject        （  对应java中的Object）</p>
+<p>CLOB        字符大对象（存储较大文本，比如，可以存储4G的字符串。） Character Large OBject（对应java中的Object）</p>
+<p>……</p>
+<p><em>数据是定长的话，使用char，不定长的话，使用varchar</em></p>
+<h2 id="7-2表的复制"><a href="#7-2表的复制" class="headerlink" title="7.2表的复制"></a>7.2表的复制</h2><p>复制数据表：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crate [temporary] <span class="keyword">table</span> [if <span class="keyword">not</span> <span class="keyword">exists</span>] tab_name</span><br></pre></td></tr></table></figure>
+
+<p>语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名 <span class="keyword">as</span> <span class="keyword">select</span>语句;</span><br></pre></td></tr></table></figure>
+
+<p>将查询结果当做表创建出来。</p>
+<h2 id="7-3将查询结果插入到一张表中"><a href="#7-3将查询结果插入到一张表中" class="headerlink" title="7.3将查询结果插入到一张表中"></a>7.3将查询结果插入到一张表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="7-4mysql表记录操作"><a href="#7-4mysql表记录操作" class="headerlink" title="7.4mysql表记录操作"></a>7.4mysql表记录操作</h2><blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> 插入新的记录：<span class="keyword">insert</span>  [][][low_priority<span class="operator">|</span>delayed<span class="operator">|</span>high_priority] [ignore] [<span class="keyword">into</span>] tbl_name</span><br><span class="line">               [(col_name,<span class="operator">~</span><span class="operator">~</span><span class="operator">~</span>)] <span class="keyword">values</span>(&#123;expr<span class="operator">|</span><span class="keyword">default</span>&#125;,……) <span class="operator">|</span> <span class="keyword">set</span> col_name<span class="operator">=</span>(expr<span class="operator">|</span><span class="keyword">default</span>)</span><br><span class="line">#如下:</span><br><span class="line">    <span class="number">1</span>)<span class="keyword">insert</span> <span class="keyword">into</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,字段名<span class="number">3</span>,....) <span class="keyword">values</span>(值<span class="number">1</span>,值<span class="number">2</span>,值<span class="number">3</span>,....)</span><br><span class="line"></span><br><span class="line">    要求：字段的数量和值的数量相同，并且数据类型要对应相同。</span><br><span class="line"></span><br><span class="line">    <span class="number">2</span>)<span class="keyword">insert</span> <span class="keyword">into</span> tab_name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">set</span> 字段名<span class="number">1</span><span class="operator">=</span>&quot;value&quot;,字段名<span class="number">2</span><span class="operator">=</span>&quot;value&quot;；</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span>）对于图片的储存：</span><br><span class="line"></span><br><span class="line">    使用路径：LOAD_FILE(<span class="string">&#x27;D:\images\picture.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span> </span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<h3 id="7-4-1update数据"><a href="#7-4-1update数据" class="headerlink" title="7.4.1update数据"></a>7.4.1update数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">update 表名 <span class="keyword">set</span> 字段名<span class="number">1</span><span class="operator">=</span>值<span class="number">1</span>,字段名<span class="number">2</span><span class="operator">=</span>值<span class="number">2.</span>.. <span class="keyword">where</span> 条件;</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span> 更新表记录：update [low_priprity] [ignore]  tbl_name <span class="keyword">set</span>  clo_name1<span class="operator">=</span>expr1</span><br><span class="line"></span><br><span class="line">更新多个表的数据：</span><br><span class="line">update[low_priority][ignore] table_references <span class="keyword">set</span> col_name<span class="operator">=</span>expr1[,col_name2<span class="operator">=</span>expr2[,...]]</span><br><span class="line">[<span class="keyword">where</span> where_definition]</span><br></pre></td></tr></table></figure>
+
+<p><em>没有条件时更新表中的所有数据</em></p>
+<h3 id="7-4-2delete数据"><a href="#7-4-2delete数据" class="headerlink" title="7.4.2delete数据"></a>7.4.2delete数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> [low_priority][quick(快速删除)][ignore] <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;[<span class="keyword">order</span> by....][limit row_count]</span><br><span class="line"></span><br><span class="line">#删除表记录：<span class="keyword">delete</span> [low_priority] [quick] [ignore] <span class="keyword">from</span> tbl<span class="operator">-</span>name</span><br></pre></td></tr></table></figure>
+
+<p>没有条件的时候全部删除</p>
+<h3 id="7-4-3约束"><a href="#7-4-3约束" class="headerlink" title="7.4.3约束"></a>7.4.3约束</h3><p>什么是约束：</p>
+<p>在创建表的时候，可以给表的字段添加相应的约束，添加约束的目的是为了保证表中数据的合法性、有效性、完整性。</p>
+<p>常见的约束：</p>
+<p>非空约束(not null)：约束的字段不能为NULL</p>
+<p>唯一约束(unique)：约束的字段不能重复</p>
+<p>主键约束(primary key)：约束的字段既不能为NULL，也不能重复（简称PK）</p>
+<p>外键约束(foreign key)：…（简称FK）</p>
+<p>检查约束(check)：注意Oracle数据库有check约束，但是mysql没有，目前mysql不支持该约束。</p>
+<h4 id="1-非空约束"><a href="#1-非空约束" class="headerlink" title="(1)非空约束"></a>(1)非空约束</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_user(</span><br><span class="line"></span><br><span class="line">id <span class="type">int</span>,</span><br><span class="line"></span><br><span class="line">username <span class="type">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="keyword">null</span>（<span class="operator">*</span><span class="operator">*</span>在创建表时添加约束<span class="operator">*</span><span class="operator">*</span>）,</span><br><span class="line"></span><br><span class="line">password <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t_user(id,password) <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;123&#x27;</span>); <span class="operator">/</span><span class="operator">/</span>编译错误，约束username字段不能为空！</span><br><span class="line"></span><br><span class="line">ERROR <span class="number">1364</span> (HY000): Field <span class="string">&#x27;username&#x27;</span> doesn<span class="string">&#x27;t have a default value</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> insert into t_user(id,username,password) values(1,&#x27;</span>lisi<span class="string">&#x27;,&#x27;</span><span class="number">123</span><span class="string">&#x27;);</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-唯一性约束"><a href="#2-唯一性约束" class="headerlink" title="(2)唯一性约束"></a>(2)唯一性约束</h4><p> <em>唯一性约束修饰的字段具有唯一性</em>，<em>不能重复。但可以为null。</em></p>
+<p> drop table if exists t_user;</p>
+<p>create table t_user(</p>
+<p>  id int,</p>
+<p>  usercode varchar(255),</p>
+<p>  username varchar(255),</p>
+<p>  unique(usercode,username) //多个字段联合起来添加一个约束unique 【表级约束】</p>
+<p>​      );</p>
+<p><strong>ps：not null约束只有列级约束，没有表级约束。</strong></p>
+<h4 id="3-主键约束"><a href="#3-主键约束" class="headerlink" title="(3)主键约束"></a>(3)主键约束</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> t_user;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_user(</span><br><span class="line"></span><br><span class="line">id <span class="type">int</span> <span class="keyword">primary</span> key, <span class="operator">/</span><span class="operator">/</span>列级约束</span><br><span class="line"></span><br><span class="line">username <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line"></span><br><span class="line">email <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line">   );</span><br></pre></td></tr></table></figure>
+
+<p><strong>主键约束</strong>，不能为null也不能重复！</p>
+<p> 主键约束 ：primary key</p>
+<p> 主键字段 : id字段添加primary key之后，id叫做主键字段</p>
+<p> 主键值 ：id字段中的每一个值都是主键值。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">create</span> <span class="keyword">table</span> t_user(</span><br><span class="line"></span><br><span class="line">id <span class="type">int</span> <span class="keyword">primary</span> key, <span class="operator">/</span><span class="operator">/</span>列级约束</span><br><span class="line"></span><br><span class="line">username <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line"></span><br><span class="line">email <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line"> );	</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-主键的分类："><a href="#4-主键的分类：" class="headerlink" title="(4)主键的分类："></a>(4)主键的分类：</h4><p>1）根据主键字段的字段数量来分：</p>
+<blockquote>
+<p>单一主键 and 复合主键</p>
+</blockquote>
+<p>2）根据主键的性质来划分：</p>
+<blockquote>
+<p>自然主键  and 业务主键</p>
+</blockquote>
+<p><strong>一个表的主键约束只能有一个</strong></p>
+<p><em>mysql<strong>提供主键自增</strong></em></p>
+<h4 id="5-外键约束"><a href="#5-外键约束" class="headerlink" title="(5)外键约束"></a>(5)外键约束</h4><blockquote>
+<p>关于外键约束的相关术语：</p>
+<p>   外键约束：foreign key</p>
+<p>   外键字段：添加有外键约束的字段</p>
+<p>   外键值：外键字段中的每一个值。</p>
+</blockquote>
+<p><strong>A表中的字段引用B表中的字段，则A是子表，B是父表</strong></p>
+<blockquote>
+<p>删除数据的时候，先删除子表，再删除父表。</p>
+<p>添加数据的时候，先添加父表，再添加子表。</p>
+<p>创建表的时候，先创建父表，再创建子表。</p>
+<p>删除表的时候，先删除子表，再删除父表。</p>
+<p>外键值可以为null</p>
+</blockquote>
+<h2 id="7-5mysql常量"><a href="#7-5mysql常量" class="headerlink" title="7.5mysql常量"></a>7.5mysql常量</h2><p>1.字符串常量：用单引号进行字符串</p>
+<h1 id="八-sql语句"><a href="#八-sql语句" class="headerlink" title="八.sql语句"></a>八.sql语句</h1><h2 id="8-1查询语句"><a href="#8-1查询语句" class="headerlink" title="8.1查询语句"></a>8.1查询语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名（能够显示表中所有数据的信息，但一般不常用）</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> 字段名<span class="number">1</span>,字段名<span class="number">2</span>,字段名<span class="number">3</span>,.... <span class="keyword">from</span> 表名;（字段可以参与数学运算）</span><br><span class="line"></span><br><span class="line">给查询结果的列重命名：<span class="keyword">select</span> ename,sal <span class="operator">*</span> <span class="number">12</span> <span class="keyword">as</span> yearsal <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ename,sal <span class="operator">*</span> <span class="number">12</span> （<span class="keyword">as</span>可以省略） <span class="string">&#x27;年薪&#x27;</span> <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>条件查询：（<span class="number">3</span>）<span class="keyword">select</span>  字段,字段... （<span class="number">1</span>） <span class="keyword">from</span>  表名  （<span class="number">2</span>）<span class="keyword">where</span>  条件;<span class="operator">*</span></span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>· <span class="keyword">select</span> ename <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="operator">=</span> <span class="number">5000</span>;<span class="operator">*</span></span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>·<span class="keyword">select</span> ename,sal <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="keyword">between</span> <span class="number">1100</span> <span class="keyword">and</span> <span class="number">3000</span>;<span class="operator">*</span> </span><br><span class="line"></span><br><span class="line"><span class="operator">*</span><span class="operator">/</span><span class="operator">/</span> between...and...是闭区间 [<span class="number">1100</span> <span class="operator">~</span> <span class="number">3000</span>]<span class="operator">*</span></span><br><span class="line"></span><br><span class="line">在数据库当中<span class="keyword">NULL</span>不是一个值，代表什么也没有，为空。</span><br><span class="line"></span><br><span class="line">空不是一个值，不能用等号衡量。必须使用 <span class="keyword">is</span> <span class="keyword">null</span>或者<span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line">·<span class="keyword">select</span> ename,sal,comm <span class="keyword">from</span> emp <span class="keyword">where</span> comm <span class="keyword">is</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ename,job <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="keyword">in</span>(<span class="number">800</span>, <span class="number">5000</span>); </span><br><span class="line"></span><br><span class="line"><span class="operator">/</span> <span class="keyword">in</span>后面的值不是区间，是具体的值。</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-2模糊查询like："><a href="#8-2模糊查询like：" class="headerlink" title="8.2模糊查询like："></a>8.2模糊查询like：</h2><p>​                找出名字当中含有O的？（在模糊查询当中，必须掌握两个特殊的符号，一个是%，一个是_)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%代表任意多个字符，_代表任意1个字符。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ename <span class="keyword">from</span> emp <span class="keyword">where</span> ename <span class="keyword">like</span> <span class="string">&#x27;%O%&#x27;</span>;</span><br><span class="line"></span><br><span class="line">新建一张表：<span class="keyword">Create</span> <span class="keyword">table</span> name<span class="operator">&lt;</span>Id <span class="type">int</span> ,Name <span class="type">varchar</span><span class="operator">&lt;</span><span class="number">255</span><span class="operator">&gt;&gt;</span>;</span><br><span class="line"></span><br><span class="line">(插入信息)<span class="keyword">Insert</span> nametable<span class="operator">&lt;</span>id,name<span class="operator">&gt;</span> <span class="keyword">values</span><span class="operator">&lt;</span><span class="number">1</span>,<span class="string">&#x27;john&#x27;</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-3排序"><a href="#8-3排序" class="headerlink" title="8.3排序"></a>8.3排序</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">		<span class="keyword">select</span> 字段名 <span class="keyword">from</span> 表名 （<span class="number">4</span>）<span class="keyword">order</span> <span class="keyword">by</span> 字段;(默认是升序)</span><br><span class="line"></span><br><span class="line">​		<span class="keyword">select</span> 字段名 <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line">​		<span class="keyword">select</span> 字段名 <span class="keyword">from</span> 表名 <span class="keyword">order</span> <span class="keyword">by</span> 字段 <span class="keyword">desc</span>;（降序）</span><br><span class="line"></span><br><span class="line">​		<span class="keyword">select</span> ename,sal <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span> , ename <span class="keyword">asc</span>;</span><br><span class="line"></span><br><span class="line">注意：越靠前的字段越能起到主导作用。只有当前面的字段无法完成排序的时候，才会启用后面的字段。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8-4分组函数"><a href="#8-4分组函数" class="headerlink" title="8.4分组函数"></a>8.4分组函数</h2><p>对某一组数据进行操作（在where操作之后）：（又名多行处理函数）自动忽略null</p>
+<p>count 计数  count（*）计数总记录的条数  count（comm）：表示统计comm字段中不为bull的数据总量</p>
+<p>sum 求和</p>
+<p>avg  平均值</p>
+<p>max 最大值</p>
+<p>min 最小值</p>
+<h2 id="8-5单行处理函数"><a href="#8-5单行处理函数" class="headerlink" title="8.5单行处理函数"></a>8.5单行处理函数</h2><p>ifnull（可能为null的数据被当作什么处理）:属于单行处理函数</p>
+<h2 id="8-6groupby和having"><a href="#8-6groupby和having" class="headerlink" title="8.6groupby和having"></a>8.6groupby和having</h2><p>groupby：按照某个字段或者某些字段进行分组</p>
+<p>having：having是对分组之后的数据进行再次过滤</p>
+<p>规则：当一条语句中有group by的话，select后面只能跟分组函数和参与分组的字段。</p>
+<h2 id="8-7执行顺序"><a href="#8-7执行顺序" class="headerlink" title="8.7执行顺序"></a>8.7执行顺序</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>               <span class="number">5</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span>            <span class="number">1</span>    </span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span>            <span class="number">2</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>        <span class="number">3</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">having</span>               <span class="number">4</span></span><br><span class="line"></span><br><span class="line">..</span><br><span class="line"></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span>        <span class="number">6</span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">limit &#123;[<span class="keyword">offset</span>,]row_count <span class="operator">|</span> row_count <span class="keyword">OFFSET</span> <span class="keyword">offset</span>&#125;    <span class="number">7</span></span><br><span class="line"></span><br><span class="line">## 查询</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-8结果集的去重："><a href="#8-8结果集的去重：" class="headerlink" title="8.8结果集的去重："></a>8.8结果集的去重：</h2><p>distinct 关键字去除重复记录（只能出现在所有字段的最前面）</p>
+<h2 id="8-9连接查询："><a href="#8-9连接查询：" class="headerlink" title="8.9连接查询："></a>8.9连接查询：</h2><p>内连接：</p>
+<p>​    1）等值连接</p>
+<p>​    2）非等值连接</p>
+<p>​    3）自连接</p>
+<p>外连接：</p>
+<p>​    1）左外连接</p>
+<p>​    2）右外连接</p>
+<p>全连接(很少用)</p>
+<p><strong>笛卡尔积现象：当两张表进行连接查询的时候，没有任何条件进行限制，最终的查询结果条数是两张表记录条数的乘积。</strong></p>
+<p>内连接:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段名 <span class="keyword">from</span> emp e (<span class="keyword">inner</span>) <span class="keyword">join</span>  dept d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno(连接条件);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span>   e.ename,e.sal,s.grade  <span class="keyword">from</span> emp e <span class="keyword">inner</span> <span class="keyword">join</span> salgrade s <span class="keyword">on</span>  e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal;</span><br></pre></td></tr></table></figure>
+
+<p><strong>自连接</strong>：最大的特点是：一张表看做两张表。自己连接自己。</p>
+<p><strong>外连接</strong>：</p>
+<p>内连接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">假设A和B表进行连接，使用内连接的话，凡是A表和B表能够匹配上的记录查询出来，这就是内连接。</span><br><span class="line"></span><br><span class="line">AB两张表没有主副之分，两张表是平等的。</span><br></pre></td></tr></table></figure>
+
+<p> 外连接：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">假设A和B表进行连接，使用外连接的话，AB两张表中有一张表是主表，一张表是副表，主要查询主表中</span><br><span class="line"></span><br><span class="line">的数据，捎带着查询副表，当副表中的数据没有和主表中的数据匹配上，副表自动模拟出NULL与之匹配。</span><br></pre></td></tr></table></figure>
+
+<p> 外连接的分类？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">左外连接（左连接）：表示左边的这张表是主表。</span><br><span class="line"></span><br><span class="line">右外连接（右连接）：表示右边的这张表是主表。</span><br></pre></td></tr></table></figure>
+
+<p> <em>左连接有右连接的写法，右连接也会有对应的左连接的写法。</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	a.ename <span class="string">&#x27;员工&#x27;</span>, b.ename <span class="string">&#x27;领导&#x27;</span></span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span></span><br><span class="line">	emp b</span><br><span class="line"><span class="keyword">on</span></span><br><span class="line">	a.mgr <span class="operator">=</span> b.empno;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>左外连接</span><br><span class="line"><span class="keyword">select</span> </span><br><span class="line">	a.ename <span class="string">&#x27;员工&#x27;</span>, b.ename <span class="string">&#x27;领导&#x27;</span></span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp b</span><br><span class="line"><span class="keyword">right</span> <span class="keyword">outer</span> <span class="keyword">join</span></span><br><span class="line">	emp a</span><br><span class="line"><span class="keyword">on</span></span><br><span class="line">	a.mgr <span class="operator">=</span> b.empno;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>右外连接</span><br></pre></td></tr></table></figure>
+
+<p><u>外连接最重要的特点是：主表的数据无条件的全部查询出来。</u></p>
+<p>三张表之间的连接：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	e.ename,d.dname,s.grade</span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">	emp e</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">	dept d</span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">	e.deptno<span class="operator">=</span>d.deptno</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> </span><br><span class="line">	salgrade s</span><br><span class="line"><span class="keyword">on</span> </span><br><span class="line">	e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>emp表先和dept表连接，然后和salgrade表连接</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-10子查询"><a href="#8-10子查询" class="headerlink" title="8.10子查询"></a>8.10子查询</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select</span><br><span class="line"></span><br><span class="line">..(select).</span><br><span class="line"></span><br><span class="line">from      select  t.*,s.grade from (select deptno,avg(sal) as avgsal from emp group by 			  deptno) t join  salgrade s on  t.avgsal between s.losal and s.hisal;</span><br><span class="line">..(select).</span><br><span class="line"></span><br><span class="line">where    	select * from emp where sal &gt; (select avg(sal) from emp);</span><br><span class="line"></span><br><span class="line">..(select).</span><br><span class="line"></span><br><span class="line"> //语句中嵌入select子句</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-11union"><a href="#8-11union" class="headerlink" title="8.11union"></a>8.11union</h2><blockquote>
+<p>（可以将查询结果集相加）</p>
+</blockquote>
+<p>将两张表整合在一起：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> ename <span class="keyword">from</span> emp <span class="keyword">where</span> 条件一</span><br><span class="line"><span class="keyword">union</span> </span><br><span class="line"><span class="keyword">select</span> dname <span class="keyword">from</span> dept <span class="keyword">where</span> 条件二</span><br></pre></td></tr></table></figure>
+
+<p><em>//拼接的数据必须两两相对应。不能一张表是一个数据，另一张表是两个数据，这样无法拼接！</em></p>
+<h2 id="8-12limit"><a href="#8-12limit" class="headerlink" title="8.12limit"></a>8.12limit</h2><blockquote>
+<p>(取出结果集中的部分数据)</p>
+</blockquote>
+<p>limit startindex length</p>
+<p>startindex表示起始位置，从0开始，0表示第一条数据</p>
+<p>length表示取几个</p>
+<p>limit执行的顺序是最后一个</p>
+<h1 id="九-mysql函数"><a href="#九-mysql函数" class="headerlink" title="九.mysql函数"></a>九.mysql函数</h1><h2 id="9-1数学函数"><a href="#9-1数学函数" class="headerlink" title="9.1数学函数"></a>9.1数学函数</h2><blockquote>
+<p>abs（）绝对值函数</p>
+<p>round（）取整函数</p>
+<p>sqrt（）求平方根函数</p>
+<p>rand（）随机数函数</p>
+<p>floor（）取最大整数函数</p>
+<p>PI() 返回圆周率的值</p>
+<p>truncate（x，d）四舍五入函数 返回被舍去至小数点后d位的数字x</p>
+<p>greatset（x1，x2，x3）返回参数中的最大值 </p>
+<p>least（）返回参数中最小值函数</p>
+<p>bin（x）返回参数x的二进制值</p>
+<p>otc（x）返回参数x的八进制值</p>
+<p>hex（x）返回参数x的十六进制值</p>
+</blockquote>
+<h2 id="9-2聚合函数"><a href="#9-2聚合函数" class="headerlink" title="9.2聚合函数"></a>9.2聚合函数</h2><blockquote>
+<p>sum（）求和函数</p>
+<p>avg（）平均值函数</p>
+<p>count（）数量函数</p>
+<p>max（）用来计算表中满足条件的数的最大值</p>
+<p>min（）用来计算表中满足条件的数的最小值</p>
+</blockquote>
+<h2 id="9-3字符串函数"><a href="#9-3字符串函数" class="headerlink" title="9.3字符串函数"></a>9.3字符串函数</h2><blockquote>
+<p>char_length() </p>
+<p>concat(str1,str2…)返回的是连接参数产生的字符串，如有一个值为null，则结果为null</p>
+<p>repeat（str，count）返回一个由重复的字符串str组成的字符串</p>
+<p>find_in_set(str,strlist)返回str在strlist中的位置值</p>
+<p>locate(substr.str) 返回str中子字符串第一次出现的位置</p>
+<p>instr（str，substr）返回字符串str中子字符串substr的第一个出现位置</p>
+<p>left（str，len）返回字符串str最左侧len个字符</p>
+<p>right（str，len）返回字符串str最右侧的len个字符</p>
+<p>中间截取函数：</p>
+</blockquote>
+<h1 id="十-存储引擎"><a href="#十-存储引擎" class="headerlink" title="十.存储引擎"></a>十.存储引擎</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span>  t_x (</span><br><span class="line"></span><br><span class="line">   id <span class="type">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span></span><br><span class="line"></span><br><span class="line">   ) ENGINE<span class="operator">=</span>InnoDB <span class="keyword">DEFAULT</span> CHARSET<span class="operator">=</span>utf8; </span><br><span class="line"></span><br><span class="line">在创建一个表的时候可以指定表使用的存储引擎以及字符编码的方式。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="10-1常见的存储引擎"><a href="#10-1常见的存储引擎" class="headerlink" title="10.1常见的存储引擎"></a>10.1常见的存储引擎</h2><h3 id="10-1-1MyISAM"><a href="#10-1-1MyISAM" class="headerlink" title="10.1.1MyISAM"></a>10.1.1MyISAM</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Engine: MyISAM</span><br><span class="line"></span><br><span class="line">   Support: YES</span><br><span class="line"></span><br><span class="line">   Comment: MyISAM storage engine</span><br><span class="line"></span><br><span class="line">Transactions: NO</span><br><span class="line"></span><br><span class="line">   XA: NO</span><br><span class="line"></span><br><span class="line"> Savepoints: NO</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>1）不支持事务</p>
+<p>2）是mysql最常用的存储引擎，但是不是默认的，默认的是（）</p>
+<p>3）MyISAM采用三个文件组织一个表：</p>
+<p>  xxx.frm(存储格式的文件)</p>
+<p>  xxx.MYD(存储表中数据的文件)</p>
+<p>  xxx.MYI(存储表中索引的文件)</p>
+<p>优点：可被压缩，节省存储空间。并且可以转换为只读表，提高检索效率。</p>
+<p>缺点:不支持事务。</p>
+</blockquote>
+<h3 id="10-1-2InnoDB"><a href="#10-1-2InnoDB" class="headerlink" title="10.1.2InnoDB"></a>10.1.2InnoDB</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Engine: InnoDB</span><br><span class="line"></span><br><span class="line">   Support: DEFAULT</span><br><span class="line"></span><br><span class="line">   Comment: Supports transactions, row-level locking, and foreign keys</span><br><span class="line"></span><br><span class="line">   Transactions: YES</span><br><span class="line"></span><br><span class="line"> XA: YES</span><br><span class="line"></span><br><span class="line"> Savepoints: YES</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>优点：支持事务、行级锁、外键等。这种存储引擎数据的安全得到保障。</p>
+<p>​    表的结构存储在xxx.frm文件中</p>
+<p>​    数据存储在tablespace这样的表空间中(逻辑概念)，无法被压缩，无法转换成只读。</p>
+<p>​    这种InnoDB存储引擎在MySQL数据库崩溃之后提供自动恢复机制。</p>
+<p>​    InoDB支持级联删除和级联更新。</p>
+</blockquote>
+<h3 id="10-1-3MEMORY"><a href="#10-1-3MEMORY" class="headerlink" title="10.1.3MEMORY"></a>10.1.3MEMORY</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> Engine: MEMORY</span><br><span class="line"></span><br><span class="line">   Support: YES</span><br><span class="line"></span><br><span class="line">  Comment: Hash based, stored in memory, useful for temporary tables</span><br><span class="line"></span><br><span class="line">Transactions: NO</span><br><span class="line"></span><br><span class="line">   XA: NO</span><br><span class="line"></span><br><span class="line"> Savepoints: NO</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  缺点：不支持事务。数据容易丢失。因为所有数据和索引都是存储在内存当中的。</p>
+<p> 优点：查询速度最快。</p>
+<p> 以前叫做HEPA引擎。</p>
+</blockquote>
+<h1 id="十一-事务"><a href="#十一-事务" class="headerlink" title="十一.事务"></a>十一.事务</h1><p>事务是指满足ACID特性（指数据库管理系统在写入或更新资料的过程中，为保证事务是正确可靠的，所必须具备的四个特性：原子性，一致性，隔离性，持久性）的一组操作，可以通过Commit提交一个事务，也可以使用Rollback进行回滚。</p>
+<p>一个事务是一个完整的业务逻辑单元，不可再分。</p>
+<p>事务的存在是为了保证数据的完整性，安全性。</p>
+<h2 id="11-1事务的特性"><a href="#11-1事务的特性" class="headerlink" title="11.1事务的特性"></a>11.1事务的特性</h2><p>​    原子性：事务是最小的工作单元，不可再分。</p>
+<p>​                    回滚可以使用回滚日志来实现，回滚日志记录着事务所执行的修改操                    作，再回滚时反向执行这些修改操作即可。</p>
+<p>​    一致性：事务必须保证多条DML语句同时成功或者同时失败。</p>
+<p>​    隔离性：事务A和事务B之间具有隔离。</p>
+<p>​    持久性：最终数据必须持久化到硬盘中，事务才算成功结束。</p>
+<p>​                    一旦事务提交，则其所做的修改会永远保存到数据库中，即使系统发生崩溃，事务执行的结果也不能丢失。</p>
+<h4 id="AUTOCOMMIT"><a href="#AUTOCOMMIT" class="headerlink" title="AUTOCOMMIT"></a>AUTOCOMMIT</h4><p>mysql默认采用自动提交模式。也就是说，日过不显式使用START TRANSACTION 语句来开始一个事务，那么每个查询操作都会当作一个事务并自动提交。</p>
+<h2 id="11-2事务的隔离级别"><a href="#11-2事务的隔离级别" class="headerlink" title="11.2事务的隔离级别"></a>11.2事务的隔离级别</h2><p>1）读未提交（read uncommitted）</p>
+<p>​    对方事务还没有提交，我们当前事务可以读取到对方未提交的数据。</p>
+<p>​    读未提交（当前事务可以读到另外事务未提交的数据）存在脏读现象：表示读到了脏数据。</p>
+<p>2）读已提交（read committed）</p>
+<p>​    对方事务提交之后的数据我方可以读取到。</p>
+<p>​    读已提交存在的问题是：不可重复读。</p>
+<p>3）可重复读（repeatable read）</p>
+<p>​    解决了：不可重复读的问题。</p>
+<p>​    问题：读取到的数据是幻象。</p>
+<p>4）序列化读/串行化读</p>
+<p>​    解决了所有的问题。</p>
+<p>​    效率低，需要事务排队。</p>
+<p>commit：提交</p>
+<p>rollback：回滚</p>
+<p>start transaction：关闭自动提交机制</p>
+<blockquote>
+<p>mysql可以远程登录：mysql -h主机号 -uroot -pyourpassword</p>
+</blockquote>
+<h1 id="十二-索引和视图"><a href="#十二-索引和视图" class="headerlink" title="十二.索引和视图"></a>十二.索引和视图</h1><p>索引相当于一本书的目录，通过目录可以快速的找到对应的资源。</p>
+<p>查询一张表是的方法：</p>
+<p>​    全表扫描：</p>
+<p>​    根据索引检索：</p>
+<p>创建索引对象：</p>
+<p>​    create index 索引名称 on 表名（字段名）；</p>
+<p>​    drop index 索引对象 on 表名；</p>
+<p>什么时候添加索引：</p>
+<p>​    1）数据量庞大</p>
+<p>​    2）该字段很少DML操作</p>
+<p>​    3）该字段经常出现在where子句中</p>
+<blockquote>
+<p>主键具有unique约束的字段会被自动添加索引</p>
+<p>根据主键索引的效率较高，尽量根据主键进行索引</p>
+</blockquote>
+<h2 id="12-1索引的分类"><a href="#12-1索引的分类" class="headerlink" title="12.1索引的分类"></a>12.1索引的分类</h2><p>​    单一索引：给单个字段添加索引</p>
+<p>​    复合索引：给多个字段联合起来添加一个索引</p>
+<p>​    主键索引：主键上会自动添加索引</p>
+<p>​    唯一索引：有unique约束的字段会自动添加索引</p>
+<p>​    ……</p>
+<blockquote>
+<p>模糊查询的时候，第一个通配符使用的是%，这个时候索引是是失效的。</p>
+</blockquote>
+<h2 id="12-2视图"><a href="#12-2视图" class="headerlink" title="12.2视图"></a>12.2视图</h2><blockquote>
+<p>站在不同的角度去看到数据。(同一张表的数据，通过不同的角度去看待)</p>
+</blockquote>
+<p>创建视图：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> myview <span class="keyword">as</span> <span class="keyword">select</span> empno,ename <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">view</span> myview;</span><br><span class="line"></span><br><span class="line">注意：只有DQL语句才能以试图对象的方式创建出来。</span><br></pre></td></tr></table></figure>
+
+<p>对试图进行增删改查，会影响到原表数据。(通过视图影响原表数据，不是直接操作的原表)</p>
+<p> 可以对试图进行CRUD操作。</p>
+<blockquote>
+<p>试图可以隐藏表的实现细节。保密级别较高的系统，数据库只对外提供相关的视图。</p>
+</blockquote>
+<h1 id="DBA命令"><a href="#DBA命令" class="headerlink" title="DBA命令"></a>DBA命令</h1><p>在数据库当中的数据导出</p>
+<blockquote>
+<p> 在windows的DOS命令窗口中执行： (导出整个库)</p>
+<p> mysqldump  数据库名&gt;D:\文件名.sql -uroot -p999</p>
+<p>在windows的dos命令窗口中执行：(导出数据库中指定的表)</p>
+<p>  mysqldump 数据库名 表名&gt;D:\文件名.sql -uroot -p999</p>
+</blockquote>
+<p><strong>导入数据</strong></p>
+<blockquote>
+<p>create database bjpowernode;</p>
+<p>use bjpowernode;</p>
+<p>source D:\bjpowernode.sql </p>
+</blockquote>
+<p>数据库设计三范式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.任何一张表都应该有主键</span><br><span class="line">2.建立在第一范式的基础上，所有的非主键字段完全依赖主键，不能产生部分依赖</span><br><span class="line">3.建立在第二范式的基础上，所有非主键字段直接依赖主键，不能产生传递依赖</span><br><span class="line"> 多对多？三张表，关系表两个外键。</span><br><span class="line"> 一对多？两张表，多的表加外键。</span><br><span class="line">  一对一设计:主键共享。</span><br><span class="line">  一对一设计:外键唯一。</span><br></pre></td></tr></table></figure>
+
+<h1 id="十三-mysql内部存储过程与触发"><a href="#十三-mysql内部存储过程与触发" class="headerlink" title="十三.mysql内部存储过程与触发"></a>十三.mysql内部存储过程与触发</h1><h2 id="13-1相关知识"><a href="#13-1相关知识" class="headerlink" title="13.1相关知识"></a>13.1相关知识</h2><h3 id="13-1-1内部存储过程"><a href="#13-1-1内部存储过程" class="headerlink" title="13.1.1内部存储过程"></a>13.1.1内部存储过程</h3><p>存储过程是一组为了完成特定功能的sql语句集,经编译后存储在数据库中,用户通过指定存储过程的名字并给定参数来调用执行他.</p>
+<h1 id="十四-锁"><a href="#十四-锁" class="headerlink" title="十四.锁"></a>十四.锁</h1><h2 id="14-1封锁粒度"><a href="#14-1封锁粒度" class="headerlink" title="14.1封锁粒度"></a>14.1封锁粒度</h2><p>mysql中提供了两种封锁粒度：行级锁以及表级锁。</p>
+<p>应该尽量只锁定西药修改的那部分数据，而不是所有的资源。锁定的数据量越少，发生锁征用的可能就越小，系统的开销就越小，系统的并发程度就越高。</p>
+<p>加锁需要消耗资源，锁的各种操作都会增加系统开销。因此封锁粒度越小，系统的开销就越大。</p>
+<h2 id="14-2封锁类型"><a href="#14-2封锁类型" class="headerlink" title="14.2封锁类型"></a>14.2封锁类型</h2><h3 id="14-2-1读写锁"><a href="#14-2-1读写锁" class="headerlink" title="14.2.1读写锁"></a>14.2.1读写锁</h3><p>互斥锁（Exclusive）：简写为X锁，又称写锁。</p>
+<p>共享锁（Shared）：简写为S锁，又称读锁。</p>
+<h3 id="14-2-2意向锁"><a href="#14-2-2意向锁" class="headerlink" title="14.2.2意向锁"></a>14.2.2意向锁</h3><p>使用意向锁可以更容易的支持多粒度封锁。</p>
+<p>在存在行级锁和表级锁的情况下，事务 T 想要对表 A 加 X 锁，就需要先检测是否有其它事务对表 A 或者表 A 中的任意一行加了锁，那么就需要对表 A 的每一行都检测一次，这是非常耗时的。</p>
+<p>意向锁在原来的 X/S 锁之上引入了 IX/IS，IX/IS 都是表锁，用来表示一个事务想要在表中的某个数据行上加 X 锁或 S 锁。有以下两个规定：</p>
+<blockquote>
+<ul>
+<li>一个事务在获得某个数据行对象的 S 锁之前，必须先获得表的 IS 锁或者更强的锁；</li>
+<li>一个事务在获得某个数据行对象的 X 锁之前，必须先获得表的 IX 锁。</li>
+</ul>
+</blockquote>
+<p>通过引入意向锁，事务 T 想要对表 A 加 X 锁，只需要先检测是否有其它事务对表 A 加了 X/IX/S/IS 锁，如果加了就表示有其它事务正在使用这个表或者表中某一行的锁，因此事务 T 加 X 锁失败。</p>
+<h2 id="14-3封锁协议"><a href="#14-3封锁协议" class="headerlink" title="14.3封锁协议"></a>14.3封锁协议</h2><h3 id="14-3-1三界封锁协议"><a href="#14-3-1三界封锁协议" class="headerlink" title="14.3.1三界封锁协议"></a>14.3.1三界封锁协议</h3><h4 id="14-3-1-1一级封锁协议"><a href="#14-3-1-1一级封锁协议" class="headerlink" title="14.3.1.1一级封锁协议"></a>14.3.1.1一级封锁协议</h4><p>事务T要修改数据A时必须加X锁，直到T结束才释放锁。</p>
+<p>可以解决丢失修改的问题，因为不能同时有两个事务对同一个数据进行修改，那么事务的修改就不会被覆盖。</p>
+<h4 id="14-3-1-2二级封锁协议"><a href="#14-3-1-2二级封锁协议" class="headerlink" title="14.3.1.2二级封锁协议"></a>14.3.1.2二级封锁协议</h4><p>在一级的基础上，要求读取数据A时必须加S锁，读取完马上释放S锁。</p>
+<p>可以解决读脏数据问题，如果一个事务在对数据A进行修改，根据1级封锁协议，会加X锁，那么就不能再加S锁了，也就是不会读入数据。</p>
+<h1 id="数据库的卸载"><a href="#数据库的卸载" class="headerlink" title="数据库的卸载"></a>数据库的卸载</h1><blockquote>
+<p>1.卸载软件</p>
+<p>2.programData文件夹</p>
+<p>3.数据库目录</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/22/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="muzinan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到muzinan的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/22/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3JVM/" class="post-title-link" itemprop="url">深入了解JVM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-22 21:31:09" itemprop="dateCreated datePublished" datetime="2021-11-22T21:31:09+08:00">2021-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-27 15:04:37" itemprop="dateModified" datetime="2021-11-27T15:04:37+08:00">2021-11-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">muzinan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">muzinan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
