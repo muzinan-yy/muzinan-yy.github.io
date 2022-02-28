@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/02/28/index/"/>
+      <url>/2022/02/28/index/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript学习笔记</title>
+      <link href="/2022/01/05/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <url>/2022/01/05/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h1><blockquote><ol><li><strong>HTML</strong> 定义了网页的内容</li><li><strong>CSS</strong> 描述了网页的布局</li><li><strong>JavaScript</strong> 控制了网页的行为</li></ol></blockquote><h2 id="JavaScript-是脚本语言"><a href="#JavaScript-是脚本语言" class="headerlink" title="JavaScript 是脚本语言"></a>JavaScript 是脚本语言</h2><p>JavaScript 是一种轻量级的编程语言。</p><p>JavaScript 是可插入 HTML 页面的编程代码。</p><p>JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。</p><h2 id="JavaScript输出"><a href="#JavaScript输出" class="headerlink" title="JavaScript输出"></a>JavaScript输出</h2><blockquote><ul><li>使用 <strong>window.alert()</strong> 弹出警告框。</li><li>使用 <strong>document.write()</strong> 方法将内容写到 HTML 文档中。</li><li>使用 <strong>innerHTML</strong> 写入到 HTML 元素。</li><li>使用 <strong>console.log()</strong> 写入到浏览器的控制台。</li></ul></blockquote><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>**值类型(基本类型)*<em>：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、</em>Symbol(表示独一无二的值)*。</p><p><strong>引用数据类型</strong>：对象(Object)、数组(Array)、函数(Function)。</p><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>访问的方法:</p><blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=person.lastname;</span><br><span class="line">name=person[<span class="string">&quot;lastname&quot;</span>];</span><br></pre></td></tr></table></figure></blockquote><h3 id="Undefined-和-Null"><a href="#Undefined-和-Null" class="headerlink" title="Undefined 和 Null"></a>Undefined 和 Null</h3><p>Undefined 这个值表示变量不含有值。</p><p>可以通过将变量的值设置为 null 来清空变量。</p><blockquote><p> JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。</p></blockquote><h2 id="HTML-中的全局变量"><a href="#HTML-中的全局变量" class="headerlink" title="HTML 中的全局变量"></a>HTML 中的全局变量</h2><blockquote><p><strong>在 HTML 中, 全局变量是 window 对象: 所有数据变量都属于 window 对象。</strong></p></blockquote><h2 id="常见的HTML事件"><a href="#常见的HTML事件" class="headerlink" title="常见的HTML事件"></a>常见的HTML事件</h2><p>下面是一些常见的HTML事件的列表:</p><table><thead><tr><th align="left">事件</th><th>描述</th></tr></thead><tbody><tr><td align="left">onchange</td><td>HTML 元素改变</td></tr><tr><td align="left">onclick</td><td>用户点击 HTML 元素</td></tr><tr><td align="left">onmouseover</td><td>鼠标指针移动到指定的元素上时发生</td></tr><tr><td align="left">onmouseout</td><td>用户从一个 HTML 元素上移开鼠标时发生</td></tr><tr><td align="left">onkeydown</td><td>用户按下键盘按键</td></tr><tr><td align="left">onload</td><td>浏览器已完成页面的加载</td></tr></tbody></table><blockquote><p>=== 为绝对相等，即数据类型与值都必须相等。</p></blockquote><p>在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object。 </p><h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p>在 JavaScript 中, <strong>undefined</strong> 是一个没有设置值的变量。</p><p><strong>typeof</strong> 一个没有值的变量会返回 <strong>undefined</strong>。</p><h2 id="JavaScript-初始化不会提升"><a href="#JavaScript-初始化不会提升" class="headerlink" title="JavaScript 初始化不会提升"></a>JavaScript 初始化不会提升</h2><p>JavaScript 只有声明的变量会提升，初始化的不会。</p><blockquote><p> “use strict” 指令只允许出现在脚本或函数的开头。</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>php学习</title>
       <link href="/2021/12/06/php%E5%AD%A6%E4%B9%A0/"/>
       <url>/2021/12/06/php%E5%AD%A6%E4%B9%A0/</url>
