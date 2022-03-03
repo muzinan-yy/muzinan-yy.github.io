@@ -754,15 +754,16 @@ DBMS -(执行)-&gt; SQL -(操作)-&gt; DB
 
 
 
-<h2 id="10-1常见的存储引擎"><a href="#10-1常见的存储引擎" class="headerlink" title="10.1常见的存储引擎"></a>10.1常见的存储引擎</h2><h3 id="10-1-1MyISAM"><a href="#10-1-1MyISAM" class="headerlink" title="10.1.1MyISAM"></a>10.1.1MyISAM</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Engine: MyISAM</span><br><span class="line"></span><br><span class="line">   Support: YES</span><br><span class="line"></span><br><span class="line">   Comment: MyISAM storage engine</span><br><span class="line"></span><br><span class="line">Transactions: NO</span><br><span class="line"></span><br><span class="line">   XA: NO</span><br><span class="line"></span><br><span class="line"> Savepoints: NO</span><br></pre></td></tr></table></figure>
+<h2 id="10-1常见的存储引擎"><a href="#10-1常见的存储引擎" class="headerlink" title="10.1常见的存储引擎"></a>10.1常见的存储引擎</h2><h3 id="10-1-1MyISAM"><a href="#10-1-1MyISAM" class="headerlink" title="10.1.1MyISAM"></a>10.1.1MyISAM</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Engine: MyISAM</span><br><span class="line"></span><br><span class="line">   Support: YES</span><br><span class="line"></span><br><span class="line">   Comment: MyISAM storage engine</span><br><span class="line"></span><br><span class="line">   Transactions: NO</span><br><span class="line"></span><br><span class="line"> XA: NO</span><br><span class="line"></span><br><span class="line"> Savepoints: NO</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>1）不支持事务</p>
-<p>2）是mysql最常用的存储引擎，但是不是默认的，默认的是（）</p>
+<p>2）是mysql最常用的存储引擎，但是不是默认的，默认的是（InnoDB）</p>
+<p>​      <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=Mysql&spm=1001.2101.3001.7020">Mysql</a>在V5.1之前默认存储引擎是MyISAM；在此之后默认存储引擎是InnoDB</p>
 <p>3）MyISAM采用三个文件组织一个表：</p>
-<p>  xxx.frm(存储格式的文件)</p>
-<p>  xxx.MYD(存储表中数据的文件)</p>
-<p>  xxx.MYI(存储表中索引的文件)</p>
+<p>xxx.frm(存储格式的文件)</p>
+<p>xxx.MYD(存储表中数据的文件)</p>
+<p>xxx.MYI(存储表中索引的文件)</p>
 <p>优点：可被压缩，节省存储空间。并且可以转换为只读表，提高检索效率。</p>
 <p>缺点:不支持事务。</p>
 </blockquote>
