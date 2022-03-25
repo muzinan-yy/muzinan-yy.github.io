@@ -518,7 +518,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.6k
+                    7.5k
                 </div>
                 
 
@@ -540,7 +540,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一-sql、DB、DBMS"><a href="#一-sql、DB、DBMS" class="headerlink" title="一.sql、DB、DBMS"></a>一.sql、DB、DBMS</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在）</span><br><span class="line">DBMS: DataBase Management <span class="keyword">System</span>（数据库管理系统，常见的有：MySQL Oracle DB2 Sybase           SqlServer...）</span><br><span class="line"><span class="keyword">SQL</span>: 结构化查询语言，是一门标准通用的语言。标准的<span class="keyword">sql</span>适合于所有的数据库产品。</span><br><span class="line">     <span class="keyword">SQL</span>属于高级语言。只要能看懂英语单词的，写出来的<span class="keyword">sql</span>语句，可以读懂什么意思。</span><br><span class="line">     <span class="keyword">SQL</span>语句在执行的时候，实际上内部也会先进行编译，然后再执行<span class="keyword">sql</span>。（<span class="keyword">sql</span>语句的编译由DBMS完成。）</span><br><span class="line">     DBMS负责执行<span class="keyword">sql</span>语句，通过执行<span class="keyword">sql</span>语句来操作DB当中的数据。</span><br><span class="line">DBMS <span class="operator">-</span>(执行)<span class="operator">-</span><span class="operator">&gt;</span> <span class="keyword">SQL</span> <span class="operator">-</span>(操作)<span class="operator">-</span><span class="operator">&gt;</span> DB</span><br></pre></td></tr></table></figure>
+                <h1 id="一-sql、DB、DBMS"><a href="#一-sql、DB、DBMS" class="headerlink" title="一.sql、DB、DBMS"></a>一.sql、DB、DBMS</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DB: DataBase（数据库，数据库实际上在硬盘上以文件的形式存在）</span><br><span class="line">DBMS: DataBase Management <span class="keyword">System</span>（数据库管理系统，常见的有：MySQL Oracle DB2 Sybase SqlServer...）</span><br><span class="line"><span class="keyword">SQL</span>: 结构化查询语言，是一门标准通用的语言。标准的<span class="keyword">sql</span>适合于所有的数据库产品。</span><br><span class="line">     <span class="keyword">SQL</span>属于高级语言。只要能看懂英语单词的，写出来的<span class="keyword">sql</span>语句，可以读懂什么意思。</span><br><span class="line">     <span class="keyword">SQL</span>语句在执行的时候，实际上内部也会先进行编译，然后再执行<span class="keyword">sql</span>。（<span class="keyword">sql</span>语句的编译由DBMS完成。）</span><br><span class="line">     DBMS负责执行<span class="keyword">sql</span>语句，通过执行<span class="keyword">sql</span>语句来操作DB当中的数据。</span><br><span class="line">DBMS <span class="operator">-</span>(执行)<span class="operator">-</span><span class="operator">&gt;</span> <span class="keyword">SQL</span> <span class="operator">-</span>(操作)<span class="operator">-</span><span class="operator">&gt;</span> DB</span><br></pre></td></tr></table></figure>
 <h1 id="二-表的概念"><a href="#二-表的概念" class="headerlink" title="二.表的概念"></a>二.表的概念</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">表：<span class="keyword">table</span>是数据库的基本组成单元，所有的数据都以表格的形式组织，目的是可读性强。</span><br><span class="line">一个表包括行和列：</span><br><span class="line">	行：被称为数据<span class="operator">/</span>记录(data)</span><br><span class="line">	列：被称为字段(<span class="keyword">column</span>)</span><br><span class="line">学号(<span class="type">int</span>)	姓名(<span class="type">varchar</span>)	年龄(<span class="type">int</span>)</span><br><span class="line"><span class="comment">------------------------------------</span></span><br><span class="line"><span class="number">110</span>			张三				<span class="number">20</span></span><br><span class="line"><span class="number">120</span>			李四				<span class="number">21</span></span><br></pre></td></tr></table></figure>
 <h1 id="三-字段的属性"><a href="#三-字段的属性" class="headerlink" title="三.字段的属性"></a>三.字段的属性</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字段名、数据类型、相关的约束。</span><br></pre></td></tr></table></figure>
 <h1 id="四-SQL语句的分类"><a href="#四-SQL语句的分类" class="headerlink" title="四.SQL语句的分类"></a>四.SQL语句的分类</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DQL（数据查询语言）: 查询语句，凡是<span class="keyword">select</span>语句都是DQL。</span><br><span class="line">DML（数据操作语言）：<span class="keyword">insert</span> <span class="keyword">delete</span> update，对表当中的数据进行增删改。</span><br><span class="line">DDL（数据定义语言）：<span class="keyword">create</span> <span class="keyword">drop</span> <span class="keyword">alter</span>，对表结构的增删改。</span><br><span class="line">TCL（事务控制语言）：<span class="keyword">commit</span>提交事务，<span class="keyword">rollback</span>回滚事务。(TCL中的T是       	Transaction)</span><br><span class="line">DCL（数据控制语言）: <span class="keyword">grant</span>授权、<span class="keyword">revoke</span>撤销权限等。</span><br></pre></td></tr></table></figure>
@@ -570,18 +570,16 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名 <span class="keyword">as</span> <span class="keyword">select</span>语句;</span><br></pre></td></tr></table></figure>
 
 <p>将查询结果当做表创建出来。</p>
-<h2 id="7-3将查询结果插入到一张表中"><a href="#7-3将查询结果插入到一张表中" class="headerlink" title="7.3将查询结果插入到一张表中"></a>7.3将查询结果插入到一张表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名</span><br></pre></td></tr></table></figure>
+<h2 id="7-3将查询结果插入到一张表中"><a href="#7-3将查询结果插入到一张表中" class="headerlink" title="7.3将查询结果插入到一张表中"></a>7.3将查询结果插入到一张表中</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名(表要存在) <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">into</span> table_name(不存在) <span class="keyword">from</span> <span class="comment">----;</span></span><br></pre></td></tr></table></figure>
 
-
-
-<h2 id="7-4mysql表记录操作"><a href="#7-4mysql表记录操作" class="headerlink" title="7.4mysql表记录操作"></a>7.4mysql表记录操作</h2><blockquote>
+<h2 id="7-4表的修改"><a href="#7-4表的修改" class="headerlink" title="7.4表的修改"></a>7.4表的修改</h2><h2 id="7-5mysql表记录操作"><a href="#7-5mysql表记录操作" class="headerlink" title="7.5mysql表记录操作"></a>7.5mysql表记录操作</h2><blockquote>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> 插入新的记录：<span class="keyword">insert</span>  [][][low_priority<span class="operator">|</span>delayed<span class="operator">|</span>high_priority] [ignore] [<span class="keyword">into</span>] tbl_name</span><br><span class="line">               [(col_name,<span class="operator">~</span><span class="operator">~</span><span class="operator">~</span>)] <span class="keyword">values</span>(&#123;expr<span class="operator">|</span><span class="keyword">default</span>&#125;,……) <span class="operator">|</span> <span class="keyword">set</span> col_name<span class="operator">=</span>(expr<span class="operator">|</span><span class="keyword">default</span>)</span><br><span class="line">#如下:</span><br><span class="line">    <span class="number">1</span>)<span class="keyword">insert</span> <span class="keyword">into</span> 表名(字段名<span class="number">1</span>,字段名<span class="number">2</span>,字段名<span class="number">3</span>,....) <span class="keyword">values</span>(值<span class="number">1</span>,值<span class="number">2</span>,值<span class="number">3</span>,....)</span><br><span class="line"></span><br><span class="line">    要求：字段的数量和值的数量相同，并且数据类型要对应相同。</span><br><span class="line"></span><br><span class="line">    <span class="number">2</span>)<span class="keyword">insert</span> <span class="keyword">into</span> tab_name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">set</span> 字段名<span class="number">1</span><span class="operator">=</span>&quot;value&quot;,字段名<span class="number">2</span><span class="operator">=</span>&quot;value&quot;；</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span>）对于图片的储存：</span><br><span class="line"></span><br><span class="line">    使用路径：LOAD_FILE(<span class="string">&#x27;D:\images\picture.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span> </span><br></pre></td></tr></table></figure>
 
 </blockquote>
 <h3 id="7-4-1update数据"><a href="#7-4-1update数据" class="headerlink" title="7.4.1update数据"></a>7.4.1update数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">update 表名 <span class="keyword">set</span> 字段名<span class="number">1</span><span class="operator">=</span>值<span class="number">1</span>,字段名<span class="number">2</span><span class="operator">=</span>值<span class="number">2.</span>.. <span class="keyword">where</span> 条件;</span><br><span class="line"></span><br><span class="line"><span class="operator">&gt;</span> 更新表记录：update [low_priprity] [ignore]  tbl_name <span class="keyword">set</span>  clo_name1<span class="operator">=</span>expr1</span><br><span class="line"></span><br><span class="line">更新多个表的数据：</span><br><span class="line">update[low_priority][ignore] table_references <span class="keyword">set</span> col_name<span class="operator">=</span>expr1[,col_name2<span class="operator">=</span>expr2[,...]]</span><br><span class="line">[<span class="keyword">where</span> where_definition]</span><br></pre></td></tr></table></figure>
 
 <p><em>没有条件时更新表中的所有数据</em></p>
-<h3 id="7-4-2delete数据"><a href="#7-4-2delete数据" class="headerlink" title="7.4.2delete数据"></a>7.4.2delete数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> [low_priority][quick(快速删除)][ignore] <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;[<span class="keyword">order</span> by....][limit row_count]</span><br><span class="line"></span><br><span class="line">#删除表记录：<span class="keyword">delete</span> [low_priority] [quick] [ignore] <span class="keyword">from</span> tbl<span class="operator">-</span>name</span><br></pre></td></tr></table></figure>
+<h3 id="7-4-2delete数据"><a href="#7-4-2delete数据" class="headerlink" title="7.4.2delete数据"></a>7.4.2delete数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> [low_priority][quick(快速删除)][ignore] <span class="keyword">from</span> 表名 <span class="keyword">where</span> 条件;[<span class="keyword">order</span> by....(<span class="keyword">ASC</span><span class="operator">||</span><span class="keyword">DESC</span>)][limit row_count]</span><br><span class="line"></span><br><span class="line">#删除表记录：<span class="keyword">delete</span> [low_priority] [quick] [ignore] <span class="keyword">from</span> tbl<span class="operator">-</span>name</span><br></pre></td></tr></table></figure>
 
 <p>没有条件的时候全部删除</p>
 <h3 id="7-4-3约束"><a href="#7-4-3约束" class="headerlink" title="7.4.3约束"></a>7.4.3约束</h3><p>什么是约束：</p>
@@ -602,7 +600,7 @@
 <p>  id int,</p>
 <p>  usercode varchar(255),</p>
 <p>  username varchar(255),</p>
-<p>  unique(usercode,username) //多个字段联合起来添加一个约束unique 【表级约束】</p>
+<p>  <strong>unique</strong>(usercode,username) //多个字段联合起来添加一个约束unique 【表级约束】</p>
 <p>​      );</p>
 <p><strong>ps：not null约束只有列级约束，没有表级约束。</strong></p>
 <h4 id="3-主键约束"><a href="#3-主键约束" class="headerlink" title="(3)主键约束"></a>(3)主键约束</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> if <span class="keyword">exists</span> t_user;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t_user(</span><br><span class="line"></span><br><span class="line">id <span class="type">int</span> <span class="keyword">primary</span> key, <span class="operator">/</span><span class="operator">/</span>列级约束</span><br><span class="line"></span><br><span class="line">username <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line"></span><br><span class="line">email <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line">   );</span><br></pre></td></tr></table></figure>
@@ -613,7 +611,7 @@
 <p> 主键值 ：id字段中的每一个值都是主键值。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">create</span> <span class="keyword">table</span> t_user(</span><br><span class="line"></span><br><span class="line">id <span class="type">int</span> <span class="keyword">primary</span> key, <span class="operator">/</span><span class="operator">/</span>列级约束</span><br><span class="line"></span><br><span class="line">username <span class="type">varchar</span>(<span class="number">255</span>),</span><br><span class="line"></span><br><span class="line">email <span class="type">varchar</span>(<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line"> );	</span><br></pre></td></tr></table></figure>
 
-<h4 id="4-主键的分类："><a href="#4-主键的分类：" class="headerlink" title="(4)主键的分类："></a>(4)主键的分类：</h4><p>1）根据主键字段的字段数量来分：</p>
+<h5 id="主键的分类"><a href="#主键的分类" class="headerlink" title="主键的分类"></a>主键的分类</h5><p>1）根据主键字段的字段数量来分：</p>
 <blockquote>
 <p>单一主键 and 复合主键</p>
 </blockquote>
@@ -637,6 +635,7 @@
 <p>删除表的时候，先删除子表，再删除父表。</p>
 <p>外键值可以为null</p>
 </blockquote>
+<p>​        </p>
 <h2 id="7-5mysql常量"><a href="#7-5mysql常量" class="headerlink" title="7.5mysql常量"></a>7.5mysql常量</h2><p>1.字符串常量：用单引号进行字符串</p>
 <h1 id="八-sql语句"><a href="#八-sql语句" class="headerlink" title="八.sql语句"></a>八.sql语句</h1><h2 id="8-1查询语句"><a href="#8-1查询语句" class="headerlink" title="8.1查询语句"></a>8.1查询语句</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名（能够显示表中所有数据的信息，但一般不常用）</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> 字段名<span class="number">1</span>,字段名<span class="number">2</span>,字段名<span class="number">3</span>,.... <span class="keyword">from</span> 表名;（字段可以参与数学运算）</span><br><span class="line"></span><br><span class="line">给查询结果的列重命名：<span class="keyword">select</span> ename,sal <span class="operator">*</span> <span class="number">12</span> <span class="keyword">as</span> yearsal <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ename,sal <span class="operator">*</span> <span class="number">12</span> （<span class="keyword">as</span>可以省略） <span class="string">&#x27;年薪&#x27;</span> <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>条件查询：（<span class="number">3</span>）<span class="keyword">select</span>  字段,字段... （<span class="number">1</span>） <span class="keyword">from</span>  表名  （<span class="number">2</span>）<span class="keyword">where</span>  条件;<span class="operator">*</span></span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>· <span class="keyword">select</span> ename <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="operator">=</span> <span class="number">5000</span>;<span class="operator">*</span></span><br><span class="line"></span><br><span class="line"><span class="operator">*</span>·<span class="keyword">select</span> ename,sal <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="keyword">between</span> <span class="number">1100</span> <span class="keyword">and</span> <span class="number">3000</span>;<span class="operator">*</span> </span><br><span class="line"></span><br><span class="line"><span class="operator">*</span><span class="operator">/</span><span class="operator">/</span> between...and...是闭区间 [<span class="number">1100</span> <span class="operator">~</span> <span class="number">3000</span>]<span class="operator">*</span></span><br><span class="line"></span><br><span class="line">在数据库当中<span class="keyword">NULL</span>不是一个值，代表什么也没有，为空。</span><br><span class="line"></span><br><span class="line">空不是一个值，不能用等号衡量。必须使用 <span class="keyword">is</span> <span class="keyword">null</span>或者<span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line"></span><br><span class="line">·<span class="keyword">select</span> ename,sal,comm <span class="keyword">from</span> emp <span class="keyword">where</span> comm <span class="keyword">is</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> ename,job <span class="keyword">from</span> emp <span class="keyword">where</span> sal <span class="keyword">in</span>(<span class="number">800</span>, <span class="number">5000</span>); </span><br><span class="line"></span><br><span class="line"><span class="operator">/</span> <span class="keyword">in</span>后面的值不是区间，是具体的值。</span><br></pre></td></tr></table></figure>
 
@@ -652,7 +651,7 @@
 
 
 <h2 id="8-4分组函数"><a href="#8-4分组函数" class="headerlink" title="8.4分组函数"></a>8.4分组函数</h2><p>对某一组数据进行操作（在where操作之后）：（又名多行处理函数）自动忽略null</p>
-<p>count 计数  count（*）计数总记录的条数  count（comm）：表示统计comm字段中不为bull的数据总量</p>
+<p>count 计数  count（*）计数总记录的条数  count（comm）：表示统计comm字段中不为null的数据总量</p>
 <p>sum 求和</p>
 <p>avg  平均值</p>
 <p>max 最大值</p>
@@ -674,9 +673,11 @@
 <p>全连接(很少用)</p>
 <p><strong>笛卡尔积现象：当两张表进行连接查询的时候，没有任何条件进行限制，最终的查询结果条数是两张表记录条数的乘积。</strong></p>
 <p>内连接:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段名 <span class="keyword">from</span> emp e (<span class="keyword">inner</span>) <span class="keyword">join</span>  dept d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno(连接条件);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span>   e.ename,e.sal,s.grade  <span class="keyword">from</span> emp e <span class="keyword">inner</span> <span class="keyword">join</span> salgrade s <span class="keyword">on</span>  e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段名 <span class="keyword">from</span> emp e (<span class="keyword">inner</span>) <span class="keyword">join</span>  dept d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno(连接条件);</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span>   e.ename,e.sal,s.grade  </span><br><span class="line"><span class="keyword">from</span> emp e <span class="keyword">inner</span> <span class="keyword">join</span> salgrade s </span><br><span class="line"><span class="keyword">on</span>  e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal;</span><br></pre></td></tr></table></figure>
 
 <p><strong>自连接</strong>：最大的特点是：一张表看做两张表。自己连接自己。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段名 <span class="keyword">from</span> emp e1 <span class="keyword">join</span> emp e2 <span class="keyword">on</span> 条件</span><br></pre></td></tr></table></figure>
+
 <p><strong>外连接</strong>：</p>
 <p>内连接：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">假设A和B表进行连接，使用内连接的话，凡是A表和B表能够匹配上的记录查询出来，这就是内连接。</span><br><span class="line"></span><br><span class="line">AB两张表没有主副之分，两张表是平等的。</span><br></pre></td></tr></table></figure>
@@ -832,14 +833,36 @@
 </blockquote>
 <h2 id="12-2视图"><a href="#12-2视图" class="headerlink" title="12.2视图"></a>12.2视图</h2><blockquote>
 <p>站在不同的角度去看到数据。(同一张表的数据，通过不同的角度去看待)</p>
+<p>子模式:</p>
+<p>优点:简化了复杂的查询</p>
+<p>​        限制对特定用户的数据访问</p>
+<p>​        提供额外的安全层</p>
+<p>​        启用计算列</p>
+<p>​        实现向后兼容</p>
 </blockquote>
 <p>创建视图：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> myview <span class="keyword">as</span> <span class="keyword">select</span> empno,ename <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">view</span> myview;</span><br><span class="line"></span><br><span class="line">注意：只有DQL语句才能以试图对象的方式创建出来。</span><br></pre></td></tr></table></figure>
+<p>首先需要查看创建视图的权限:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> select_priv,Create_view_priv <span class="keyword">from</span> mysql.user <span class="keyword">where</span> <span class="keyword">user</span><span class="operator">=</span><span class="string">&#x27;用户名&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
-<p>对试图进行增删改查，会影响到原表数据。(通过视图影响原表数据，不是直接操作的原表)</p>
-<p> 可以对试图进行CRUD操作。</p>
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> myview <span class="keyword">as</span> <span class="keyword">select</span> empno,ename <span class="keyword">from</span> emp;</span><br><span class="line"><span class="keyword">WITH</span> <span class="keyword">CHECK</span> OPTION:</span><br><span class="line">	对视图进行UPDATE，<span class="keyword">INSERT</span>和<span class="keyword">DELETE</span>操作时要保证更新、插入或删除的行满足视图定义中的谓词条件（即子查询中的条件表达式）</span><br><span class="line">	表示更新视图时要保证在该视图的权限范围之内</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">view</span> myview;</span><br><span class="line"></span><br><span class="line">注意：只有DQL语句才能以试图对象的方式创建出来。</span><br><span class="line">查看视图的结构:<span class="keyword">desc</span> 视图名  </span><br><span class="line">查看视图的信息:<span class="keyword">show</span> <span class="keyword">table</span> status <span class="keyword">like</span> <span class="string">&#x27;视图名&#x27;</span>;</span><br><span class="line">查看视图的详细定义: <span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">view</span> 视图名;</span><br></pre></td></tr></table></figure>
+
+<p>对视图进行增删改查，会影响到原表数据。(通过视图影响原表数据，不是直接操作的原表)</p>
+<h3 id="12-2-1视图的操作"><a href="#12-2-1视图的操作" class="headerlink" title="12.2.1视图的操作"></a>12.2.1视图的操作</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">修改视图:</span><br><span class="line">	<span class="keyword">create</span> <span class="keyword">or</span> replace [algorithm<span class="operator">=</span>&#123;undefined<span class="operator">|</span><span class="keyword">merge</span><span class="operator">|</span>temptable&#125;];</span><br><span class="line">	<span class="keyword">view</span> 视图;</span><br><span class="line">	<span class="keyword">as</span> <span class="keyword">select</span> 语句</span><br><span class="line">	[<span class="keyword">with</span>[cascade<span class="operator">|</span><span class="keyword">local</span>]<span class="keyword">check</span> option];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">alter</span> <span class="keyword">view</span>[&#123;algorithm<span class="operator">=</span>&#123;<span class="keyword">merge</span>,temptable<span class="operator">|</span>undefined&#125;&#125;]<span class="keyword">view</span> view_name 		[(column_list)] </span><br><span class="line">	<span class="keyword">as</span> select_statement</span><br><span class="line">	[<span class="keyword">with</span>[<span class="keyword">cascaded</span><span class="operator">|</span><span class="keyword">local</span>]<span class="keyword">check</span> option]</span><br><span class="line">视图数据的修改:</span><br><span class="line">	update view_name <span class="keyword">set</span> <span class="comment">----- where条件</span></span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>试图可以隐藏表的实现细节。保密级别较高的系统，数据库只对外提供相关的视图。</p>
+<p>不能更改视图的情况:</p>
+<p>​    1)视图中包含count(),sum(),max(),min()</p>
+<p>​    2)视图中包含union,union all,</p>
+<p>​    3)常量视图</p>
+<p>​    4)视图中的select中包含子查询</p>
+<p>​    5)由不可更新的视图导出的视图</p>
+<p>​    6)创建视图时,algorithm为temptable类型</p>
+</blockquote>
+<p>可以对视图进行CRUD操作。</p>
+<blockquote>
+<p>视图可以隐藏表的实现细节。保密级别较高的系统，数据库只对外提供相关的视图。</p>
 </blockquote>
 <h1 id="DBA命令"><a href="#DBA命令" class="headerlink" title="DBA命令"></a>DBA命令</h1><p>在数据库当中的数据导出</p>
 <blockquote>
@@ -888,6 +911,55 @@
 <p>2.programData文件夹</p>
 <p>3.数据库目录</p>
 </blockquote>
+<h1 id="十六-数据完整性约束"><a href="#十六-数据完整性约束" class="headerlink" title="十六. 数据完整性约束"></a>十六. 数据完整性约束</h1><h2 id="16-1数据完整性约束"><a href="#16-1数据完整性约束" class="headerlink" title="16.1数据完整性约束"></a>16.1数据完整性约束</h2><h3 id="16-1-1实体完整性约束"><a href="#16-1-1实体完整性约束" class="headerlink" title="16.1.1实体完整性约束"></a>16.1.1实体完整性约束</h3><blockquote>
+<p>1.主键约束:</p>
+<p>​        每个表只能定义一个主键</p>
+<p>​        唯一性约束</p>
+<p>​        最小化规则</p>
+<p>​        一个列名在复合主键的列表中只能出现一次</p>
+<p>​            1)作为列的完整性约束</p>
+<p>​            2)作为表的完整性约束</p>
+<p>2.候选键约束:</p>
+<p>​        一个表只能创建一个主键,但是可以定义若干个候选键</p>
+<p>​        定义主键约束时,系统会自动创建primary key索引,</p>
+<p>而定义候选键约束时,系统会自动创建unique索引</p>
+</blockquote>
+<h3 id="16-1-2参照完整性"><a href="#16-1-2参照完整性" class="headerlink" title="16.1.2参照完整性"></a>16.1.2参照完整性</h3><blockquote>
+<p>若属性f是基本关系R的外码,它与基本关系S的主键K相对应,则对于R中的每个元组只允许有两个可能,要么取空值,要么等于S中某个元组的主键值.</p>
+<p>被参考的表要么是已经存在的表,或者是当前正在创建的表,也就是说,参考表和被参考表是同一个表,这样的表称为自参考表,这种结构被称为自参考完整性.</p>
+</blockquote>
+<h3 id="16-1-3用户定义完整性"><a href="#16-1-3用户定义完整性" class="headerlink" title="16.1.3用户定义完整性"></a>16.1.3用户定义完整性</h3><blockquote>
+<p>1.非空约束:</p>
+<p>​    not null;</p>
+<p>2.check约束:</p>
+<p>​    check(expr)</p>
+</blockquote>
+<h2 id="16-2命名完整性约束"><a href="#16-2命名完整性约束" class="headerlink" title="16.2命名完整性约束"></a>16.2命名完整性约束</h2><p>数据库的安全性</p>
+<p>数据库的安全是指DBMS能够保证DB免受非法,非授权用户的使用,泄露,更改或者破坏的机制和手段.</p>
+<p>数据库安全性控制:</p>
+<p>用户身份鉴别</p>
+<p>存取控制:</p>
+<p>自主存取控制(DAC discretionary access control)</p>
+<p>强制存取控制(MAC mandatory access control)</p>
+<p>对数据对象进行安全性分级：绝密（Top Secret） 机密（Secret） 可信（confidential） 无分类（unclassified）</p>
+<p>推断控制机制</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#授权命令</span><br><span class="line"><span class="keyword">grant</span> &#123;<span class="keyword">all</span> privileges<span class="operator">|</span>privilege&#123;,privilege...&#125;&#125;</span><br><span class="line"><span class="keyword">on</span> [<span class="keyword">table</span>] tablename<span class="operator">|</span>viewname</span><br><span class="line"><span class="keyword">to</span> &#123;public<span class="operator">|</span><span class="keyword">user</span><span class="operator">-</span>id&#123;,<span class="keyword">user</span><span class="operator">-</span>id...&#125;&#125;</span><br><span class="line">[<span class="keyword">with</span> <span class="keyword">grant</span> option]</span><br><span class="line"></span><br><span class="line">#收回授权命令：</span><br><span class="line"><span class="keyword">REVOKE</span> &#123;<span class="keyword">all</span> privilEges <span class="operator">|</span> priv &#123;, priv…&#125; &#125; </span><br><span class="line"><span class="keyword">ON</span> tablename <span class="operator">|</span> viewname</span><br><span class="line"><span class="keyword">FROM</span> &#123;public <span class="operator">|</span> <span class="keyword">user</span> &#123;, <span class="keyword">user</span>…&#125; &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>视图</p>
+<p>审计：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AUDIT <span class="keyword">ALTER</span>,UPDATE <span class="keyword">on</span> SC;</span><br><span class="line">NOAUDIT	<span class="keyword">ALTER</span>,UPDATE  <span class="keyword">ON</span> SC;</span><br></pre></td></tr></table></figure>
+
+<p>数据加密</p>
+<p>自主访问控制:</p>
+<p>grant select:</p>
+<p>强制安全性机制:</p>
+<p>绝密(top secret),机密(secret),可信(confirm)</p>
+<p>审计:</p>
+<p>audit  </p>
+<p>用户级审计</p>
+<p>系统级审计</p>
 
                 
             </div>
@@ -1444,7 +1516,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.8k</span>
+                        class="white-color">18.7k</span>
             
             
             
