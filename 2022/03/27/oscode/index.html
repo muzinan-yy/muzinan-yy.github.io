@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, muzinan の blog">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="oscode, muzinan の blog">
+    <meta name="description" content="进程的调度:
+1.基于优先级优先调度
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | muzinan の blog</title>
+    <title>oscode | muzinan の blog</title>
     <link rel="icon" type="image/jpeg" href="/blood.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -372,12 +374,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">oscode</h1>
                 </div>
             </div>
         </div>
@@ -491,9 +493,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/os/">
+                                <span class="chip bg-color">os</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -505,7 +511,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-14
+                    2022-03-27
                 </div>
                 
 
@@ -514,7 +520,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    554
                 </div>
                 
 
@@ -536,19 +542,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <p>进程的调度:</p>
+<p>1.基于优先级优先调度</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//定义进程控制块PCB</span></span><br><span class="line"><span class="comment">//定义状态</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Status</span> &#123;</span></span><br><span class="line">    E,<span class="comment">//正在运行</span></span><br><span class="line">    R,<span class="comment">//运行结束</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PCB</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>: </span><br><span class="line">    string processName;</span><br><span class="line">    PCB* next;</span><br><span class="line">    <span class="keyword">int</span> runtime;</span><br><span class="line">    <span class="keyword">int</span> priority;</span><br><span class="line">    Status status;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">PCB</span>() :<span class="built_in">processName</span>(<span class="string">&quot;N&quot;</span>), <span class="built_in">next</span>(<span class="literal">NULL</span>), <span class="built_in">runtime</span>(<span class="built_in">rand</span>() % <span class="number">7</span>), <span class="built_in">priority</span>(<span class="built_in">rand</span>() % <span class="number">7</span>), <span class="built_in">status</span>(R) &#123;&#125;;<span class="comment">//</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Display</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; processName &lt;&lt; <span class="string">&quot;\t&quot;</span> &lt;&lt; runtime &lt;&lt; <span class="string">&quot;\t\t&quot;</span> &lt;&lt; priority;</span><br><span class="line">        <span class="keyword">if</span> (status == E) &#123; cout &lt;&lt; <span class="string">&quot;\tE&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123; cout &lt;&lt; <span class="string">&quot;\tR&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">queuePCB</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">queuePCB</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    PCB* head;<span class="comment">//指向队首的指针</span></span><br><span class="line">    PCB* p;<span class="comment">//游离的指针</span></span><br><span class="line"><span class="keyword">public</span>:  </span><br><span class="line">    <span class="built_in">queuePCB</span>()</span><br><span class="line">        :<span class="built_in">head</span>(<span class="literal">NULL</span>)</span><br><span class="line">        , <span class="built_in">p</span>(<span class="literal">NULL</span>)</span><br><span class="line">    &#123;&#125;</span><br><span class="line">    <span class="function">PCB* <span class="title">Insert</span><span class="params">(PCB&amp; pnode)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (pnode.processName == <span class="string">&quot;N&quot;</span>) &#123;<span class="comment">//初始化进程名</span></span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;请输入进程名：&quot;</span> &lt;&lt; endl;</span><br><span class="line">            string name;</span><br><span class="line">            cin &gt;&gt; name;</span><br><span class="line">            pnode.processName = name;</span><br><span class="line">        &#125;</span><br><span class="line">        p = head;</span><br><span class="line">        <span class="comment">//若是指针不为空</span></span><br><span class="line">        <span class="keyword">if</span> (head != <span class="literal">NULL</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (head-&gt;next == <span class="literal">NULL</span>) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (head-&gt;priority &lt; pnode.priority) </span><br><span class="line">                    &#123;<span class="comment">//swap</span></span><br><span class="line">                    pnode.next = head;</span><br><span class="line">                    head-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">                    head = &amp;pnode;</span><br><span class="line">                    <span class="built_in">Show</span>();</span><br><span class="line">                    <span class="keyword">return</span> p;</span><br><span class="line">                    &#125;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                    &#123;</span><br><span class="line">                    head-&gt;next = &amp;pnode;</span><br><span class="line">                    pnode.next = <span class="literal">NULL</span>;</span><br><span class="line">                    <span class="built_in">Show</span>();</span><br><span class="line">                    <span class="keyword">return</span> p;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (pnode.priority &gt; head-&gt;priority)</span><br><span class="line">                &#123;</span><br><span class="line">                    pnode.next = p;</span><br><span class="line">                    head = &amp;pnode;</span><br><span class="line">                    <span class="built_in">Show</span>();</span><br><span class="line">                    <span class="keyword">return</span> p;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">while</span> (p-&gt;next != <span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (pnode.priority &gt; (p-&gt;next-&gt;priority))</span><br><span class="line">                    &#123;</span><br><span class="line">                        pnode.next = p-&gt;next;</span><br><span class="line">                        p-&gt;next = &amp;pnode;</span><br><span class="line">                        <span class="built_in">Show</span>();</span><br><span class="line">                        <span class="keyword">return</span> p;</span><br><span class="line">                    &#125;</span><br><span class="line">                    p = p-&gt;next;</span><br><span class="line">                &#125;</span><br><span class="line">                p-&gt;next = &amp;pnode;</span><br><span class="line">                pnode.next= <span class="literal">NULL</span>;</span><br><span class="line">                <span class="built_in">Show</span>();</span><br><span class="line">                <span class="keyword">return</span> p;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">    head = &amp;pnode;</span><br><span class="line">    head-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="built_in">Show</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Run</span><span class="params">(PCB&amp; pnode)</span> </span>&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;运行的进程为：&quot;</span> &lt;&lt; endl;</span><br><span class="line">        pnode.<span class="built_in">Display</span>();</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        pnode.priority--;</span><br><span class="line">        pnode.runtime--;</span><br><span class="line">        <span class="keyword">if</span> (pnode.runtime == <span class="number">0</span>) &#123;</span><br><span class="line">            pnode.status = E;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Dispatch</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (head != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            <span class="built_in">Run</span>(*head);</span><br><span class="line">            <span class="keyword">if</span> (head-&gt;status == E) &#123;</span><br><span class="line">                head = head-&gt;next;</span><br><span class="line">                <span class="built_in">Show</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                p = head;</span><br><span class="line">                head = head-&gt;next;</span><br><span class="line">                <span class="built_in">Insert</span>(*p);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        PCB* tmp;</span><br><span class="line">        tmp = head;</span><br><span class="line">        <span class="keyword">if</span> (tmp != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;进程名&quot;</span> &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; <span class="string">&quot;所需运行时间&quot;</span> &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; <span class="string">&quot;优先级 &quot;</span> &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; <span class="string">&quot;状态&quot;</span> &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (tmp != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            tmp-&gt;<span class="built_in">Display</span>();</span><br><span class="line">            tmp = tmp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queuePCB qPCB;</span><br><span class="line">    PCB arr[<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        qPCB.<span class="built_in">Insert</span>(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;进程已就绪&quot;</span> &lt;&lt; endl;</span><br><span class="line">    qPCB.<span class="built_in">Dispatch</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;进程运行已结束&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
                 
             </div>
@@ -575,7 +572,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/11/14/hello-world/">http://example.com/2021/11/14/hello-world/</a>
+                    <a href="http://example.com/2022/03/27/oscode/">http://example.com/2022/03/27/oscode/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,7 +609,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/os/">
+                                    <span class="chip bg-color">os</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -788,13 +789,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/14/first-blog/">
+                <a href="/2022/04/14/%E5%AE%89%E5%8D%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="王璐瑶我喜欢你">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="安卓">
                         
-                        <span class="card-title">王璐瑶我喜欢你</span>
+                        <span class="card-title">安卓</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -805,8 +806,45 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            muzinan
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/01/05/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript学习笔记">
+                        
+                        <span class="card-title">JavaScript学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -818,49 +856,11 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/11/14/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            muzinan
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
