@@ -1,0 +1,1364 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="windows程序设计, muzinan の blog">
+    <meta name="description" content="APIURLDownloadToFile1234567891011121314下载文件:HRESULT URLDownloadToFile(             LPUNKNOWN            pCaller,      //">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>windows程序设计 | muzinan の blog</title>
+    <link rel="icon" type="image/jpeg" href="/blood.jpg">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/blood.jpg" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">muzinan の blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Galleries</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/blood.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">muzinan の blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Galleries</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/muzinan12300" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/muzinan12300" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">windows程序设计</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/windows/">
+                                <span class="chip bg-color">windows</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-04-28
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.8k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><h4 id="URLDownloadToFile"><a href="#URLDownloadToFile" class="headerlink" title="URLDownloadToFile"></a>URLDownloadToFile</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">下载文件:</span><br><span class="line"><span class="function">HRESULT <span class="title">URLDownloadToFile</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">             LPUNKNOWN            pCaller,      <span class="comment">//参数为ActiveX控件的指针</span></span></span></span><br><span class="line"><span class="params"><span class="function">             LPCTSTR              szURL,		<span class="comment">//要下载的url地址</span></span></span></span><br><span class="line"><span class="params"><span class="function">             LPCTSTR              szFileName,   <span class="comment">//保存的路径</span></span></span></span><br><span class="line"><span class="params"><span class="function">  _Reserved_ DWORD                dwReserved,   <span class="comment">//Reserved. Must be set to 0.</span></span></span></span><br><span class="line"><span class="params"><span class="function">             LPBINDSTATUSCALLBACK lpfnCB       <span class="comment">//下载进度状态回调接口的指针，实时监控下载文件的状态需要用到这个指针</span></span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"></span><br><span class="line"> 返回值：</span><br><span class="line">S_OK : 成功下载；</span><br><span class="line">E_OUTOFMEMORY：缓冲区长度不够，或者没有足够的内存来完成下载的操作；</span><br><span class="line">INET_E_DOWNLOAD_FAILURE：指定的资源或者回调接口有问题。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="ShellExecuteEx"><a href="#ShellExecuteEx" class="headerlink" title="ShellExecuteEx"></a>ShellExecuteEx</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">SHELLEXECUTEINFO shellinfo = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">shellinfo.cbSize = <span class="built_in"><span class="keyword">sizeof</span></span>(SHELLEXECUTEINFO);</span><br><span class="line">shellinfo.lpVerb = _T(<span class="string">&quot;open&quot;</span>);</span><br><span class="line">shellinfo.lpFile = _T(<span class="string">&quot;calc.exe&quot;</span>);</span><br><span class="line">shellinfo.nShow = SW_SHOW;</span><br><span class="line"><span class="built_in">ShellExecuteEx</span>(&amp;shellinfo);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">自动执行文件:</span><br><span class="line">输入输出参数都是 SHELLEXECUTEINFO 结构体，其结构定义如下：</span><br><span class="line"><span class="function">BOOL <span class="title">ShellExecuteEx</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _Inout_ SHELLEXECUTEINFO *pExecInfo</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">SHELLEXECUTEINFO</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  DWORD    cbSize;<span class="comment">//结构大小,sizeof(SHELLEXECUTEINFO)</span></span><br><span class="line">  ULONG     fMask;<span class="comment">//指定结构成员的有效性</span></span><br><span class="line">  HWND      hwnd;<span class="comment">//父窗口句柄或出错时显示错误父窗口的句柄，可以为 NULL</span></span><br><span class="line">  LPCTSTR   lpVerb;<span class="comment">//指定该函数的执行动作</span></span><br><span class="line">  LPCTSTR   lpFile;<span class="comment">//操作对象路径</span></span><br><span class="line">  LPCTSTR   lpParameters;<span class="comment">//执行参数，可以为 ULL</span></span><br><span class="line">  LPCTSTR   lpDirectory;<span class="comment">//工作目录，可以为 NULL</span></span><br><span class="line">  <span class="keyword">int</span>             nShow;<span class="comment">//显示方式</span></span><br><span class="line">  HINSTANCE hInstApp;<span class="comment">//如果设置了 SEE_MASK_NOCLOSEPROCESS ,并且调用成功则该值大于32，调用失败者被设置错误值</span></span><br><span class="line">  LPVOID     lpIDList;<span class="comment">//ITEMIDLIST结构的地址，存储成员的特别标识符，当fMask不包括SEE_MASK_IDLIST或SEE_MASK_INVOKEIDLIST时该项被忽略</span></span><br><span class="line">  LPCTSTR   lpClass;<span class="comment">//指明文件类别的名字或GUID，当fMask不包括SEE_MASK_CLASSNAME时该项被忽略</span></span><br><span class="line">  HKEY        hkeyClass;<span class="comment">//获得已在系统注册的文件类型的Handle，当fMask不包括SEE_MASK_HOTKEY时该项被忽略</span></span><br><span class="line">  DWORD   dwHotKey;<span class="comment">//程序的热键关联，低位存储虚拟关键码（Key Code），高位存储修改标志位(HOTKEYF_)，当fmask不包括SEE_MASK_HOTKEY时该项被忽略</span></span><br><span class="line"></span><br><span class="line">  <span class="class"><span class="keyword">union</span></span></span><br><span class="line"><span class="class">  &#123;</span></span><br><span class="line">    HANDLE hIcon;<span class="comment">//取得对应文件类型的图标的Handle，当fMask不包括SEE_MASK_ICON时该项被忽略</span></span><br><span class="line">    HANDLE hMonitor;<span class="comment">//将文档显示在显示器上的Handle，当fMask不包括SEE_MASK_HMONITOR时该项被忽略</span></span><br><span class="line">  &#125; DUMMYUNIONNAME;</span><br><span class="line"></span><br><span class="line">  HANDLE    hProcess;<span class="comment">//指向新启动的程序的句柄。若fMask不设为SEE_MASK_NOCLOSEPROCESS则该项值为NULL。</span></span><br><span class="line">                     <span class="comment">//但若程序没有启动，即使fMask设为SEE_MASK_NOCLOSEPROCESS，该值也仍为NULL。</span></span><br><span class="line">                     <span class="comment">//如果没有新创建进程，也会为空</span></span><br><span class="line"></span><br><span class="line">&#125; SHELLEXECUTEINFO, *LPSHELLEXECUTEINFO;</span><br><span class="line"></span><br><span class="line">fMask 用于指定结构成员的内容和有效性，可为下列值的组合：</span><br><span class="line"></span><br><span class="line">● <span class="built_in">SEE_MASK_DEFAULT</span> (<span class="number">0</span>)默认</span><br><span class="line">● SEE_MASK_CLASSNAME 使用 lpClass 参数，如果 SEE_MASK_CLASSKEY 也有效，则用后者</span><br><span class="line">● SEE_MASK_CLASSKEY 使用 hkeyClass 参数</span><br><span class="line">● SEE_MASK_IDLIST 使用 lpIDList 参数</span><br><span class="line">● SEE_MASK_INVOKEIDLIST 使用选定项目的快捷菜单 IContextMenu 接口处理程序</span><br><span class="line">● SEE_MASK_ICON 使用 hIcon 给出的菜单，不能与 SEE_MASK_HMONITOR 共用，Vista之后</span><br><span class="line">● SEE_MASK_HOTKEY 使用 dwHotKey 参数</span><br><span class="line">● SEE_MASK_NOCLOSEPROCESS 如果执行之后需要返回进程句柄，或者等待执行完毕的话，则需要指定该参数，从结构参数意义可以看到 hProcess 和 hInstApp 都依赖该选项</span><br><span class="line">● SEE_MASK_CONNECTNETDRV 验证共享并连接到驱动器号</span><br><span class="line">● SEE_MASK_NOASYNC 不等待操作完成，直接返回，会创建一个后台线程运行。</span><br><span class="line">● SEE_MASK_FLAG_DDEWAIT 弃用，使用 SEE_MASK_NOASYNC</span><br><span class="line">● SEE_MASK_DOENVSUBST 环境变量会被展开</span><br><span class="line">● SEE_MASK_FLAG_NO_UI 出现错误，不显示错误消息框，比如不会弹出找不到文件之类的窗口，直接返回失败</span><br><span class="line">● SEE_MASK_UNICODE UNICODE 程序</span><br><span class="line">● SEE_MASK_NO_CONSOLE 继承父进程的控制台，而不是创建新的控制台，与 CREATE_NEW_CONSOLE 相反</span><br><span class="line">● SEE_MASK_ASYNCOK 执行在后台线程，调用立即返回</span><br><span class="line">● SEE_MASK_NOQUERYCLASSSTORE 弃用</span><br><span class="line">● SEE_MASK_HMONITOR 使用 hmonitor，不能与 SEE_MASK_ICON 共存</span><br><span class="line">● SEE_MASK_NOZONECHECKS 不执行区域检查</span><br><span class="line">● SEE_MASK_WAITFORINPUTIDLE 创建新进程后，等待进程变为空闲状态再返回，超时时间为<span class="number">1</span>分钟</span><br><span class="line">● SEE_MASK_FLAG_LOG_USAGE 跟踪应用程序启动次数</span><br><span class="line">● SEE_MASK_FLAG_HINST_IS_SITE</span><br><span class="line"></span><br><span class="line">lpVerb 参数与 ShellExecute 的 lpOperation 参数一致：</span><br><span class="line">edit 用编辑器打开 lpFile 指定的文档，如果 lpFile 不是文档，则会失败</span><br><span class="line">explore 浏览 lpFile 指定的文件夹</span><br><span class="line">find 搜索 lpDirectory 指定的目录</span><br><span class="line">open 打开 lpFile 文件，lpFile 可以是文件或文件夹</span><br><span class="line">print 打印 lpFile，如果 lpFile 不是文档，则函数失败</span><br><span class="line">properties 显示属性</span><br><span class="line">runas 请求以管理员权限运行，比如以管理员权限运行某个exe</span><br><span class="line"><span class="literal">NULL</span> 执行默认”open”动作</span><br><span class="line"></span><br><span class="line">nShow 与 ShellExecute 的该参数一致：</span><br><span class="line">● SW_HIDE 隐藏窗口，活动状态给令一个窗口</span><br><span class="line">● SW_MINIMIZE 最小化窗口，活动状态给令一个窗口</span><br><span class="line">● SW_RESTORE 用原来的大小和位置显示一个窗口，同时令其进入活动状态</span><br><span class="line">● SW_SHOW 用当前的大小和位置显示一个窗口，同时令其进入活动状态</span><br><span class="line">● SW_SHOWMAXIMIZED 最大化窗口，并将其激活</span><br><span class="line">● SW_SHOWMINIMIZED 最小化窗口，并将其激活</span><br><span class="line">● SW_SHOWMINNOACTIVE 最小化一个窗口，同时不改变活动窗口</span><br><span class="line">● SW_SHOWNA 用当前的大小和位置显示一个窗口，不改变活动窗口</span><br><span class="line">● SW_SHOWNOACTIVATE 用最近的大小和位置显示一个窗口，同时不改变活动窗口</span><br><span class="line">● SW_SHOWNORMAL 与SW_RESTORE相同</span><br><span class="line"></span><br><span class="line">如果设置了 SEE_MASK_NOCLOSEPROCESS ，调用成功则 hInstApp 返回大于<span class="number">32</span>的值，调用失败会返回：</span><br><span class="line">● <span class="built_in">SE_ERR_FNF</span> (<span class="number">2</span>) 文件未找到</span><br><span class="line">● <span class="built_in">SE_ERR_PNF</span> (<span class="number">3</span>) 路径未找到</span><br><span class="line">● <span class="built_in">SE_ERR_ACCESSDENIED</span> (<span class="number">5</span>) 拒绝访问</span><br><span class="line">● <span class="built_in">SE_ERR_OOM</span> (<span class="number">8</span>) 内存不足</span><br><span class="line">● <span class="built_in">SE_ERR_DLLNOTFOUND</span> (<span class="number">32</span>) 动态库未找到</span><br><span class="line">● <span class="built_in">SE_ERR_SHARE</span> (<span class="number">26</span>) 无法共享打开的文件</span><br><span class="line">● <span class="built_in">SE_ERR_ASSOCINCOMPLETE</span> (<span class="number">27</span>) 文件关联信息不完整</span><br><span class="line">● <span class="built_in">SE_ERR_DDETIMEOUT</span> (<span class="number">28</span>) 操作超时</span><br><span class="line">● <span class="built_in">SE_ERR_DDEFAIL</span> (<span class="number">29</span>) 操作失败</span><br><span class="line">● <span class="built_in">SE_ERR_DDEBUSY</span> (<span class="number">30</span>) DDE 操作忙</span><br><span class="line">● <span class="built_in">SE_ERR_NOASSOC</span> (<span class="number">31</span>) 文件关联不可用</span><br><span class="line"></span><br><span class="line">返回值：</span><br><span class="line">函数执行成功，返回 TRUE ，否则返回 FALSE ，可使用 GetLastError 获取错误码。</span><br><span class="line"></span><br><span class="line">● ERROR_FILE_NOT_FOUND 文件不存在</span><br><span class="line">● ERROR_PATH_NOT_FOUND 路径不存在</span><br><span class="line">● <span class="function">ERROR_DDE_FAIL <span class="title">DDE</span><span class="params">(动态数据交换)</span>失败</span></span><br><span class="line"><span class="function">● ERROR_NO_ASSOCIATION 未找到与指定文件拓展名关联的应用</span></span><br><span class="line"><span class="function">● ERROR_ACCESS_DENIED 拒绝访问</span></span><br><span class="line"><span class="function">● ERROR_DLL_NOT_FOUND 未找到dll</span></span><br><span class="line"><span class="function">● ERROR_CANCELLED 功能提示用户提供额外信息，但是用户取消请求。</span></span><br><span class="line"><span class="function">● ERROR_NOT_ENOUGH_MEMORY 内存不足</span></span><br><span class="line"><span class="function">● ERROR_SHARING_VIOLATION 发生共享冲突</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文件的操作"><a href="#文件的操作" class="headerlink" title="文件的操作"></a>文件的操作</h3><h4 id="文件的删除"><a href="#文件的删除" class="headerlink" title="文件的删除"></a>文件的删除</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//文件的删除</span></span><br><span class="line"><span class="function">BOOL WINAPI <span class="title">DeleteFile</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_  LPCTSTR lpFileName</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数执行成功，返回 TRUE ，否则返回 FALSE ，可使用 GetLastError 获取错误码。</span></span><br><span class="line"><span class="comment">//备注：如果程序尝试删除一个不存在的文件，GetLastError 返回 ERROR_FILE_NOT_FOUND。如果文件是只读的，则 GetLastError 返回 ERROR_ACCESS_DENIED。</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="文件的复制"><a href="#文件的复制" class="headerlink" title="文件的复制"></a>文件的复制</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//文件的复制:</span></span><br><span class="line"><span class="function">BOOL <span class="title">CopyFile</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  LPCTSTR lpExistingFileName, <span class="comment">//存在的文件路径</span></span></span></span><br><span class="line"><span class="params"><span class="function">  LPCTSTR lpNewFileName,      <span class="comment">//新的保存文件路径</span></span></span></span><br><span class="line"><span class="params"><span class="function">  BOOL    bFailIfExists       </span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="comment">//传递TRUE：如果目标文件已经存在，不拷贝，CopyFile 返回 FALSE，传递 FALSE，如果目标文件已经存在，覆盖目标文件</span></span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件的移动"><a href="#文件的移动" class="headerlink" title="文件的移动"></a>文件的移动</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">MoveFile</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  LPCTSTR lpExistingFileName,</span></span></span><br><span class="line"><span class="params"><span class="function">  LPCTSTR lpNewFileName</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"><span class="comment">//lpExistingFileName：要移动的源文件或者文件夹的路径</span></span><br><span class="line"><span class="comment">//lpNewFileName：要移动到的目标文件或者文件夹的路径</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>获取错误码函数:GetLastError</p>
+<p>返回DWORD</p>
+</blockquote>
+<h3 id="MessageBox"><a href="#MessageBox" class="headerlink" title="MessageBox"></a>MessageBox</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MessageBox</span>(HWND hWnd, LPCTSTR lpText, LPCTSTR lpCaption, UINT uType)</span><br><span class="line">hWnd:</span><br><span class="line">此参数代表消息框拥有的窗口。如果为<span class="literal">NULL</span>，则消息框没有拥有窗口。</span><br><span class="line"></span><br><span class="line">lpText:</span><br><span class="line">消息框的内容。</span><br><span class="line"></span><br><span class="line">lpCaption:</span><br><span class="line">消息框的标题。</span><br><span class="line"></span><br><span class="line">uType:</span><br><span class="line">指定一个决定对话框的内容和行为的位标志集。此参数可以为下列标志组中标志的组合。指定下列标志中的一个来显示消息框中的按钮以及图标。</span><br></pre></td></tr></table></figure>
+
+<h3 id="消息处理"><a href="#消息处理" class="headerlink" title="消息处理"></a>消息处理</h3><p>消息使用MSG结构进行存储</p>
+<h3 id="客户区和非客户区"><a href="#客户区和非客户区" class="headerlink" title="客户区和非客户区"></a>客户区和非客户区</h3><h3 id="获取设备环境句柄"><a href="#获取设备环境句柄" class="headerlink" title="获取设备环境句柄"></a>获取设备环境句柄</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">方法一:</span><br><span class="line">hdc=<span class="built_in">BeginPaint</span>(hWnd,&amp;ps);</span><br><span class="line"><span class="built_in">EndPaint</span>(hWnd,&amp;ps);</span><br><span class="line"></span><br><span class="line">方法二:</span><br><span class="line">hdc=<span class="built_in">GetDC</span>(hWnd);</span><br><span class="line"><span class="built_in">Release</span>(hWnd,hdc)</span><br><span class="line">    </span><br><span class="line"><span class="comment">//GetClientRect(hWnd,&amp;rect);</span></span><br><span class="line"><span class="comment">//DrawText(hdc, TEXT(&quot;hello world!&quot;), -1, &amp;rect, DT_CENTER);</span></span><br><span class="line"><span class="comment">//TextOut(hdc, 400, 400, TEXT(&quot;你是不是傻&quot;) ,5);    </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文本的输出"><a href="#文本的输出" class="headerlink" title="文本的输出"></a>文本的输出</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//TextOut 函数使用当前选择的字体、背景颜色和文本颜色，将一个字符串绘制于窗口的指定位置。</span></span><br><span class="line"><span class="function">BOOL <span class="title">TextOut</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_  HDC hdc,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_  <span class="keyword">int</span> nXStart,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_  <span class="keyword">int</span> nYStart,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_  LPCTSTR lpString,<span class="comment">// 指向将被绘制字符串的指针</span></span></span></span><br><span class="line"><span class="params"><span class="function">  _In_  <span class="keyword">int</span> cchString	 <span class="comment">//lpString 字符串的长度（有多少个字符）</span></span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串的处理"><a href="#字符串的处理" class="headerlink" title="字符串的处理"></a>字符串的处理</h3><h4 id="不安全的处理版本"><a href="#不安全的处理版本" class="headerlink" title="不安全的处理版本"></a>不安全的处理版本</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数用途:wsprintf </span></span><br><span class="line"><span class="comment">//函数将格式化字符串写入到指定的缓冲区里</span></span><br><span class="line"><span class="comment">//输出缓冲区里的的值取决于格式说明符（即&quot;%&quot;）</span></span><br><span class="line"><span class="comment">//如果写入的是文字，此函数给写入的文字的末尾追加一个&#x27;\0&#x27;</span></span><br><span class="line"><span class="comment">//函数的返回值是写入的长度，但不包括最后的&#x27;\0&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> __cdecl <span class="title">wsprintf</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _Out_  LPTSTR lpOut,<span class="comment">//缓冲区的最大的限制为1024字节</span></span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   LPCTSTR lpFmt,<span class="comment">//格式化字符串</span></span></span></span><br><span class="line"><span class="params"><span class="function">  _In_    ...</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"><span class="comment">//lstrlen 函数用于计算指定字符串的长度（不包含&#x27;\0）</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> WINAPI <span class="title">lstrlen</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_  LPCTSTR lpString</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"><span class="comment">//lstrcat 函数的功能是将一个字符串拼接在另一个字符串后边。</span></span><br><span class="line"><span class="function">LPTSTR WINAPI <span class="title">lstrcat</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _Inout_  LPTSTR lpString1,<span class="comment">//一个以&#x27;\0&#x27;为结尾的字符串，该字符串空间必须大到足以容纳本身及另一个字符串</span></span></span></span><br><span class="line"><span class="params"><span class="function">  _In_     LPTSTR lpString2</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"><span class="comment">//lstrcpy 函数的功能是复制一个字符串到缓冲区。</span></span><br><span class="line"><span class="function">LPTSTR WINAPI <span class="title">lstrcpy</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _Out_  LPTSTR lpString1,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   LPTSTR lpString2</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="安全的处理版本"><a href="#安全的处理版本" class="headerlink" title="安全的处理版本"></a>安全的处理版本</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//StringCchPrintf 函数用于把数据格式化写入到指定的缓冲区里，该函数要求提供目标缓冲区的大小，确保不会发生越界访问。</span></span><br><span class="line"><span class="function">HRESULT <span class="title">StringCchPrintf</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _Out_  LPTSTR pszDest,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   <span class="keyword">size_t</span> cchDest,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   LPCTSTR pszFormat,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   ...</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"><span class="comment">//StringCchLength 函数用于确定字符串是否超过了规定的长度，以字符为计算单位。</span></span><br><span class="line"><span class="function">HRESULT <span class="title">StringCchLength</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   LPCTSTR psz,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   <span class="keyword">size_t</span> cchMax,</span></span></span><br><span class="line"><span class="params"><span class="function">  _Out_  <span class="keyword">size_t</span> *pcch</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"><span class="comment">//StringCchCat 函数的功能是将一个字符串拼接到另一个字符串。StringCchCat 函数要求提供目标缓冲区的长度，以确保写入数据不会超出缓冲区的末尾。</span></span><br><span class="line"><span class="function">HRESULT <span class="title">StringCchCat</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _Inout_  LPTSTR pszDest,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_     <span class="keyword">size_t</span> cchDest,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_     LPCTSTR pszSrc</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"><span class="comment">//StringCchCopy 函数的功能是复制一个字符串到缓冲区。StringCchCopy 函数要求提供目标缓冲区的长度，以确保写入数据不会超出缓冲区的末尾。</span></span><br><span class="line"><span class="function">HRESULT <span class="title">StringCchCopy</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  _Out_  LPTSTR pszDest,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   <span class="keyword">size_t</span> cchDest,</span></span></span><br><span class="line"><span class="params"><span class="function">  _In_   LPCTSTR pszSrc</span></span></span><br><span class="line"><span class="params"><span class="function">)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//需要引入#include&lt;strsafe.h&gt;头文件</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>实例</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> xchar,ychar;</span><br><span class="line"><span class="keyword">case</span> WM_CREATE:</span><br><span class="line">		hdc = <span class="built_in">GetDC</span>(hWnd);</span><br><span class="line">		<span class="built_in">GetTextMetrics</span>(hdc, &amp;textmetric);</span><br><span class="line">		xchar = textmetric.tmAveCharWidth;<span class="comment">//字体中小写字符的平均宽度（一般定义为字母 x 的宽度）</span></span><br><span class="line">		ychar = textmetric.tmHeight + textmetric.tmExternalLeading;<span class="comment">//取得字的高度和字之间的间距</span></span><br><span class="line">		<span class="built_in">ReleaseDC</span>(hWnd, hdc);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> WM_PAINT:</span><br><span class="line">        &#123;</span><br><span class="line">            PAINTSTRUCT ps;</span><br><span class="line">			RECT rect;</span><br><span class="line">            hdc = <span class="built_in">BeginPaint</span>(hWnd, &amp;ps);</span><br><span class="line">			<span class="keyword">wchar_t</span> c[] = <span class="string">L&quot;你真的漂亮&quot;</span>;</span><br><span class="line">			<span class="keyword">size_t</span> tlength;</span><br><span class="line">            <span class="comment">// <span class="doctag">TODO:</span> 在此处添加使用 hdc 的任何绘图代码...</span></span><br><span class="line">			<span class="comment">//GetClientRect(hWnd,&amp;rect);</span></span><br><span class="line">			<span class="comment">//DrawText(hdc, TEXT(&quot;hello world!&quot;), -1, &amp;rect, DT_CENTER);</span></span><br><span class="line">			<span class="comment">//TextOut(hdc, 400, 400, TEXT(&quot;你是不是傻&quot;) ,5);</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">				<span class="built_in">StringCchPrintf</span>(szBuffer, <span class="number">128</span>,<span class="built_in">TEXT</span>(<span class="string">&quot;%d,%s&quot;</span>), i + <span class="number">1</span>, <span class="built_in">TEXT</span>(<span class="string">&quot;这是一个测试&quot;</span>));</span><br><span class="line">				<span class="built_in">StringCchLength</span>(szBuffer, <span class="number">128</span>, &amp;tlength);</span><br><span class="line">				<span class="built_in">TextOut</span>(hdc, xchar, i*ychar, szBuffer, tlength);</span><br><span class="line">			&#125; </span><br><span class="line">            <span class="built_in">EndPaint</span>(hWnd, &amp;ps);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取窗口的尺寸</span></span><br><span class="line"><span class="keyword">case</span> WM_PAINT:</span><br><span class="line">        &#123;</span><br><span class="line">            PAINTSTRUCT ps;</span><br><span class="line">			RECT rect;</span><br><span class="line">            hdc = <span class="built_in">BeginPaint</span>(hWnd, &amp;ps);</span><br><span class="line">			<span class="built_in">GetClientRect</span>(hWnd, &amp;rect);</span><br><span class="line">			cxClient = <span class="built_in">GetSystemMetrics</span>(SM_CXSCREEN);</span><br><span class="line">			cyClient = <span class="built_in">GetSystemMetrics</span>(SM_CXSCREEN);</span><br><span class="line">			<span class="built_in">StringCchPrintf</span>(szBuffer, <span class="number">128</span>, <span class="built_in">TEXT</span>(<span class="string">&quot;当前显示器的分辨率是：%d*%d px&quot;</span>),cxClient,cyClient );</span><br><span class="line">			<span class="built_in">DrawText</span>(hdc, szBuffer, <span class="number">-1</span>, &amp;rect, DT_CENTER);</span><br><span class="line">            <span class="built_in">EndPaint</span>(hWnd, &amp;ps);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="滚动条"><a href="#滚动条" class="headerlink" title="滚动条"></a>滚动条</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加滚动条</span></span><br><span class="line">HWND hWnd = <span class="built_in">CreateWindowW</span>(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW|WS_VSCROLL|WS_HSCROLL,</span><br><span class="line">      CW_USEDEFAULT, <span class="number">0</span>, CW_USEDEFAULT, <span class="number">0</span>, <span class="literal">nullptr</span>, <span class="literal">nullptr</span>, hInstance, <span class="literal">nullptr</span>);</span><br><span class="line">WS_VSCROLL <span class="comment">//添加垂直滚动条</span></span><br><span class="line">WS_HSCROLL <span class="comment">//添加水平滚动条</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//滚动t</span></span><br><span class="line"><span class="keyword">case</span> WM_VSCROLL:</span><br><span class="line">		hdc = <span class="built_in">GetDC</span>(hWnd);</span><br><span class="line">		<span class="comment">//设置对齐的方式</span></span><br><span class="line">		<span class="comment">//SetTextAlign(hdc, TA_TOP | TA_RIGHT);</span></span><br><span class="line">		<span class="built_in"><span class="keyword">switch</span></span> (<span class="built_in">LOWORD</span>(wParam))</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> SB_LINEUP:</span><br><span class="line">			<span class="built_in">TextOut</span>(hdc, <span class="number">0</span>, <span class="number">0</span>, _T(<span class="string">&quot;向上滚动一行&quot;</span>), <span class="number">6</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SB_LINEDOWN:</span><br><span class="line">			<span class="built_in">TextOut</span>(hdc, <span class="number">0</span>, <span class="number">0</span>, _T(<span class="string">&quot;向下滚动一行&quot;</span>), <span class="number">6</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SB_PAGEDOWN:</span><br><span class="line">			<span class="built_in">TextOut</span>(hdc, <span class="number">0</span>, <span class="number">0</span>, _T(<span class="string">&quot;想下滚动一页&quot;</span>), <span class="number">6</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SB_THUMBTRACK:</span><br><span class="line">			<span class="built_in">TextOut</span>(hdc, <span class="number">0</span>, <span class="number">0</span>, _T(<span class="string">&quot;抓着不放&quot;</span>), <span class="number">4</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">ReleaseDC</span>(hWnd, hdc);</span><br><span class="line">		<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+
+<p>MoveToEx()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//指定一个起点</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>LineTo()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">muzinan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/04/28/windows%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">http://example.com/2022/04/28/windows%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">muzinan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/windows/">
+                                    <span class="chip bg-color">windows</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/05/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            muzinan
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/21/psgx%E5%AD%A6%E4%B9%A0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="psgx学习">
+                        
+                        <span class="card-title">psgx学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            muzinan
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/sgx/">
+                        <span class="chip bg-color">sgx</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: muzinan の blog<br />'
+            + '文章作者: muzinan<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2022</span>
+            
+            <a href="/about" target="_blank">muzinan</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">29.2k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/muzinan12300" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2724459827@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2724459827" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2724459827" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
